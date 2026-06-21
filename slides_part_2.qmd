@@ -6,173 +6,608 @@ format: kakashi-revealjs
 ---
 
 ```{r setup, include=FALSE}
-options(
-  tibble.max_extra_cols = 6,
-  tibble.width = 60
+library(ggplot2)
+# From the Okabe-Ito palette
+oi_orange <- "#E69F00"
+oi_green <- "#009E73"
+oi_blue <- "#0072B2"
+
+theme_diagram <- theme_void() +
+  theme(
+    plot.margin = margin(20, 20, 20, 20),
+    plot.title = element_text(face = "bold", size = 16, margin = margin(b = 10))
+  )
+```
+
+## Strategies for solving code problems {background-color="#23373B"}
+
+1. Restart your R session
+2. Debugging tools
+3. Reproducible examples
+4. LLMs
+
+# Debugging {background-color="#23373B"}
+
+## Key concepts
+
+- **Traceback**: Shows the call stack leading to an error (where).
+- **Interactive debugger**: Allows you to step through code line by line (why).
+
+## Tracebacks
+
+```{r}
+#| error: true
+inner <- function(x) {
+  x + 1
+}
+
+outer <- function(x) {
+  inner(x)
+}
+
+outer("a")
+```
+
+## Tracebacks
+
+```{r}
+#| eval: false
+traceback()
+```
+
+```
+2: inner(x) at #6
+1: outer("a") at #9
+```
+
+## Tracebacks
+
+```{r}
+#| error: true
+#| code-line-numbers: "1,3"
+#| output-location: fragment
+options(error = rlang::entrace)
+outer("a")
+rlang::last_trace()
+```
+
+## `browser()`
+
+
+```{r}
+#| eval: false
+#| code-line-numbers: "2"
+inner <- function(x) {
+  browser()
+  x + 1
+}
+
+outer <- function(x) {
+  inner(x)
+}
+
+outer("a")
+```
+
+## Interactive debugging
+
+![](img/interactive_debugger.png)
+
+## Interactive debugger tips
+
+
+::::::: columns
+::: {.column width="35%"}
+Investigate objects
+
+`ls()`, `ls.str()`,<br> `str()`, `print()`
+
+:::
+
+::: {.column width="5%"}
+:::
+
+:::: {.column width="60%"}
+
+Control execution
+
+
+::: small
+| command | operation                              |
+|---------|----------------------------------------|
+| `n`     | next statement                         |
+| `c`     | continue (leave interactive debugging) |
+| `s`     | step into function call                |
+| `f`     | finish loop / function                 |
+| `where` | show previous calls                    |
+| `Q`     | quit debugger                          |
+:::
+::::
+:::::::
+
+::: footnote
+source: What They Forgot to Teach You about R
+:::
+
+## Breakpoints
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/breakpoint-left.png)
+:::
+
+::: {.column width="50%"}
+![](img/breakpoint-right.png)
+:::
+
+::::
+
+## Debugging console
+
+![](img/cheatsheet-debug-console.PNG)
+
+::: footer
+RStudio IDE cheatsheet
+
+<https://www.rstudio.com/resources/cheatsheets/>
+:::
+
+
+## RStudio error handling
+
+![](img/ide-on-error.png)
+
+## IDE message only
+
+<br>
+
+![](img/ide-on-error-message.png)
+
+## IDE error inspector
+
+<br>
+
+![](img/ide-on-error-inspector.png)
+
+## IDE break in code
+
+<br>
+
+![](img/ide-on-error-debugger.png)
+
+
+## `debug()`
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|1|2-3|4"
+debug(sample)
+sample(10, 1)
+sample(10, 1)
+undebug(sample)
+```
+
+## `debugonce()`
+
+```{r}
+#| eval: false
+#| code-line-numbers: "|2|4-6"
+library(ggplot2)
+debugonce(ggplot2:::check_element)
+
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  theme_void()
+```
+
+## `options(error = recover)`
+
+- Always enter the debugger on error
+
+## Warnings
+
+```{r}
+#| code-line-numbers: "|1-2|3-4|5-6|8-12"
+# default, stores warnings until top-level function returns
+options(warn = 0)
+# warnings are printed as they occur
+options(warn = 1)
+# upgrades warnings to errors
+options(warn = 2)
+
+# initiate recover on warning
+# and save original settings
+old <- options(warn = 2, error = recover)
+# restore original settings
+options(old)
+# source: rstats.wtf
+```
+
+# Making (minimal) reproducible examples {background-color="#23373B"}
+
+## Minimal reproducible examples
+
+```{r}
+#| error: true
+library(ggplot2)
+diabetes <- read.csv(
+  "https://raw.githubusercontent.com/malcolmbarrett/au-stats412-612-01-reading_data/master/diabetes.csv"
+)
+just_height <- diabetes[, "height"]
+ggplot(just_height, aes(x = height)) +
+  geom_histogram() +
+  coord_equal() +
+  theme_minimal()
+```
+
+## Minimal reproducible examples
+
+- Make it reproducible (e.g. you may need `library()`)
+- Make it minimal (e.g. remove unnecessary code)
+
+## Minimal reproducible examples
+
+```{r}
+#| error: true
+#| code-line-numbers: "|2|3-4"
+library(ggplot2)
+just_bill_len <- penguins[, "bill_len"]
+ggplot(just_bill_len, aes(x = bill_len)) +
+  geom_histogram()
+```
+
+## reprex ![](img/reprex.png){.absolute top=0 right=0 width=140}
+
+- Copy code to the clipboard and run `reprex::reprex()` in the console
+- Or use the RStudio addin
+
+## reprex
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/reprex-left.png)
+:::
+
+::: {.column width="50%"}
+![](img/reprex-right.png)
+:::
+
+::::
+
+# Source code and binaries {background-color="#23373B"}
+
+## Package states {.small}
+
+- Package developers write in **source code**, then **bundle** the code to send to CRAN.
+- CRAN builds **binaries** or otherwise supplies the bundle to install.
+- We **install** the result with `install.packages()` and friends.
+- We bring an installed package **into memory** with `library()`.
+
+## Package states
+
+```{r}
+#| fig-width: 9
+#| fig-height: 9
+#| echo: false
+
+states <- data.frame(
+  label = c("source", "bundled", "binary", "installed", "in-memory"),
+  x = 1:5,
+  y = 0,
+  stage = c("build", "build", "user", "user", "user")
+)
+bw <- 0.42
+bh <- 0.22
+
+arr <- data.frame(
+  x = 1:4 + bw + 0.05,
+  xend = 2:5 - bw - 0.05,
+  y = 0,
+  yend = 0
+)
+
+ggplot() +
+  geom_rect(
+    data = states,
+    aes(
+      xmin = x - bw,
+      xmax = x + bw,
+      ymin = y - bh,
+      ymax = y + bh,
+      fill = stage,
+      color = stage
+    ),
+    linewidth = 0.4
+  ) +
+  scale_fill_manual(values = c(build = "#E69F0026", user = "#009E7326")) +
+  scale_color_manual(values = c(build = oi_orange, user = oi_green)) +
+  guides(fill = "none", color = "none") +
+  geom_text(
+    data = states,
+    aes(x = x, y = y, label = label),
+    size = 3.6,
+    family = "mono",
+    color = "grey20"
+  ) +
+  geom_segment(
+    data = arr,
+    aes(x = x, xend = xend, y = y, yend = yend),
+    arrow = arrow(length = unit(0.1, "cm"), type = "closed"),
+    color = "grey50",
+    linewidth = 0.3
+  ) +
+  annotate(
+    "text",
+    x = 1.5,
+    y = -0.37,
+    label = "R CMD build",
+    size = 3.5,
+    family = "mono",
+    color = "grey50"
+  ) +
+  annotate(
+    "text",
+    x = 2.5,
+    y = -0.37,
+    label = "R CMD INSTALL\n--build",
+    size = 3.5,
+    family = "mono",
+    color = "grey50",
+    lineheight = 0.85
+  ) +
+  annotate(
+    "text",
+    x = 3.5,
+    y = -0.37,
+    label = "install.packages()",
+    size = 3.5,
+    family = "mono",
+    color = "grey50"
+  ) +
+  annotate(
+    "text",
+    x = 4.5,
+    y = -0.37,
+    label = "library()",
+    size = 3.5,
+    family = "mono",
+    color = "grey50"
+  ) +
+  annotate(
+    "segment",
+    x = 1,
+    xend = 3,
+    y = -0.7,
+    yend = -0.7,
+    color = oi_orange,
+    linewidth = 0.5
+  ) +
+  annotate(
+    "text",
+    x = 2,
+    y = -0.85,
+    label = "package build tools required\nmay need compilation",
+    size = 4,
+    family = "mono",
+    color = oi_orange
+  ) +
+  annotate(
+    "segment",
+    x = 3,
+    xend = 5,
+    y = -0.7,
+    yend = -0.7,
+    color = oi_green,
+    linewidth = 0.5
+  ) +
+  annotate(
+    "text",
+    x = 4,
+    y = -0.85,
+    label = "typical user path\n(no building/compilation)",
+    size = 4,
+    family = "mono",
+    color = oi_green
+  ) +
+  annotate(
+    "text",
+    x = 3,
+    y = 0.55,
+    label = "CRAN / R-universe / PPM",
+    size = 5,
+    family = "mono",
+    fontface = "bold",
+    color = oi_green
+  ) +
+  annotate(
+    "text",
+    x = 3,
+    y = 0.72,
+    label = "pre-built binaries",
+    size = 6,
+    family = "mono",
+    color = oi_green
+  ) +
+  annotate(
+    "segment",
+    x = 3,
+    xend = 3,
+    y = 0.43,
+    yend = bh + 0.02,
+    arrow = arrow(length = unit(0.1, "cm"), type = "closed"),
+    color = oi_green,
+    linewidth = 0.3
+  ) +
+  annotate(
+    "curve",
+    x = 1,
+    xend = 5,
+    y = bh + 0.05,
+    yend = bh + 0.05,
+    curvature = -0.5,
+    arrow = arrow(length = unit(0.1, "cm"), type = "closed"),
+    color = oi_blue,
+    linewidth = 0.3,
+    linetype = "dashed"
+  ) +
+  annotate(
+    "text",
+    x = 3,
+    y = 1.1,
+    label = "devtools::load_all()",
+    size = 3,
+    family = "mono",
+    color = oi_blue
+  ) +
+  coord_cartesian(xlim = c(0.3, 5.7), ylim = c(-1.05, 1.3)) +
+  theme_diagram
+```
+
+## Package repositories
+
+```{r}
+#| eval: false
+getOption("repos")
+```
+
+```{r}
+#| echo: false
+structure(c(CRAN = "https://cran.rstudio.com/"), IDE = TRUE)
+```
+
+* CRAN offers binaries for Windows and Mac, typically for the latest version and the version before that
+* CRAN **archives** package bundles for all versions that have been on CRAN, but these then need to be built from source
+
+## Package repositories
+
+```{r}
+#| eval: false
+install.packages(
+  "data.table",
+  repos = c(CRAN = "https://packagemanager.posit.co/cran/2026-02-13")
 )
 ```
 
-## Quarto
+* [Posit Package Manager](https://packagemanager.posit.co/client/#/) offers binaries for many OSes as well as daily-ish snapshots
+* [R-Universe](https://ropensci.org/r-universe/) and [R-Multiverse](https://r-multiverse.org/) are increasingly important community-led, GitHub-based repositories that serve binaries
+# Managing R installations {background-color="#23373B"}
 
-Quarto enables you to weave together content and executable code into a finished presentation.
-To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+## [rig](https://github.com/r-lib/rig): The R Installation Manager
 
-> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
+* rig is a command line tool that you use in the terminal (not the R console) to manage R installations
+* `rig add <version>`, e.g. `rig add 4.1.0` `rig add release`
+* `rig default <version>`, `rig rstudio <version>`
 
-## Bullets
+# R Startup {background-color="#23373B"}
 
-When you click the **Render** button a document will be generated that includes:
+## R Startup
 
--   Content authored with markdown
--   Output from executable code
+![](img/R-startup.svg)
 
-> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
-You can embed code like this:
-
-```{r}
-#| echo: true
-1 + 1
-```
-
-> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
-
-You can also add `text marked as code`!
-
-# New topic! {background-color="#23373B"}
-
-To make a slide like this, use:
-
-    # Title of slide {background-color="#562457"}
-
-## Tabset example
-
-::: panel-tabset
-## Example 1
-
-Content here for tabset 1 :)
-
-## Example 2
-
-More content here, for tabset 2 :)
+:::footnote
+source: What They Forgot to Teach You about R
 :::
 
-## Incremental content
+## `.Rprofile`
 
-*Hi!*
+- R code that runs at startup
+- Can be used to set options, load development packages, and customize your R console
+- Should generally not be used for things that will affect reproducibility, e.g., loading a package required for code to work
 
-. . .
+## `.Rprofile`
 
+- `usethis::edit_r_profile()` opens the user-level .Rprofile
+- `interactive()` is a useful function to conditionally run code only in interactive sessions, e.g. loading dev packages like `devtools` and `usethis`
 
-Use `. . .` to separate content as an incremental slide!
-
-. . .
-
-Bye!
-
-## Numbers
-
-1. **thing 1**
-1. *thing 2*
-1. ~~thing 3~~
-
-## Non-Incremental lists
-
-::: {.nonincremental}
-- **thing 1**
-- *thing 2*
-- ~~thing 3~~
-:::
-
-## You can add R code
+## `.Rprofile`
 
 ```{r}
-#| code-line-numbers: "|2,4|5|6"
-library(dplyr)
-library(ggplot2)
-g <- starwars |>
-  ggplot() +
-  geom_point(aes(x = height, y = mass)) +
-  theme_light()
-```
-
-## And show the results, as well :)
-
-```{r}
-#| fig.align: center
-#| echo: true
-g
-```
-
-## What about tables? {.smaller}
-
-### `knitr::kable()`
-
-::: columns
-::: {.column width="50%"}
-```{r}
-#| label: kable-ex
-#| echo: true
 #| eval: false
-tab <- starwars |>
-  tidyr::drop_na(species) |>
-  group_by(species) |>
-  summarise(
-    n = n(),
-    mean_heigth = round(mean(height, na.rm = TRUE)),
-    mean_mass = round(mean(mass, na.rm = TRUE))
-  ) |>
-  slice_max(order_by = n, n = 4)
-
-knitr::kable(tab)
+options(
+  warnPartialMatchArgs = TRUE,
+  warnPartialMatchAttr = TRUE,
+  warnPartialMatchDollar = TRUE,
+  repos = "https://packagemanager.posit.co/cran/latest"
+)
 ```
+
+## `.Rprofile`
+
+```{r}
+#| eval: false
+if (interactive()) {
+  suppressMessages({
+    library(devtools)
+    library(usethis)
+    library(reprex)
+  })
+}
+```
+
+## `.Rprofile`
+
+```{r}
+#| eval: false
+get_project_deps <- function(path = getwd()) {
+  stopifnot(requireNamespace("renv", quietly = TRUE))
+  renv::dependencies(path = path)$Package |>
+    unique()
+}
+```
+
+## `.Rprofile`
+
+```{r}
+#| eval: false
+# bad
+library(ggplot2)
+theme_set(theme_minimal())
+```
+
+## `.Renviron`
+
+- Environment variables that are set at startup
+- Can be used to set API keys, database credentials, and other sensitive information
+
+## `.Renviron`
+
+- `usethis::edit_r_environ()` opens the user-level .Renviron
+- Use `Sys.getenv()` to access environment variables in your R code
+
+## `.Renviron`
+
+```bash
+GITHUB_PAT=ghp_1234567890abcdef1234567890abcdef12345678
+SOME_API_KEY=abcdef1234567890abcdef1234567890
+```
+
+From R:
+
+```{r}
+#| eval: false
+api_key <- Sys.getenv("SOME_API_KEY")
+some_function_that_uses_api_key(api_key)
+```
+
+## Scope of `.Rprofile` and `.Renviron`
+
+- User-level: `~/.Rprofile` and `~/.Renviron`
+- Project-level: `./.Rprofile` and `./.Renviron`
+- `usethis::edit_r_profile(scope = "project")` and `usethis::edit_r_environ(scope = "project")`
+- Tools such as {renv} also use `.Rprofile` for project-specific settings for package management
+
+# Your Turn {background-color="#23373B"}
+
+# Positron Demo {background-color="#23373B"}
+
+## Resources {background-color="#23373B"}
+
+:::nonincremental
+- [What They Forgot to Teach You about R](https://rstats.wtf/)
+- [Advanced R: Debugging](https://adv-r.hadley.nz/debugging.html)
+- [Debugging with RStudio](https://support.posit.co/hc/en-us/articles/205612627-Debugging-with-the-RStudio-IDE)
+- [Debugging with Positron](https://positron.posit.co/guide-r-debugging.html)
+- [System Setup for building Packages](https://r-pkgs.org/setup.html)
 :::
-
-::: {.column width="50%"}
-```{r}
-#| label: kable-ex
-#| eval: true
-```
-:::
-:::
-
-## `DT::datatable()` {.small}
-
-With the `smaller` class in the slide!
-Ex: `## slide name {.small}`
-
-```{r}
-DT::datatable(tab, options = list(pageLength = 5))
-```
-
-## `gt::gt()`
-
-```{r}
-gt::gt(tab)
-```
-
-## `reactable::reactable()`
-
-```{r}
-reactable::reactable(tab)
-```
-
-## Diagrams with Mermaid!
-
-Read about how to create a diagram in this [post by Mine Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/).
-
-<center>
-<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/quartotip?src=hash&amp;ref_src=twsrc%5Etfw">#quartotip</a> 21: Create diagrams in Quarto documents using Mermaid or Graphviz in executable code cells, similar to how you create figures.<br><br>Read more: <a href="https://t.co/3qx9oSNCay">https://t.co/3qx9oSNCay</a> <a href="https://t.co/fYzGcISl4h">pic.twitter.com/fYzGcISl4h</a></p>&mdash; Quarto (@quarto_pub) <a href="https://twitter.com/quarto_pub/status/1549271325943947270?ref_src=twsrc%5Etfw">July 19, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</center>
-
-
-## Exporting into PDF
-
-You can use the function `pagedown::chrome_print()` to print the HTML version into a PDF!
-
-```r
-pagedown::chrome_print("path-to-file.html")
-```
