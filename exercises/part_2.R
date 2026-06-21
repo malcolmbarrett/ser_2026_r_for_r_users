@@ -9,7 +9,7 @@
 
 library(ggplot2)
 library(purrr)
-library(polars) # the colleague did the data prep in polars
+library(polars) # I did the data prep in polars
 
 # ===== YOUR TURN 1 =====
 # The library(polars) call above fails: polars is not installed, and it is
