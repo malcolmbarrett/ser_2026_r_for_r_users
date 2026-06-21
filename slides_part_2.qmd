@@ -609,4 +609,5 @@ some_function_that_uses_api_key(api_key)
 - [Advanced R: Debugging](https://adv-r.hadley.nz/debugging.html)
 - [Debugging with RStudio](https://support.posit.co/hc/en-us/articles/205612627-Debugging-with-the-RStudio-IDE)
 - [Debugging with Positron](https://positron.posit.co/guide-r-debugging.html)
+- [System Setup for building Packages](https://r-pkgs.org/setup.html)
 :::
