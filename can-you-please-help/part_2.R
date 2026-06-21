@@ -2,10 +2,9 @@
 #
 # A colleague sent you this script. They say it "almost works" but they
 # cannot get it to run start to finish. Work through each YOUR TURN block
-# in order. Each one points you at a debugging tool; use it to understand
-# and fix the problem.
+# in order.
 #
-# The data is `infert`, a built-in case-control study of infertility.
+# The data is `infert`, a built-in data set from a matched case-control study of infertility.
 
 library(ggplot2)
 library(purrr)
@@ -85,5 +84,6 @@ quantile(ors, c(0.025, 0.975))
 # 3. .libPaths()        # confirm it now points inside the project.
 # 4. Reinstall polars into the project library, again from R-multiverse:
 #    renv::install("polars", repos = "https://community.r-multiverse.org")
-#    Install any other packages the script needs the same way.
+#    Install the other packages the script needs the same way.
+#    renv::install(c("ggplot2", "purrr"))
 # 5. renv::snapshot()   # record every package and version in renv.lock.

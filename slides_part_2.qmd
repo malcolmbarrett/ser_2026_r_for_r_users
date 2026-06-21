@@ -550,6 +550,17 @@ if (interactive()) {
 
 ```{r}
 #| eval: false
+get_project_deps <- function(path = getwd()) {
+  stopifnot(requireNamespace("renv", quietly = TRUE))
+  renv::dependencies(path = path)$Package |>
+    unique()
+}
+```
+
+## `.Rprofile`
+
+```{r}
+#| eval: false
 # bad
 library(ggplot2)
 theme_set(theme_minimal())
