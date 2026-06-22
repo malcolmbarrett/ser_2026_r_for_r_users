@@ -1,12 +1,110 @@
 ---
-title: "Smoking and Birthweight analysis"
+title: "Smoking and Birth Weight Analysis"
 format: html
+execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
 ```{r}
 #| label: setup
 #| include: false
 library(tidyverse)
+library(janitor)
+library(broom)
+library(gtsummary)
+library(here)
 
+theme_set(theme_minimal())
 
+age_min <- 18
+bad_ids <- 1:3
+bw_cutoff <- 2500
+preterm_cutoff <- 37
 ```
+
+## Overview
+
+This report analyzes the relationship between smoking during pregnancy and birth outcomes after restricting to mothers aged `r age_min` years and older and excluding the records flagged during data review.
+
+```{r}
+#| label: read-clean-data
+births <- read_csv(
+  here("data", "births.csv"),
+  show_col_types = FALSE
+) |>
+  clean_names() |>
+  filter(
+    mat_age >= age_min,
+    !id %in% bad_ids
+  ) |>
+  mutate(
+    low_bw = if_else(birth_weight < bw_cutoff, 1, 0),
+    preterm = if_else(ges_age < preterm_cutoff, 1, 0),
+    smoke = if_else(smoker == "Yes", 1, 0)
+  ) |>
+  filter(!is.na(birth_weight))
+```
+
+The analysis dataset includes `r nrow(births)` births. There were `r sum(births$low_bw)` low-birth-weight births and `r sum(births$preterm)` preterm births.
+
+## Table 1
+
+```{r}
+#| label: tbl-table-1
+#| tbl-cap: "Participant characteristics by smoking status"
+table1 <- births |>
+  select(smoker, mat_age, mat_bmi, parity, education, low_bw, preterm) |>
+  tbl_summary(by = smoker) |>
+  add_overall()
+
+table1
+```
+
+The median maternal age was `r inline_text(table1, variable = "mat_age", column = "stat_0")` overall.
+
+## Birth Weight
+
+```{r}
+#| label: fig-birthweight
+#| fig-cap: "Birth weight by smoking status"
+ggplot(births, aes(x = smoker, y = birth_weight, fill = smoker)) +
+  geom_boxplot() +
+  labs(
+    x = "Smoker",
+    y = "Birth weight (g)"
+  ) +
+  theme(legend.position = "none")
+```
+
+## Models
+
+```{r}
+#| label: fit-models
+low_bw_model <- glm(
+  low_bw ~ smoke + mat_age + mat_bmi + as.factor(education) + parity,
+  data = births,
+  family = binomial
+)
+
+preterm_model <- glm(
+  preterm ~ smoke + mat_age + mat_bmi + as.factor(education) + parity,
+  data = births,
+  family = binomial
+)
+```
+
+```{r}
+#| label: tbl-low-bw-model
+#| tbl-cap: "Odds ratios for low birth weight"
+tbl_regression(low_bw_model, exponentiate = TRUE)
+```
+
+```{r}
+#| label: tbl-preterm-model
+#| tbl-cap: "Odds ratios for preterm birth"
+tbl_regression(preterm_model, exponentiate = TRUE)
+```
+
+The adjusted odds ratio for low birth weight comparing smokers with non-smokers was `r inline_text(tbl_regression(low_bw_model, exponentiate = TRUE), variable = "smoke")`.
