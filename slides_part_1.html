@@ -218,7 +218,7 @@ Louisa Smith
 <h2>You inherited a script</h2>
 <p>Sam, a graduate student on your research team, just graduated and left for a new job, leaving an ongoing project to pass to you. Their analysis is “done.” You get an email:</p>
 <blockquote>
-<p>“Here’s the script – <code>final_analysis_FINAL_v2.R</code>. It definitely works, just run it! The data’s attached, plus the Table 1 doc I’ve been updating. Good luck! – Sam”</p>
+<p>“Here’s the script. It definitely works, just run it! The data’s attached, plus the Table 1 doc I’ve been updating. Good luck! – Sam”</p>
 </blockquote>
 <div class="fragment">
 <p>Attached: <code>final_analysis_FINAL_v2.R</code>, <code>births.csv</code>, and <code>Table1_DRAFT_manuscript.docx</code>.</p>
@@ -242,7 +242,6 @@ Louisa Smith
 <li class="fragment"><strong>Code style</strong> – readable code, and formatters that do it for you</li>
 <li class="fragment"><strong>Quarto</strong> – analysis and write-up in one reproducible document</li>
 <li class="fragment"><strong>Organizing &amp; scaling</strong> – scripts → Quarto → <code>targets</code></li>
-<li class="fragment"><strong>Documenting</strong> – a README so you remember what you did…</li>
 </ul>
 </section>
 <section id="two-editors-same-ideas" class="slide level2">
@@ -853,7 +852,7 @@ Louisa Smith
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">print</span>(<span class="fu">table</span>(births<span class="sc">$</span>low_bw, births<span class="sc">$</span>smoker))</span>
 <span id="cb29-2"><a href=""></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">prop.table</span>(...), <span class="dv">3</span>))</span>
 <span id="cb29-3"><a href=""></a><span class="fu">print</span>(<span class="fu">mean</span>(births<span class="sc">$</span>mat_age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Numbers got <code>print()</code>ed (NB: you do not need to write <code>print()</code> in this situation!), then <strong>hand-typed into a Word doc</strong>.</p>
+<p>Numbers got <code>print()</code>ed (NB: you do not need to write <code>print()</code> if you are just running interactively like this!), then <strong>hand-typed into a Word doc</strong>.</p>
 <p>Change the inclusion criteria or update the data and every number in the tables and text now needs to be updated by hand</p>
 </section>
 <section id="first-let-r-build-the-table" class="slide level2">
@@ -1161,48 +1160,6 @@ run_all.R        # source() them in order</code></pre>
 <p>Restart R and source <code>run_all.R</code>. Does it run cleanly?</p>
 </section></section>
 <section>
-<section id="documenting-your-project" class="title-slide slide level1 center" data-background-color="#23373B">
-<h1>Documenting your project</h1>
-
-</section>
-<section id="the-one-thing-sam-didnt-leave-you" class="slide level2">
-<h2>The one thing Sam didn’t leave you</h2>
-<p>You’ve spent this whole session reverse-engineering a script with no instructions: guessing what <code>age_min</code> was, where the data came from, how to run the thing.</p>
-<div class="fragment">
-<p>A <strong>README</strong> would have answered most of that in 30 seconds.</p>
-</div>
-<div class="fragment">
-<p>It’s just a plain text or markdown file (<code>README.md</code>) at the project root</p>
-</div>
-</section>
-<section id="what-goes-in-a-readme" class="slide level2 smaller">
-<h2>What goes in a README</h2>
-<p>It doesn’t have to be long – even ten lines beats nothing:</p>
-<ul>
-<li class="fragment"><strong>What</strong> the project is and what question it answers</li>
-<li class="fragment"><strong>Data</strong> – where it came from, any particularities, citations</li>
-<li class="fragment"><strong>How to run it</strong> – e.g., open the <code>.Rproj</code>, source <code>run_all.R</code>, or run <code>targets::tar_make()</code>, or just have to render <code>manuscript.qmd</code></li>
-<li class="fragment"><strong>Project structure</strong> – the folder map</li>
-<li class="fragment"><strong>Key decisions</strong> – including those magic numbers (<code>age_min</code>, the LBW cutoff)</li>
-<li class="fragment"><strong>Requirements</strong> – packages needed (this is where <code>renv</code> pays off)</li>
-</ul>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>Write it for the person who inherits this in two years. That person is usually you!</p>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
 <section id="wrap-up" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Wrap-up</h1>
 
@@ -1222,7 +1179,6 @@ run_all.R        # source() them in order</code></pre>
 <li class="fragment">Code that runs <strong>top to bottom</strong> in a fresh session</li>
 <li class="fragment">Let a <strong>formatter</strong> keep the style tidy</li>
 <li class="fragment"><strong>Quarto</strong> so your numbers never go stale; pick the <strong>organization</strong> that fits</li>
-<li class="fragment">A <strong>README</strong> so the next person (probably you) isn’t reverse-engineering it</li>
 </ul>
 </section>
 <section id="on-to-part-2" class="slide level2">

@@ -20,7 +20,7 @@ options(
 
 Sam, a graduate student on your research team, just graduated and left for a new job, leaving an ongoing project to pass to you. Their analysis is "done." You get an email:
 
-> "Here's the script -- `final_analysis_FINAL_v2.R`. It definitely works, just run it! The data's attached, plus the Table 1 doc I've been updating. Good luck! -- Sam"
+> "Here's the script. It definitely works, just run it! The data's attached, plus the Table 1 doc I've been updating. Good luck! -- Sam"
 
 . . .
 
@@ -42,7 +42,6 @@ Today we'll cover good R practices to avoid leaving any of your colleagues – a
 - **Code style** -- readable code, and formatters that do it for you
 - **Quarto** -- analysis and write-up in one reproducible document
 - **Organizing & scaling** -- scripts → Quarto → `targets`
-- **Documenting** -- a README so you remember what you did...
 
 ## Two editors, same ideas
 
@@ -597,10 +596,6 @@ We're not going to practice this, but there is helpful documentation: <https://r
 :::
 
 
-
-
-
-
 ## Make it run, start to finish {.activity-slide background-color="#0072B2"}
 
 :::nonincremental
@@ -737,7 +732,7 @@ print(round(prop.table(...), 3))
 print(mean(births$mat_age))
 ```
 
-Numbers got `print()`ed (NB: you do not need to write `print()` in this situation!), then **hand-typed into a Word doc**.
+Numbers got `print()`ed (NB: you do not need to write `print()` if you are just running interactively like this!), then **hand-typed into a Word doc**.
 
 Change the inclusion criteria or update the data and every number in the tables and text now needs to be updated by hand
 
@@ -1051,37 +1046,6 @@ Carve your (pre-Quarto) working script into numbered pieces and save them into t
 
 Restart R and source `run_all.R`. Does it run cleanly?
 
-# Documenting your project {background-color="#23373B"}
-
-## The one thing Sam didn't leave you
-
-You've spent this whole session reverse-engineering a script with no instructions: guessing what `age_min` was, where the data came from, how to run the thing.
-
-. . .
-
-A **README** would have answered most of that in 30 seconds.
-
-. . .
-
-It's just a plain text or markdown file (`README.md`) at the project root
-
-## What goes in a README {.smaller}
-
-It doesn't have to be long -- even ten lines beats nothing:
-
-- **What** the project is and what question it answers
-- **Data** -- where it came from, any particularities, citations
-- **How to run it** -- e.g., open the `.Rproj`, source `run_all.R`, or run `targets::tar_make()`, or just have to render `manuscript.qmd`
-- **Project structure** -- the folder map
-- **Key decisions** -- including those magic numbers (`age_min`, the LBW cutoff)
-- **Requirements** -- packages needed (this is where `renv` pays off)
-
-. . .
-
-::: callout-tip
-Write it for the person who inherits this in two years. That person is usually you!
-:::
-
 # Wrap-up {background-color="#23373B"}
 
 ## Before and after
@@ -1099,7 +1063,6 @@ Write it for the person who inherits this in two years. That person is usually y
 - Code that runs **top to bottom** in a fresh session
 - Let a **formatter** keep the style tidy
 - **Quarto** so your numbers never go stale; pick the **organization** that fits
-- A **README** so the next person (probably you) isn't reverse-engineering it
 
 ## On to Part 2
 
