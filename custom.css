@@ -9,47 +9,215 @@
   color: #c0392b;
 }
 
-
-/* ---- density: keep kakashi's look, but stop dense slides spilling over ----
-   the stock theme uses very large, very spaced lists (great for short lists,
-   too tall for this content-heavy deck). these trims preserve the fonts,
-   colors, bullet-less lists, and numbered circles, just with tighter spacing. */
+/* keep kakashi's list style, but avoid runaway sizing on dense slides */
+.reveal .slides ul,
+.reveal .slides ol {
+  font-size: 1.08em;
+  line-height: 1.25;
+}
 
 .reveal .slides ul {
-  font-size: 110%;
-  padding-top: 6px;
+  padding-top: 0.35em;
 }
+
 .reveal .slides ul li {
-  padding-bottom: 12px;
+  padding-bottom: 0.35em;
 }
 
-/* ordered lists in the theme compound 125% on both ol and li; undo that and
-   tighten the per-step gap (the numbered circle keeps each step ~60px tall) */
 .reveal .slides ol {
-  font-size: 108%;
-}
-.reveal .slides ol li {
-  font-size: 100%;
-  margin: 6px 0;
+  padding-left: 1.2em;
 }
 
-/* nested lists shouldn't re-inflate
+.reveal .slides ol li {
+  font-size: 1em;
+  margin: 0.45em 0;
+  padding-left: 1.45em;
+}
+
+.reveal .slides ol li::before {
+  left: -1.2em;
+  top: 0.05em;
+  width: 1.45em;
+  height: 1.45em;
+  line-height: 1.45em;
+}
+
 .reveal .slides li ul,
 .reveal .slides li ol {
-  font-size: 95%;
-  padding-top: 2px;
-} */
-
-.reveal .slides ul {
-  font-size: 125%;      /* was 110% — bigger bullet text */
-  padding-top: 4px;
-}
-.reveal .slides ul li {
-  padding-bottom: 6px;  /* was 12px — less space between bullets */
-  line-height: 1.25;    /* optional: tightens wrapped lines within a bullet */
+  font-size: 0.86em;
+  font-weight: 500;
+  padding-top: 0.25em;
 }
 
-.reveal .slides ol li {
-  font-size: 125%;   /* bump up for bigger step text */
-  margin: 4px 0;     /* was 6px — tighter, but keep ≥ ~2px so the numbered circles don't collide */
+.reveal .slides li li {
+  padding-bottom: 0.2em;
+}
+
+/* tighter variants for content-heavy slides */
+.reveal .slides section.smaller {
+  font-size: 0.82em;
+}
+
+.reveal .slides section.smaller ul,
+.reveal .slides section.smaller ol {
+  line-height: 1.18;
+}
+
+.reveal .slides section.smaller li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  padding-bottom: 0.2em;
+}
+
+.reveal .slides section.compact pre code {
+  font-size: 1.05em;
+  line-height: 1.15;
+}
+
+.reveal .slides section.activity-slide ul,
+.reveal .slides section.activity-slide ol {
+  font-size: 0.95em;
+}
+
+.reveal .slides section.activity-slide {
+  padding-top: 0.7em;
+}
+
+.reveal .slides section.activity-slide::before {
+  content: "Activity";
+  display: inline-block;
+  margin-bottom: 0.35em;
+  padding: 0.18em 0.55em;
+  border: 2px solid #e69f00;
+  border-radius: 999px;
+  color: #e69f00;
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.reveal .slides section.activity-slide h2 {
+  margin-top: 0;
+}
+
+.reveal .slides section.activity-slide li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  padding-bottom: 0.2em;
+}
+
+.reveal .slides img {
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.reveal .slides video {
+  max-height: 72vh;
+}
+
+.reveal .slides .callout {
+  font-size: 0.82em;
+  border: 0 !important;
+  border-left: 0.24em solid #e69f00 !important;
+  border-radius: 4px;
+  background: #f8f8f6 !important;
+  color: #23373b;
+  box-shadow: none;
+}
+
+.reveal .slides .callout.callout-note.callout-style-default {
+  border-left-color: #e69f00 !important;
+}
+
+.reveal .slides .callout .callout-body {
+  padding: 0.55em 0.75em 0.65em;
+  background: transparent !important;
+}
+
+.reveal .slides .callout .callout-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0 0 0.35em;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #e69f00 !important;
+  font-weight: 700;
+}
+
+.reveal .slides .callout .callout-title p {
+  margin: 0;
+}
+
+.reveal .slides .callout .callout-icon-container {
+  display: none !important;
+}
+
+.reveal .slides .callout .callout-content {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.reveal .slides .callout p {
+  margin-bottom: 0;
+}
+
+.reveal .slides .callout.callout-tip.callout-style-default {
+  border-left-color: #009e73 !important;
+  background: #f4faf7 !important;
+}
+
+.reveal .slides .callout.callout-tip .callout-title,
+.reveal .slides .callout.callout-tip .callout-title strong {
+  color: #009e73 !important;
+}
+
+.reveal .slides .callout.callout-note.callout-style-default {
+  border-left-color: #e69f00 !important;
+  background: #f8f8f6 !important;
+}
+
+.reveal .slides .callout.callout-note .callout-title,
+.reveal .slides .callout.callout-note .callout-title strong {
+  color: #e69f00 !important;
+}
+
+/* keep inline code readable while its fragment is current */
+.reveal .slides .fragment.current-fragment code {
+  color: #009e73;
+}
+
+/* activity instructions should accumulate rather than fade away */
+.reveal .slides section.activity-slide .fragment.visible:not(.current-fragment) {
+  color: #edeef;
+}
+
+.reveal .slides section.activity-slide
+  .fragment.visible:not(.current-fragment)
+  strong {
+  color: #e69f00;
+}
+
+.reveal .slides section.activity-slide
+  .fragment.visible:not(.current-fragment)
+  em {
+  color: #56b4e9;
+}
+
+.reveal .slides section.activity-slide
+  .fragment.visible:not(.current-fragment)
+  code {
+  color: #009e73;
+}
+
+.reveal .slides section.activity-slide
+  .fragment.visible:not(.current-fragment)
+  a {
+  color: #ec99c6;
+}
+
+.reveal .slides section.activity-slide
+  .fragment.visible:not(.current-fragment)::before {
+  background-color: #56b4e9;
 }
