@@ -640,7 +640,7 @@ Louisa Smith
 <span id="cb22-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()    <span class="co"># record current versions to renv.lock</span></span>
 <span id="cb22-3"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()     <span class="co"># reproduce that exact set on another machine</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<p>We’re not going to practice this, but TODO renv resources</p>
+<p>We’re not going to practice this, but there is helpful documentation: <a href="https://rstudio.github.io/renv/articles/renv.html" class="uri">https://rstudio.github.io/renv/articles/renv.html</a></p>
 </div>
 </section></section>
 <section id="activity-3" class="title-slide slide level1 center" data-background-color="#0072B2">
@@ -807,23 +807,143 @@ Louisa Smith
 <p>Markdown for text; code chunks for analysis:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="in">```{r}</span></span>
 <span id="cb30-2"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/births.csv"</span>))</span>
-<span id="cb30-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-3"><a href=""></a><span class="in">```</span></span>
+<span id="cb30-4"><a href=""></a>We conducted a really *important* study...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="quarto-vs.-rmarkdown" class="slide level2">
-<h2>Quarto vs.&nbsp;RMarkdown?</h2>
-<p>TODO</p>
+<section id="why-not-r-markdown" class="slide level2">
+<h2>Why not R Markdown?</h2>
+<p>Only because quarto is newer and more featured!</p>
+<ul>
+<li class="fragment">Anything you already know how to do in R Markdown you can do in quarto, and more!</li>
+<li class="fragment">All of these slides are made in quarto.</li>
+<li class="fragment">If you know and love R Markdown, by all means keep using it!</li>
+</ul>
+</section>
+<section id="quarto-workflow" class="slide level2">
+<h2>Quarto workflow</h2>
+<ol type="1">
+<li class="fragment">Create a Quarto document</li>
+<li class="fragment">Write code</li>
+<li class="fragment">Write text</li>
+<li class="fragment">Repeat 2-3 in whatever order you want</li>
+<li class="fragment">Render repeatedly as you go</li>
+</ol>
+</section>
+<section id="how-does-it-work" class="slide level2">
+<h2>How does it work?</h2>
+<ul>
+<li class="fragment">You text in markdown and code in R</li>
+<li class="fragment"><code>knitr</code> processes the code chunks, executes the R code, and inserts the code outputs (e.g., plots, tables) back into the markdown document</li>
+<li class="fragment"><code>pandoc</code> transforms the markdown document into various output formats</li>
+</ul>
+
+<img data-src="images/2b931008-dc7c-4bec-92cb-112a55126975.png" class="r-stretch"></section>
+<section id="text-and-code" class="slide level2">
+<h2>Text and code…</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a><span class="fu"># My header</span></span>
+<span id="cb31-2"><a href=""></a></span>
+<span id="cb31-3"><a href=""></a>Some text</span>
+<span id="cb31-4"><a href=""></a></span>
+<span id="cb31-5"><a href=""></a>Some *italic text*</span>
+<span id="cb31-6"><a href=""></a></span>
+<span id="cb31-7"><a href=""></a>Some **bold text**</span>
+<span id="cb31-8"><a href=""></a></span>
+<span id="cb31-9"><a href=""></a><span class="ss">- </span>Eggs</span>
+<span id="cb31-10"><a href=""></a><span class="ss">- </span>Milk</span>
+<span id="cb31-11"><a href=""></a></span>
+<span id="cb31-12"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb31-13"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb31-14"><a href=""></a>x</span>
+<span id="cb31-15"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="becomes" class="slide level2">
+<h2>… becomes …</h2>
+<h3 id="my-title">My title</h3>
+<p>Some text</p>
+<p>Some <em>italic text</em></p>
+<p>Some <strong>bold text</strong></p>
+<ul>
+<li class="fragment">Eggs</li>
+<li class="fragment">Milk</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb32-2"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="if-you-prefer-you-can-use-the-visual-editor" class="slide level2">
+<h2>If you prefer, you can use the visual editor</h2>
+
+<img data-src="images/Screenshot%202023-08-14%20at%209.41.22%20PM.png" class="r-stretch"></section>
+<section id="r-chunks" class="slide level2">
+<h2>R chunks</h2>
+<p>Everything within the chunks has to be valid R<sup>1</sup></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb34-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb34-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb35-2"><a href=""></a>x <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb35-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<p>Chunks run in order, continuously, like a single script</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>You can also use other languages, like Python!</p></li></ol></aside></section>
+<section id="yaml" class="slide level2">
+<h2>YAML</h2>
+<p>At the top of your Quarto document, a header written in <em>yaml</em> describes options for the document</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb37-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb37-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My document"</span></span>
+<span id="cb37-3"><a href=""></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Louisa Smith</span></span>
+<span id="cb37-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb37-5"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>There are a <em>ton</em> of possible options, but importantly, this determines the document output</p>
+</section>
+<section id="output" class="slide level2">
+<h2>Output</h2>
+
+<img data-src="images/6f28e7d4-3394-43f9-8b0d-41c52de3883f.png" class="r-stretch"><p><a href="https://quarto.org/docs/output-formats/all-formats.html" class="uri">https://quarto.org/docs/output-formats/all-formats.html</a></p>
 </section>
 <section id="numbers-that-never-go-stale" class="slide level2">
 <h2>Numbers that never go stale</h2>
 <p>Report results with <strong>inline code</strong> instead of typing them:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>There were {r} nrow(births) participants in the study. TODO FIX</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href=""></a>There were <span class="in">`r nrow(births)`</span> participants in the study.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>There were 1960 participants in the study.</p>
+</div>
 <div class="fragment">
 <p>That <code>`r `</code> chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself – no more hand-typed numbers.</p>
 </div>
 </section>
 <section id="you-can-pull-numbers-directly-from-tables" class="slide level2">
 <h2>You can pull numbers directly from tables</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a>TODO inline_code(table1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href=""></a>The median material age was `r inline_text(table1, variable = "mat_age", </span>
+<span id="cb39-2"><a href=""></a>column = "stat_0")`.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>The median maternal age was 29 (26, 33).</p>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><code>inline_text()</code> is a helper that pulls a specific value from the table. A tutorial is available here: <a href="https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html" class="uri">https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html</a></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="rendering-the-blank-slate-test-for-free" class="slide level2">
 <h2>Rendering = the blank-slate test, for free</h2>
@@ -900,8 +1020,8 @@ run_all.R        # source() them in order</code></pre>
 </section>
 <section id="a-quarto-report-assembled-from-sections" class="slide level2">
 <h2>3. A Quarto report, assembled from sections</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a>{{&lt; include _sections/_methods.qmd &gt;}}</span>
-<span id="cb34-2"><a href=""></a>{{&lt; include _sections/_results.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a>{{&lt; include _sections/_methods.qmd &gt;}}</span>
+<span id="cb41-2"><a href=""></a>{{&lt; include _sections/_results.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A parent document pulls in section files that share one R session.</p>
 <div class="fragment">
 <p>Good when a document gets unwieldy, or co-authors each own a section without scrolling through the whole manuscript.</p>
@@ -923,26 +1043,28 @@ run_all.R        # source() them in order</code></pre>
 <section id="a-targets-pipeline" class="slide level2">
 <h2>4. A <code>targets</code> pipeline</h2>
 <p><code>targets</code> tracks what each step depends on and <strong>only re-runs what changed</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">list</span>(</span>
-<span id="cb35-2"><a href=""></a>  <span class="fu">tar_target</span>(births_file, <span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>), <span class="at">format =</span> <span class="st">"file"</span>),</span>
-<span id="cb35-3"><a href=""></a>  <span class="fu">tar_target</span>(births,      <span class="fu">clean_births</span>(<span class="fu">read_births</span>(births_file))),</span>
-<span id="cb35-4"><a href=""></a>  <span class="fu">tar_target</span>(lbw_model,   <span class="fu">fit_lbw_model</span>(births)),</span>
-<span id="cb35-5"><a href=""></a>  <span class="fu">tar_target</span>(bw_plot,     <span class="fu">plot_birthweight</span>(births))</span>
-<span id="cb35-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href=""></a><span class="fu">list</span>(</span>
+<span id="cb42-2"><a href=""></a>  <span class="fu">tar_target</span>(births_file, <span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>), <span class="at">format =</span> <span class="st">"file"</span>),</span>
+<span id="cb42-3"><a href=""></a>  <span class="fu">tar_target</span>(births,      <span class="fu">clean_births</span>(<span class="fu">read_births</span>(births_file))),</span>
+<span id="cb42-4"><a href=""></a>  <span class="fu">tar_target</span>(lbw_model,   <span class="fu">fit_lbw_model</span>(births)),</span>
+<span id="cb42-5"><a href=""></a>  <span class="fu">tar_target</span>(bw_plot,     <span class="fu">plot_birthweight</span>(births))</span>
+<span id="cb42-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="why-targets" class="slide level2">
 <h2>Why <code>targets</code>?</h2>
 <p>Edit the figure and re-run – a slow model <strong>does not need to be refit</strong>. Change the raw data file and everything downstream knows it’s out of date.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_visnetwork</span>()   <span class="co"># see the dependency graph</span></span>
-<span id="cb36-2"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()         <span class="co"># build only what's stale</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_visnetwork</span>()   <span class="co"># see the dependency graph</span></span>
+<span id="cb43-2"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()         <span class="co"># build only what's stale</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<p>Overkill for today’s tiny analysis. Worth it when steps are slow, numerous, or re-run constantly.</p>
+<p>It’s overkill for today’s tiny analysis, but worth it when steps are slow, numerous, or re-run constantly (I use it for simulation studies and for more complex analyses where the data is often changing)</p>
 </div>
 </section>
 <section id="targets" class="slide level2">
 <h2><code>targets</code></h2>
-<p>TODO: add lecture content</p>
-</section></section>
+<p>I gave a talk introducing <code>targets</code> a few years ago: <a href="https://www.louisahsmith.com/talks/2023-05-31/slides#/title-slide" class="uri">https://www.louisahsmith.com/talks/2023-05-31/slides#/title-slide</a></p>
+<p>The documentation is very thorough: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
+
+<img data-src="images/paste-10.png" class="r-stretch"></section></section>
 <section>
 <section id="activity-6" class="title-slide slide level1 center" data-background-color="#0072B2">
 <h1>Activity 6</h1>
@@ -950,11 +1072,11 @@ run_all.R        # source() them in order</code></pre>
 </section>
 <section id="split-it-up" class="slide level2">
 <h2>Split it up</h2>
-<p>Carve your working script into numbered pieces and saave them into the appropriate directory:</p>
+<p>Carve your working script into numbered pieces and save them into the appropriate directory:</p>
 <ol type="1">
-<li class="fragment"><code>R/00_setup.R</code> – <code>library()</code> calls and <code>theme_set()</code></li>
-<li class="fragment"><code>R/01_clean.R</code> – read + clean the data</li>
-<li class="fragment"><code>R/02_analysis.R</code> – fit the models</li>
+<li class="fragment"><code>R/00_setup.R</code> – <code>library()</code> calls, read + clean the data</li>
+<li class="fragment"><code>R/01_model.R</code> – fit the models</li>
+<li class="fragment"><code>R/02_figures-tables.R</code> – analyze the results</li>
 <li class="fragment"><code>run_all.R</code> – <code>source()</code> them in order
 <ul>
 <li class="fragment">make sure you are referring to the file paths where they are saved!</li>
@@ -1050,6 +1172,7 @@ run_all.R        # source() them in order</code></pre>
 
 </div>
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

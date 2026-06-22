@@ -494,7 +494,7 @@ renv::restore()     # reproduce that exact set on another machine
 
 . . .
 
-We're not going to practice this, but TODO renv resources
+We're not going to practice this, but there is helpful documentation: <https://rstudio.github.io/renv/articles/renv.html>
 
 # Activity {background-color="#0072B2"}
 
@@ -670,29 +670,144 @@ Markdown for text; code chunks for analysis:
 ```{{r}}
 births <- read_csv(here("data/births.csv"))
 ```
+We conducted a really *important* study...
 ````
 
-## Quarto vs. RMarkdown?
+## Why not R Markdown?
 
-TODO
+Only because quarto is newer and more featured!
+
+- Anything you already know how to do in R Markdown you can do in quarto, and more!
+- All of these slides are made in quarto.
+- If you know and love R Markdown, by all means keep using it!
+
+## Quarto workflow
+
+1.  Create a Quarto document
+2.  Write code
+3.  Write text
+4.  Repeat 2-3 in whatever order you want
+5.  Render repeatedly as you go
+
+## How does it work?
+
+- You text in markdown and code in R
+- `knitr` processes the code chunks, executes the R code, and inserts the code outputs (e.g., plots, tables) back into the markdown document
+- `pandoc` transforms the markdown document into various output formats
+
+![](images/2b931008-dc7c-4bec-92cb-112a55126975.png)
+
+## Text and code...
+
+````
+# My header
+
+Some text
+
+Some *italic text*
+
+Some **bold text**
+
+- Eggs
+- Milk
+
+```{{r}}
+x <- 3
+x
+```
+````
+
+## ... becomes ...
+
+### My title
+
+Some text
+
+Some *italic text*
+
+Some **bold text**
+
+- Eggs
+- Milk
+
+```{r}
+x <- 3
+x
+```
+
+## If you prefer, you can use the visual editor
+
+![](images/Screenshot%202023-08-14%20at%209.41.22%20PM.png)
+
+## R chunks
+
+Everything within the chunks has to be valid R[^1]
+
+[^1]: You can also use other languages, like Python!
+
+```{r}
+#| echo: fenced
+x <- 3
+```
+
+```{r}
+#| echo: fenced
+x + 4
+```
+
+Chunks run in order, continuously, like a single script
+
+## YAML
+
+At the top of your Quarto document, a header written in *yaml* describes options for the document
+
+``` yml
+---
+title: "My document"
+author: Louisa Smith
+format: html
+---
+```
+
+There are a *ton* of possible options, but importantly, this determines the document output
+
+## Output
+
+![](images/6f28e7d4-3394-43f9-8b0d-41c52de3883f.png)
+
+<https://quarto.org/docs/output-formats/all-formats.html>
 
 ## Numbers that never go stale
 
 Report results with **inline code** instead of typing them:
 
 ``` markdown
-There were {r} nrow(births) participants in the study. TODO FIX
+There were `r knitr::inline_expr("nrow(births)")` participants in the study.
 ```
 
-::: fragment
+. . .
+
+There were 1960 participants in the study.
+
+. . .
+
 That `` `r ` `` chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself -- no more hand-typed numbers.
-:::
 
 ## You can pull numbers directly from tables
 
-```markdown
-TODO inline_code(table1)
+``` markdown
+The median material age was `r knitr::inline_expr('inline_text(table1, variable = "mat_age", \ncolumn = "stat_0")')`.
 ```
+
+. . .
+
+The median maternal age was 29 (26, 33).
+
+. . .
+
+::: callout-note
+`inline_text()` is a helper that pulls a specific value from the table. A tutorial is available here: <https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html>
+:::
 
 ## Rendering = the blank-slate test, for free
 
@@ -703,7 +818,6 @@ When you click **Render**, Quarto runs the whole document in a **fresh R session
 ::: callout-tip
 If your `.qmd` renders, it's reproducible by construction -- hidden state and out-of-order code can't survive a render. That alone is a great reason to move analyses into Quarto.
 :::
-
 
 # Activity 5 {background-color="#0072B2"}
 
@@ -795,21 +909,25 @@ targets::tar_make()         # build only what's stale
 
 . . .
 
-Overkill for today's tiny analysis. Worth it when steps are slow, numerous, or re-run constantly.
+It's overkill for today's tiny analysis, but worth it when steps are slow, numerous, or re-run constantly (I use it for simulation studies and for more complex analyses where the data is often changing)
 
 ## `targets`
 
-TODO: add lecture content
+I gave a talk introducing `targets` a few years ago: <https://www.louisahsmith.com/talks/2023-05-31/slides#/title-slide>
+
+The documentation is very thorough: <https://books.ropensci.org/targets/>
+
+![](images/paste-10.png)
 
 # Activity 6 {background-color="#0072B2"}
 
 ## Split it up
 
-Carve your working script into numbered pieces and saave them into the appropriate directory:
+Carve your working script into numbered pieces and save them into the appropriate directory:
 
-1.  `R/00_setup.R` -- `library()` calls and `theme_set()`
-2.  `R/01_clean.R` -- read + clean the data
-3.  `R/02_analysis.R` -- fit the models
+1.  `R/00_setup.R` -- `library()` calls, read + clean the data
+2.  `R/01_model.R` -- fit the models
+3.  `R/02_figures-tables.R` -- analyze the results
 4.  `run_all.R` -- `source()` them in order
     - make sure you are referring to the file paths where they are saved!
 
@@ -856,7 +974,6 @@ Create a `README.md` at your project root. Cover:
 - where the data come from
 - how to run it (open `.Rproj` → restart R → source `run_all.R`)
 - the key analysis choices -- `age_min`, the low-birth-weight cutoff
-
 
 # Wrap-up {background-color="#23373B"}
 
