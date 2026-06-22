@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slides_part_1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_part_1_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_part_1_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_part_1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_part_1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_part_1_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides_part_1_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Louisa Smith">
+  <title>R for R Users</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slides_part_1_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_part_1_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="slides_part_1_files/libs/revealjs/dist/theme/quarto-378ee3d603240085af4914d7b403490a.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="slides_part_1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_part_1_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_part_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_part_1_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#23373B" data-color="#EDEEF" class="quarto-title-block center">
+  <h1 class="title">R for R Users</h1>
+  <p class="subtitle">Part 1: R Workflows</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Louisa Smith 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="the-scenario" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>The scenario</h1>
+
+</section>
+<section id="you-inherited-a-script" class="slide level2">
+<h2>You inherited a script</h2>
+<p>Sam, a graduate student on your research team, just graduated and left for a new job, leaving an ongoing project to pass to you. Their analysis is “done.” You get an email:</p>
+<blockquote>
+<p>“Here’s the script – <code>final_analysis_FINAL_v2.R</code>. It definitely works, just run it! The data’s attached, plus the Table 1 doc I’ve been updating. Good luck! – Sam”</p>
+</blockquote>
+<div class="fragment">
+<p>Attached: <code>final_analysis_FINAL_v2.R</code>, <code>births.csv</code>, <code>new_births_2024.csv</code>, and <code>Table1_DRAFT_manuscript.docx</code>.</p>
+</div>
+</section>
+<section id="you-open-it-and-start-running" class="slide level2">
+<h2>You open it and start running</h2>
+
+<img data-src="images/paste-1.png" class="r-stretch"></section></section>
+<section>
+<section id="most-of-us-have-written-a-script-like-this" class="title-slide slide level1 center">
+<h1>Most of us have <em>written</em> a script like this</h1>
+<p>Today we’ll cover good R practices to avoid leaving any of your colleagues – and possibly most importantly, your future self – in this position</p>
+</section>
+<section id="what-part-1-covers" class="slide level2 smaller">
+<h2>What Part 1 covers</h2>
+<ul>
+<li class="fragment"><strong>Projects + paths</strong> – <code>here()</code></li>
+<li class="fragment"><strong>Blank-slate R</strong> – why “it works on my machine” happens</li>
+<li class="fragment"><strong>Reproducibility</strong> – code that runs in order, every time</li>
+<li class="fragment"><strong>Code style</strong> – readable code, and formatters that do it for you</li>
+<li class="fragment"><strong>Quarto</strong> – analysis and write-up in one reproducible document</li>
+<li class="fragment"><strong>Organizing &amp; scaling</strong> – scripts → Quarto → <code>targets</code></li>
+<li class="fragment"><strong>Documenting</strong> – a README so you remember what you did…</li>
+</ul>
+</section>
+<section id="two-editors-same-ideas" class="slide level2">
+<h2>Two editors, same ideas</h2>
+<p>We’ll work in <strong>RStudio</strong> today – it’s probably what you already use and it’s great</p>
+<div class="fragment">
+<p>But keep an eye on <strong>Positron</strong>: Posit’s newer editor, built on VS Code. Multi-language (R <em>and</em> Python), more extensible, and where a lot of this is heading.</p>
+</div>
+<div class="fragment">
+<p>I’ll mention a few Positron asides in case you ever want to make the switch</p>
+</div>
+</section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<video autoplay="" muted="" loop="" width="100%" style="max-width: 800px;">
+<source src="https://positron.posit.co/videos/positron-hero-fast-tour.mp4" type="video/mp4">
+</video>
+<div style="font-size: 0.5em; color: gray;">
+<p><a href="https://positron.posit.co/" class="uri">https://positron.posit.co/</a></p>
+</div>
+</section>
+
+<section>
+<section id="projects" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Projects</h1>
+
+</section>
+<section id="the-first-line-already-broke" class="slide level2">
+<h2>The first line already broke</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">setwd</span>(<span class="st">"/Users/sam/Desktop/myproject"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="error-output">
+<p>Error in setwd(“/Users/sam/Desktop/myproject”) :</p>
+<p>cannot change working directory</p>
+</div>
+</section>
+<section id="do-you-think-this-code-from-2015-still-runs" class="slide level2">
+<h2>Do you think this code from 2015 still runs?</h2>
+
+<img data-src="images/paste-5.png" class="r-stretch"></section>
+<section id="the-problem-with-setwd" class="slide level2">
+<h2>The problem with <code>setwd()</code></h2>
+<p><code>setwd()</code> points at one exact folder on one exact computer. The moment the project moves – a new laptop, a shared drive, <em>your</em> machine – it’s dead.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>A classic explainer: <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/" class="uri">https://www.tidyverse.org/blog/2017/12/workflow-vs-script/</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="better-an-r-project" class="slide level2 smaller">
+<h2>Better: an R Project</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<pre><code>my-project/
+├─ my-project.Rproj
+├─ README.md
+├─ data/
+│   ├─ raw/
+│   └─ processed/
+├─ R/
+└─ results/
+    ├─ figures/
+    └─ tables/</code></pre>
+</div><div class="column" style="width:58%;">
+<ul>
+<li class="fragment">The <code>.Rproj</code> file marks the <strong>project root</strong> and opens RStudio <em>in that folder</em> – no <code>setwd()</code> needed
+<ul>
+<li class="fragment">It stores some settings but you never need to edit it by hand</li>
+<li class="fragment">Positron doesn’t use <code>.Rproj</code> files, instead opening the folder as a project – but the idea is the same</li>
+</ul></li>
+<li class="fragment">If you share the project folder (e.g.&nbsp;GitHub, Dropbox, zipping and emailing), it will set the working directory wherever it’s saved</li>
+</ul>
+</div></div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="images/paste-6.png" class="r-stretch"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="images/paste-7.png" class="r-stretch"></section></section>
+<section id="activity" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity</h1>
+<ul>
+<li class="fragment">Start a new R project (<strong>File → New Project → New Directory → New Project.</strong>, or use the upper-right-corner drop-down)</li>
+<li class="fragment">Add a <code>data</code> folder (either through RStudio or your file explorer)</li>
+<li class="fragment">Move the workshop files into the appropriate places in the project folder</li>
+</ul>
+</section>
+
+<section>
+<section id="file-paths" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>File paths</h1>
+
+</section>
+<section id="the-good-news-is-that-this-runs-now" class="slide level2">
+<h2>The good news is that this runs now!</h2>
+<p>The bad news is that, depending on your settings, if you run it from within an RMarkdown/Quarto document, it might break</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>births<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/births.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="error-output">
+<p>Error in file(file, “rt”) : cannot open the connection</p>
+<p>In addition: Warning message:</p>
+<p>In file(file, “rt”) :</p>
+<p>cannot open file ‘data/births.csv’: No such file or directory</p>
+</div>
+</section>
+<section id="paths-that-travel-the-here-package" class="slide level2">
+<h2>Paths that travel: the <code>here</code> package</h2>
+<p><code>here()</code> builds paths <strong>from the project root</strong> – the folder with the <code>.Rproj</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">library</span>(here)</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"data/births.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<ul>
+<li class="fragment">On my machine <code>here("data/births.csv")</code> becomes my full path (i.e., <code>/Users/l.smith/.../myproject/data/births.csv</code>); on yours it becomes yours</li>
+<li class="fragment">This conversion into a full path rather than relative path means that it will work even in a Quarto document compiling in a subdirectory</li>
+</ul>
+</div>
+</section>
+<section id="how-to-use-here" class="slide level2">
+<h2>How to use <code>here()</code></h2>
+<p>You can nest as many directories as exist in the path, and slashes are always forward:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(<span class="fu">here</span>(<span class="st">"results/figures/birthweight.png"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>You can also pass the pieces separately – both give the same path:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(<span class="fu">here</span>(<span class="st">"results"</span>, <span class="st">"figures"</span>, <span class="st">"birthweight.png"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="herehere-vs-libraryhere" class="slide level2">
+<h2><code>here::here()</code> vs <code>library(here)</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">library</span>(here)</span>
+<span id="cb7-2"><a href=""></a><span class="fu">here</span>(<span class="st">"data/births.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>is the same as</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/births.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section></section>
+<section id="activity-1" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity</h1>
+<p>Start rewriting the script</p>
+<ul>
+<li class="fragment">Delete the <code>setwd()</code> line, and rewrite the <code>read.csv()</code> line to use <code>here()</code>
+<ul>
+<li class="fragment">You might need to <code>install.packages("here")</code> first</li>
+</ul></li>
+<li class="fragment">Make sure you can read in the data!</li>
+</ul>
+</section>
+
+<section>
+<section id="blank-slate-r" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Blank-slate R</h1>
+
+</section>
+<section id="your-r-session-is-full-of-invisible-state" class="slide level2">
+<h2>Your R session is full of invisible state</h2>
+<p>While you work, R quietly accumulates:</p>
+<ul>
+<li class="fragment"><strong>objects</strong> you’ve created</li>
+<li class="fragment"><strong>packages</strong> you’ve loaded</li>
+<li class="fragment">a <strong>working directory</strong></li>
+</ul>
+<div class="fragment">
+<p>A script doesn’t make this explicit will run for <strong>you, today</strong>, and break for <strong>anyone else</strong> – including future you</p>
+</div>
+</section>
+<section id="hidden-state-a-worked-example" class="slide level2">
+<h2>Hidden state: a worked example</h2>
+<p>Sam’s script restricts to adult mothers:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="do">####### smoking &amp; birth weight analysis ########</span></span>
+<span id="cb9-2"><a href=""></a><span class="do">####### *** this is the GOOD version, use this one!! *** ########</span></span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a><span class="co"># install.packages("tidyverse")    # run this if it doesn't work</span></span>
+<span id="cb9-5"><a href=""></a></span>
+<span id="cb9-6"><a href=""></a><span class="fu">setwd</span>(<span class="st">"/Users/sam/Desktop/myproject"</span>)</span>
+<span id="cb9-7"><a href=""></a></span>
+<span id="cb9-8"><a href=""></a>births<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"births.csv"</span>)</span>
+<span id="cb9-9"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(births)</span>
+<span id="cb9-10"><a href=""></a></span>
+<span id="cb9-11"><a href=""></a><span class="co"># restrict to adult moms only</span></span>
+<span id="cb9-12"><a href=""></a>births <span class="ot">=</span> births[births<span class="sc">$</span>mat_age <span class="sc">&gt;=</span> age_min,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<div class="error-output">
+<p>Error: object ‘age_min’ not found</p>
+</div>
+</div>
+</section>
+<section id="error-object-not-found" class="slide level2">
+<h2>Error: object not found</h2>
+<p>Where does <code>age_min</code> come from? It’s <strong>never defined in the script</strong>. Sam typed <code>age_min &lt;- 18</code> in the console months ago, and it’s been sitting in their environment ever since.</p>
+<div class="fragment">
+<p>This is <em>hidden state</em> – the analysis depends on something that isn’t in the code.</p>
+</div>
+<div class="fragment">
+<p>This is also common when you are not running code top-to-bottom – this will error in a new session even if <code>age_min</code> is defined down below.</p>
+</div>
+</section>
+<section id="and-its-not-just-objects" class="slide level2">
+<h2>And it’s not just objects</h2>
+<p>The same trap catches <strong>functions</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="error-output">
+<p>Error in clean_names(births) : could not find function “clean_names”</p>
+</div>
+<div class="fragment">
+<p>If a package was loaded in Sam’s session but <code>library()</code> never made it into the script, or a helper function only ever lived in the console, your clean session has no idea what you mean.</p>
+</div>
+</section>
+<section id="packages" class="slide level2">
+<h2>Packages</h2>
+<p><code>base</code>, <code>methods</code>, <code>datasets</code>, <code>utils</code>, <code>grDevices</code>, <code>graphics</code>, <code>stats</code> are all loaded by default</p>
+
+<img data-src="images/paste-4.png" class="r-stretch"></section>
+<section id="referring-to-functions-from-packages" class="slide level2">
+<h2>Referring to functions from packages</h2>
+<p>Works because <code>janitor</code> is loaded:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">library</span>(janitor)</span>
+<span id="cb11-2"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Works without loading all <code>janitor</code> functions</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>births <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But another <code>janitor</code> function, like <code>get_dupes(births)</code> will error</p>
+</section>
+<section id="quick-tip" class="slide level2">
+<h2>Quick tip</h2>
+<div class="error-output">
+<p>Error: object ‘Age_Min’ not found</p>
+</div>
+<div class="error-output">
+<p>Error in clean.names(births) : could not find function “clean.names”</p>
+</div>
+<p>You are also going to get these same errors if you spell something wrong, so check for typos before going on a wild goose chase for hidden state!</p>
+</section>
+<section id="attach" class="slide level2">
+<h2><code>attach()</code></h2>
+<p>Sam’s script does this:</p>
+<div class="sin">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">attach</span>(births)</span>
+<span id="cb13-2"><a href=""></a><span class="fu">mean</span>(birth_weight)     <span class="co"># look ma, no births$</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>attach()</code> dumps a <strong>copy</strong> of every column into your search path so you can type <code>birth_weight</code> instead of <code>births$birth_weight</code>. Tempting. Don’t.</p>
+</section>
+<section id="why-attach-goes-wrong" class="slide level2 smaller">
+<h2>Why <code>attach()</code> goes wrong</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">attach</span>(births)</span>
+<span id="cb14-2"><a href=""></a>births<span class="sc">$</span>low_bw <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(births<span class="sc">$</span>birth_weight <span class="sc">&lt;</span> <span class="dv">2500</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb14-3"><a href=""></a></span>
+<span id="cb14-4"><a href=""></a><span class="fu">table</span>(low_bw)   <span class="co"># Error: object 'low_bw' not found</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>The attached copy is a <strong>snapshot</strong>. Edit <code>births</code> and the attached <code>birth_weight</code> is now <em>stale</em> – you’re working with two versions and won’t be told which.</p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment">attach two datasets with a shared column name and one silently masks the other</li>
+<li class="fragment">forget to <code>detach()</code> and the clutter follows you all session</li>
+</ul>
+<p>Refer to columns explicitly (<code>births$x</code>, or <code>with()</code>, or stay inside dplyr).</p>
+</div>
+</section>
+<section id="start-every-session-empty" class="slide level2">
+<h2>Start every session empty</h2>
+<p>Tell R to never save or restore your workspace:</p>
+<ul>
+<li class="fragment"><strong>Tools → Global Options → General</strong></li>
+<li class="fragment">Uncheck <em>“Restore .RData into workspace at startup”</em></li>
+<li class="fragment">Set <em>“Save workspace to .RData on exit”</em> → <strong>Never</strong></li>
+</ul>
+
+<img data-src="images/paste-8.png" class="r-stretch"><p>In <strong>Positron</strong>, this is automatic!</p>
+</section>
+<section id="rmlist-ls-is-not-a-clean-slate" class="slide level2">
+<h2><code>rm(list = ls())</code> is not a clean slate</h2>
+<p>You’ll see scripts open with this to “clear everything”:</p>
+<div class="sin">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>It deletes objects – but it does <strong>not</strong> unload packages, reset options, or change the working directory. It’s a false sense of safety.</p>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>The real reset: <strong>Session → Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>). Do it often. A fresh process is the only true blank slate.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section id="activity-2" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity</h1>
+<p>Hunt the hidden state</p>
+<p>Sam’s environment was full of things the script quietly depends on. Find as many as you can:</p>
+<ul>
+<li class="fragment">objects used but never <strong>defined</strong> in the script</li>
+<li class="fragment">functions called but never <strong>defined</strong></li>
+<li class="fragment">packages used but never <strong>loaded</strong> with <code>library()</code></li>
+</ul>
+<p>Just make a list for now – we’ll fix them next.</p>
+</section>
+
+<section>
+<section id="reproducibility" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Reproducibility</h1>
+
+</section>
+<section id="code-runs-in-the-order-its-written" class="slide level2">
+<h2>Code runs in the order it’s written</h2>
+<p>…not the order you happened to run things in. Sam’s script draws a figure near the top:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> smoker, <span class="at">y =</span> birth_weight)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href=""></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>…but <code>plot_data</code> isn’t created until <strong>30 lines later</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>plot_data <span class="ot">=</span> births   <span class="co"># defined AFTER the figure that uses it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Sam ran the cells out of order in a live session. It “worked” because by then <code>plot_data</code> happened to exist.</p>
+</div>
+</section>
+<section id="same-story-with-packages" class="slide level2">
+<h2>Same story with packages</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">ggplot</span>(plot_data, ...)   <span class="co"># line 28</span></span>
+<span id="cb18-2"><a href=""></a></span>
+<span id="cb18-3"><a href=""></a><span class="fu">library</span>(tidyverse)       <span class="co"># line 40 -- ggplot lives here!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>The <code>library()</code> call exists – it’s just in the wrong place. In Sam’s session the package was already loaded, so the figure ran. In a fresh session it errors: <code>could not find function "ggplot"</code>.</p>
+</div>
+<div class="fragment">
+<p><strong>Load every package at the top.</strong></p>
+</div>
+</section>
+<section id="the-fix-is-just-order" class="slide level2">
+<h2>The fix is just… order</h2>
+<p>A script should read top to bottom like a recipe: <strong>load → read → clean → model → report</strong>. Nothing is used before it exists.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb19-2"><a href=""></a><span class="fu">library</span>(here)</span>
+<span id="cb19-3"><a href=""></a></span>
+<span id="cb19-4"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb19-5"><a href=""></a>  <span class="fu">clean_births</span>(<span class="at">age_min =</span> <span class="dv">18</span>)</span>
+<span id="cb19-6"><a href=""></a></span>
+<span id="cb19-7"><a href=""></a><span class="co"># now plot it -- the data exists</span></span>
+<span id="cb19-8"><a href=""></a><span class="fu">ggplot</span>(births, <span class="fu">aes</span>(<span class="at">x =</span> smoker, <span class="at">y =</span> birth_weight)) <span class="sc">+</span></span>
+<span id="cb19-9"><a href=""></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reproducible-re-runnable-from-scratch" class="slide level2">
+<h2>Reproducible = re-runnable from scratch</h2>
+<p>A reproducible analysis can be re-run from nothing and give the same result – by you, by a reviewer, by you in two years.</p>
+<p>That needs:</p>
+<ul>
+<li class="fragment"><strong>self-contained paths</strong> (<code>here()</code>),</li>
+<li class="fragment">a <strong>clean session</strong> (no hidden state),</li>
+<li class="fragment">code in <strong>runnable order</strong></li>
+</ul>
+</section>
+<section id="two-more-reproducibility-levers" class="slide level2">
+<h2>Two more reproducibility levers</h2>
+<p>These won’t show up today, but you’ll hit both in real work – so know they exist.</p>
+<div class="fragment">
+<ul>
+<li class="fragment"><strong>Randomness</strong> – anything random gives different answers each run unless you pin it down.</li>
+<li class="fragment"><strong>Package versions</strong> – “it worked last year” can fail after an update.</li>
+</ul>
+</div>
+</section>
+<section id="randomness-needs-a-seed" class="slide level2">
+<h2>Randomness needs a seed</h2>
+<p>Bootstraps, multiple imputation, train/test splits, simulations, <code>sample()</code> – re-run them and you get <em>different numbers</em> every time.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">20260615</span>)</span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a>boot_samples <span class="ot">&lt;-</span> <span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>, \(i) <span class="fu">slice_sample</span>(births, <span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p><code>set.seed()</code> once, near the top, makes the randomness repeatable. Pick an random integer – the point is that it’s <strong>written down</strong>, so your confidence interval is the same tomorrow.</p>
+</div>
+</section>
+<section id="your-packages-are-part-of-the-environment" class="slide level2">
+<h2>Your packages are part of the environment</h2>
+<p>Blank-slate R handles your objects and which packages are loaded. But it doesn’t pin <strong>which versions</strong>.</p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="co"># code written under dplyr 1.0...</span></span>
+<span id="cb21-2"><a href=""></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.by =</span> group)   <span class="co"># ...errors on older dplyr</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>“Works on my machine” is often really “works with <em>my</em> package versions.” For an analysis you’ll revisit, share, or publish, that’s a reproducibility hole.</p>
+</div>
+</section>
+<section id="renv-a-lockfile-for-your-project" class="slide level2">
+<h2><code>renv</code>: a lockfile for your project</h2>
+<p><code>renv</code> gives each project its <strong>own library</strong> and records exact versions in a <code>renv.lock</code> file that travels with the project.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>renv<span class="sc">::</span><span class="fu">init</span>()        <span class="co"># start tracking this project's packages</span></span>
+<span id="cb22-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()    <span class="co"># record current versions to renv.lock</span></span>
+<span id="cb22-3"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()     <span class="co"># reproduce that exact set on another machine</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>We’re not going to practice this, but TODO renv resources</p>
+</div>
+</section></section>
+<section id="activity-3" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity</h1>
+<p>Make it run, start to finish</p>
+<ol type="1">
+<li class="fragment">Move <code>library()</code> calls to the top; move the figure <strong>after</strong> the data it plots.</li>
+<li class="fragment">Fix the hidden state you found previously (define the objects, load the packages, replace Sam’s helper).
+<ul>
+<li class="fragment">set <code>min_age</code> to 18, <code>bad_ids</code> to 1:3, <code>bw_cutoff</code> to 2500, and replace <code>make_or_table()</code> with <code>tidy()</code></li>
+</ul></li>
+<li class="fragment"><strong>Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>) for a clean slate.</li>
+<li class="fragment">Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as possible (there will still be 1 you can’t fix – see if you can figure out why!)</li>
+</ol>
+</section>
+
+<section>
+<section id="code-style" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Code style</h1>
+
+</section>
+<section id="style-is-for-humans" class="slide level2">
+<h2>Style is for humans</h2>
+<p>The code runs either way. Style is what makes it <strong>readable, reviewable, and hard to break</strong> – by collaborators, reviewers, and future you.</p>
+<div class="fragment">
+<p>This is <em>separate</em> from code that’s wrong or unsafe. We’re talking about formatting and naming here, not correctness.</p>
+</div>
+</section>
+<section id="ugly-unreadable-code" class="slide level2">
+<h2>Ugly, unreadable code</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>d2<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">'f.csv'</span>);d2<span class="sc">$</span>x2<span class="ot">&lt;-</span>d2<span class="sc">$</span>x<span class="sc">*</span><span class="fl">1.8</span><span class="sc">+</span><span class="dv">32</span>;m<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x2<span class="sc">+</span>grp,d2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What does this do? Who knows. One line, three statements, cryptic names, no spaces, mixed assignment.</p>
+<p>Instead you might write</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>data_f <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'f.csv'</span>)</span>
+<span id="cb24-2"><a href=""></a>multiplier <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
+<span id="cb24-3"><a href=""></a>baseline <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb24-4"><a href=""></a>data_f<span class="sc">$</span>corrected_x <span class="ot">&lt;-</span> data_f<span class="sc">$</span>x <span class="sc">*</span> multiplier <span class="sc">+</span> baseline</span>
+<span id="cb24-5"><a href=""></a>mod_y <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> corrected_x <span class="sc">+</span> grp, data_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="more-bad-habits" class="slide level2">
+<h2>More bad habits</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># inconsistent naming -- pick a lane!</span></span>
+<span id="cb25-2"><a href=""></a>MatAge <span class="ot">&lt;-</span> d<span class="sc">$</span>mat_age</span>
+<span id="cb25-3"><a href=""></a>birth.weight <span class="ot">&lt;-</span> d<span class="sc">$</span>birthWeight</span>
+<span id="cb25-4"><a href=""></a>n_Obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>( d )</span>
+<span id="cb25-5"><a href=""></a></span>
+<span id="cb25-6"><a href=""></a><span class="co"># magic numbers with no explanation</span></span>
+<span id="cb25-7"><a href=""></a>d <span class="ot">&lt;-</span> d[d<span class="sc">$</span>v3 <span class="sc">&gt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> d<span class="sc">$</span>v7 <span class="sc">&lt;</span> <span class="dv">37</span>, ]</span>
+<span id="cb25-8"><a href=""></a></span>
+<span id="cb25-9"><a href=""></a><span class="co"># the commented-out graveyard</span></span>
+<span id="cb25-10"><a href=""></a><span class="co"># m1 &lt;- lm(y ~ x)</span></span>
+<span id="cb25-11"><a href=""></a><span class="co"># m2 &lt;- lm(y ~ x + z)</span></span>
+<span id="cb25-12"><a href=""></a><span class="co"># m3 &lt;- lm(y ~ x + z + w)   # this one? maybe?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="habits-worth-keeping" class="slide level2 smaller">
+<h2>Habits worth keeping</h2>
+<ul>
+<li class="fragment"><strong>One statement per line</strong>; let long calls breathe across lines</li>
+<li class="fragment"><strong>Spaces</strong> around operators: <code>x + 1</code>, not <code>x+1</code></li>
+<li class="fragment"><strong><code>&lt;-</code></strong> for assignment (the tidyverse convention), reserve <code>=</code> for arguments</li>
+<li class="fragment"><strong>Consistently cased</strong> names that mean something</li>
+<li class="fragment"><strong>Indent</strong> nested code; delete dead commented-out code (save in separate file?)</li>
+<li class="fragment">Keep lines short enough to read without scrolling</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Reference: <a href="https://r4ds.hadley.nz/workflow-style" class="uri">https://r4ds.hadley.nz/workflow-style</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dont-do-it-by-hand-use-a-formatter" class="slide level2 smaller">
+<h2>Don’t do it by hand – use a formatter</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>styler</strong> (R package)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">RStudio → <strong>Addins → Style active file</strong></li>
+<li class="fragment">or <code>styler::style_file("R/01_clean.R")</code></li>
+<li class="fragment"><a href="https://styler.r-lib.org" class="uri">https://styler.r-lib.org</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Air</strong> (newer, very fast)</p>
+<ul>
+<li class="fragment">Format-on-save in your editor</li>
+<li class="fragment"><strong>Built into Positron</strong>; RStudio &amp; VS Code via extension</li>
+<li class="fragment"><a href="https://posit-dev.github.io/air/" class="uri">https://posit-dev.github.io/air/</a></li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>Pick one and be consistent. The point isn’t <em>which</em> – it’s that the machine keeps the formatting tidy so code review is about ideas, not whitespace.</p>
+</div>
+</section></section>
+<section id="activity-4" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity</h1>
+<p>Clean it up</p>
+<ol type="1">
+<li class="fragment">Install and run <code>styler::style_file()</code> on your script (Addins → Style active file), or install Air and format document.</li>
+<li class="fragment">Look at the diff – what did the formatter change for you?</li>
+<li class="fragment">Now fix what a formatter <strong>won’t</strong>: cryptic names, <code>=</code> → <code>&lt;-</code> inconsistency, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
+</ol>
+</section>
+
+<section>
+<section id="reproducible-reporting" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Reproducible reporting</h1>
+
+</section>
+<section id="section-3" class="slide level2" data-background-color="#23373B">
+<h2></h2>
+<div style="font-size:1.4em">
+<p><strong>Plot twist</strong> 🔌</p>
+</div>
+<p><em>“Restrict to mothers aged 20 and older, not 18.”</em></p>
+<div class="fragment">
+<p>Change <code>age_min &lt;- 20</code> in <strong>one</strong> place, re-run, and every number updates.</p>
+</div>
+<div class="fragment">
+<p>…except the ones Sam hand-typed into <code>Table1_DRAFT_manuscript.docx</code>. Those are now <strong>wrong</strong>, and nothing tells you</p>
+</div>
+</section>
+<section id="sams-report-was-copy-paste" class="slide level2">
+<h2>Sam’s “report” was copy-paste</h2>
+<p>Sam’s script is full of this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">print</span>(<span class="fu">table</span>(births<span class="sc">$</span>low_bw, births<span class="sc">$</span>smoker))</span>
+<span id="cb27-2"><a href=""></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">prop.table</span>(...), <span class="dv">3</span>))</span>
+<span id="cb27-3"><a href=""></a><span class="fu">print</span>(<span class="fu">mean</span>(births<span class="sc">$</span>mat_age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Numbers got <code>print()</code>ed (NB: you do not need to write <code>print()</code> in this situation!), then <strong>hand-typed into a Word doc</strong>. Re-run the analysis (or change the inclusion criteria…) and every number in that doc is now a lie waiting to be caught in proofs.</p>
+</section>
+<section id="first-let-r-build-the-table" class="slide level2">
+<h2>First, let R build the table</h2>
+<p>Instead of typing Table 1 by hand, generate it with <strong>gtsummary</strong> or a similar package:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb28-2"><a href=""></a></span>
+<span id="cb28-3"><a href=""></a>table1 <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span></span>
+<span id="cb28-4"><a href=""></a>  <span class="fu">select</span>(smoker, mat_age, mat_bmi, parity, education, low_bw, preterm) <span class="sc">|&gt;</span></span>
+<span id="cb28-5"><a href=""></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> smoker) <span class="sc">|&gt;</span></span>
+<span id="cb28-6"><a href=""></a>  <span class="fu">add_overall</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it.</p>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+
+<img data-src="images/paste-9.png" class="r-stretch"></section>
+<section id="quarto-code-and-write-up-in-one-file" class="slide level2">
+<h2>Quarto: code and write-up in one file</h2>
+<p>A Quarto document (<code>.qmd</code>) weaves prose, code, and output together, then renders to HTML, Word, or PDF.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb29-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Smoking and birth weight"</span></span>
+<span id="cb29-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb29-4"><a href=""></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb29-5"><a href=""></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-6"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Markdown for text; code chunks for analysis:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb30-2"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/births.csv"</span>))</span>
+<span id="cb30-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="quarto-vs.-rmarkdown" class="slide level2">
+<h2>Quarto vs.&nbsp;RMarkdown?</h2>
+<p>TODO</p>
+</section>
+<section id="numbers-that-never-go-stale" class="slide level2">
+<h2>Numbers that never go stale</h2>
+<p>Report results with <strong>inline code</strong> instead of typing them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>There were {r} nrow(births) participants in the study. TODO FIX</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>That <code>`r `</code> chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself – no more hand-typed numbers.</p>
+</div>
+</section>
+<section id="you-can-pull-numbers-directly-from-tables" class="slide level2">
+<h2>You can pull numbers directly from tables</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a>TODO inline_code(table1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rendering-the-blank-slate-test-for-free" class="slide level2">
+<h2>Rendering = the blank-slate test, for free</h2>
+<p>When you click <strong>Render</strong>, Quarto runs the whole document in a <strong>fresh R session, top to bottom</strong>.</p>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>If your <code>.qmd</code> renders, it’s reproducible by construction – hidden state and out-of-order code can’t survive a render. That alone is a great reason to move analyses into Quarto.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="activity-5" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity 5</h1>
+
+</section>
+<section id="turn-the-analysis-into-a-report" class="slide level2">
+<h2>Turn the analysis into a report</h2>
+<ol type="1">
+<li class="fragment"><strong>File → New File → Quarto Document.</strong></li>
+<li class="fragment">Move your cleaning + model code into code chunks.
+<ul>
+<li class="fragment">You can omit the sensitivity analysis section for now</li>
+</ul></li>
+<li class="fragment">Replace Sam’s hand-typed Table 1 with <code>tbl_summary()</code>.</li>
+<li class="fragment">Write one sentence of results using <strong>inline R code</strong> (about whatever you want).</li>
+<li class="fragment">Click <strong>Render</strong>, then change <code>age_min</code> and re-render. Watch every number – table and text – update itself.</li>
+</ol>
+</section></section>
+<section>
+<section id="organizing-scaling" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Organizing &amp; scaling</h1>
+
+</section>
+<section id="one-script-that-does-everything" class="slide level2">
+<h2>One script that does everything</h2>
+<p>Sam’s script reads, cleans, plots, models, and saves – all in one file, top to bottom. For a small analysis, honestly, that’s fine!</p>
+<div class="fragment">
+<p>The strain shows up as it grows:</p>
+<ul>
+<li class="fragment">you scroll forever to find the modeling code</li>
+<li class="fragment">re-running the figure means re-running the slow cleaning too</li>
+<li class="fragment">two people can’t edit it without colliding</li>
+</ul>
+</div>
+<div class="fragment">
+<p>There’s no single right answer. Here are four options, lightest to heaviest – pick what works for you</p>
+</div>
+</section>
+<section id="numbered-scripts-a-runner" class="slide level2">
+<h2>1. Numbered scripts + a runner</h2>
+<pre><code>R/00_setup.R     # packages, options, source functions
+R/01_clean.R     # raw data  -&gt;  analysis data
+R/02_analysis.R  # fit models
+R/03_outputs.R   # tables, figures
+run_all.R        # source() them in order</code></pre>
+<p>Transparent, no new tools. A great default for most projects.</p>
+</section>
+<section id="one-quarto-document" class="slide level2">
+<h2>2. One Quarto document</h2>
+<p>Everything – cleaning, models, write-up – in a single <code>.qmd</code>.</p>
+<div class="fragment">
+<p>Best when the analysis <em>is</em> the deliverable: a report, a paper, a homework assignment. One file renders to the finished document.</p>
+</div>
+</section>
+<section id="a-quarto-report-assembled-from-sections" class="slide level2">
+<h2>3. A Quarto report, assembled from sections</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a>{{&lt; include _sections/_methods.qmd &gt;}}</span>
+<span id="cb34-2"><a href=""></a>{{&lt; include _sections/_results.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A parent document pulls in section files that share one R session.</p>
+<div class="fragment">
+<p>Good when a document gets unwieldy, or co-authors each own a section without scrolling through the whole manuscript.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>This is basically how I wrote my dissertation (with RMarkdown)!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-targets-pipeline" class="slide level2">
+<h2>4. A <code>targets</code> pipeline</h2>
+<p><code>targets</code> tracks what each step depends on and <strong>only re-runs what changed</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a><span class="fu">list</span>(</span>
+<span id="cb35-2"><a href=""></a>  <span class="fu">tar_target</span>(births_file, <span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>), <span class="at">format =</span> <span class="st">"file"</span>),</span>
+<span id="cb35-3"><a href=""></a>  <span class="fu">tar_target</span>(births,      <span class="fu">clean_births</span>(<span class="fu">read_births</span>(births_file))),</span>
+<span id="cb35-4"><a href=""></a>  <span class="fu">tar_target</span>(lbw_model,   <span class="fu">fit_lbw_model</span>(births)),</span>
+<span id="cb35-5"><a href=""></a>  <span class="fu">tar_target</span>(bw_plot,     <span class="fu">plot_birthweight</span>(births))</span>
+<span id="cb35-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="why-targets" class="slide level2">
+<h2>Why <code>targets</code>?</h2>
+<p>Edit the figure and re-run – a slow model <strong>does not need to be refit</strong>. Change the raw data file and everything downstream knows it’s out of date.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_visnetwork</span>()   <span class="co"># see the dependency graph</span></span>
+<span id="cb36-2"><a href=""></a>targets<span class="sc">::</span><span class="fu">tar_make</span>()         <span class="co"># build only what's stale</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>Overkill for today’s tiny analysis. Worth it when steps are slow, numerous, or re-run constantly.</p>
+</div>
+</section>
+<section id="targets" class="slide level2">
+<h2><code>targets</code></h2>
+<p>TODO: add lecture content</p>
+</section></section>
+<section>
+<section id="activity-6" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity 6</h1>
+
+</section>
+<section id="split-it-up" class="slide level2">
+<h2>Split it up</h2>
+<p>Carve your working script into numbered pieces and saave them into the appropriate directory:</p>
+<ol type="1">
+<li class="fragment"><code>R/00_setup.R</code> – <code>library()</code> calls and <code>theme_set()</code></li>
+<li class="fragment"><code>R/01_clean.R</code> – read + clean the data</li>
+<li class="fragment"><code>R/02_analysis.R</code> – fit the models</li>
+<li class="fragment"><code>run_all.R</code> – <code>source()</code> them in order
+<ul>
+<li class="fragment">make sure you are referring to the file paths where they are saved!</li>
+</ul></li>
+</ol>
+<p>Restart R and source <code>run_all.R</code>. Does it run clean?</p>
+</section></section>
+<section>
+<section id="documenting-your-project" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Documenting your project</h1>
+
+</section>
+<section id="the-one-thing-sam-didnt-leave-you" class="slide level2">
+<h2>The one thing Sam didn’t leave you</h2>
+<p>You’ve spent this whole session reverse-engineering a script with no instructions: guessing what <code>age_min</code> was, where the data came from, how to run the thing.</p>
+<div class="fragment">
+<p>A <strong>README</strong> would have answered most of that in 30 seconds.</p>
+</div>
+<div class="fragment">
+<p>It’s a plain text or markdown file (<code>README.md</code>) at the project root. Be the colleague you wish Sam had been.</p>
+</div>
+</section>
+<section id="what-goes-in-a-readme" class="slide level2 smaller">
+<h2>What goes in a README</h2>
+<p>It doesn’t have to be long – even ten lines beats nothing:</p>
+<ul>
+<li class="fragment"><strong>What</strong> the project is and what question it answers</li>
+<li class="fragment"><strong>Data</strong> – where it came from, and “raw is read-only”</li>
+<li class="fragment"><strong>How to run it</strong> – open the <code>.Rproj</code>, restart R, source <code>run_all.R</code></li>
+<li class="fragment"><strong>Project structure</strong> – the folder map</li>
+<li class="fragment"><strong>Key decisions</strong> – including those magic numbers (<code>age_min</code>, the LBW cutoff)</li>
+<li class="fragment"><strong>Requirements</strong> – packages needed (this is where <code>renv</code> pays off)</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Write it for the person who inherits this in two years. That person is usually you.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="activity-7" class="title-slide slide level1 center" data-background-color="#0072B2">
+<h1>Activity 7</h1>
+
+</section>
+<section id="write-the-readme" class="slide level2 smaller">
+<h2>Write the README</h2>
+<p>Create a <code>README.md</code> at your project root. Cover:</p>
+<ul>
+<li class="fragment">what the analysis does</li>
+<li class="fragment">where the data come from</li>
+<li class="fragment">how to run it (open <code>.Rproj</code> → restart R → source <code>run_all.R</code>)</li>
+<li class="fragment">the key analysis choices – <code>age_min</code>, the low-birth-weight cutoff</li>
+</ul>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center" data-background-color="#23373B">
+<h1>Wrap-up</h1>
+
+</section>
+<section id="before-and-after" class="slide level2">
+<h2>Before and after</h2>
+<p><strong>Before:</strong> one file, hard-coded paths, hidden state, code out of order, results typed into Word by hand. Broke on the first line.</p>
+<div class="fragment">
+<p><strong>After:</strong> an R Project anyone can open and run from a clean session – paths that travel, code in order, tables and numbers that rebuild themselves, and a choice of ways to organize and report it.</p>
+</div>
+</section>
+<section id="the-habits-worth-keeping" class="slide level2 smaller">
+<h2>The habits worth keeping</h2>
+<ul>
+<li class="fragment">One R <strong>Project</strong> per analysis; paths via <strong><code>here()</code></strong></li>
+<li class="fragment">Start every session <strong>blank</strong>; restart often</li>
+<li class="fragment">Code that runs <strong>top to bottom</strong> in a fresh session</li>
+<li class="fragment">Let a <strong>formatter</strong> keep the style tidy</li>
+<li class="fragment"><strong>Quarto</strong> so your numbers never go stale; pick the <strong>organization</strong> that fits</li>
+<li class="fragment">A <strong>README</strong> so the next person (probably you) isn’t reverse-engineering it</li>
+</ul>
+</section>
+<section id="on-to-part-2" class="slide level2">
+<h2>On to Part 2</h2>
+<p>Your project runs and reports itself.</p>
+<div class="fragment">
+<p>But code still breaks. Part 2: <strong>how to debug it systematically, and how to ask for help</strong> that actually gets you unstuck.</p>
+
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slides_part_1_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slides_part_1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slides_part_1_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_part_1_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

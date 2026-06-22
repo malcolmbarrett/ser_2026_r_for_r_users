@@ -1,0 +1,55 @@
+/* R console error output */
+.reveal .error-output {
+  background: #fbe4e4;
+  border-left: 4px solid #c0392b;
+  border-radius: 4px;
+  padding: 0.5em 0.8em;
+  font-family: monospace;
+  font-size: 0.75em;
+  color: #c0392b;
+}
+
+
+/* ---- density: keep kakashi's look, but stop dense slides spilling over ----
+   the stock theme uses very large, very spaced lists (great for short lists,
+   too tall for this content-heavy deck). these trims preserve the fonts,
+   colors, bullet-less lists, and numbered circles, just with tighter spacing. */
+
+.reveal .slides ul {
+  font-size: 110%;
+  padding-top: 6px;
+}
+.reveal .slides ul li {
+  padding-bottom: 12px;
+}
+
+/* ordered lists in the theme compound 125% on both ol and li; undo that and
+   tighten the per-step gap (the numbered circle keeps each step ~60px tall) */
+.reveal .slides ol {
+  font-size: 108%;
+}
+.reveal .slides ol li {
+  font-size: 100%;
+  margin: 6px 0;
+}
+
+/* nested lists shouldn't re-inflate
+.reveal .slides li ul,
+.reveal .slides li ol {
+  font-size: 95%;
+  padding-top: 2px;
+} */
+
+.reveal .slides ul {
+  font-size: 125%;      /* was 110% — bigger bullet text */
+  padding-top: 4px;
+}
+.reveal .slides ul li {
+  padding-bottom: 6px;  /* was 12px — less space between bullets */
+  line-height: 1.25;    /* optional: tightens wrapped lines within a bullet */
+}
+
+.reveal .slides ol li {
+  font-size: 125%;   /* bump up for bigger step text */
+  margin: 4px 0;     /* was 6px — tighter, but keep ≥ ~2px so the numbered circles don't collide */
+}

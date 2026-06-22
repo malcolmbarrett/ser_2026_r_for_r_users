@@ -5,7 +5,7 @@
 
 setwd("/Users/sam/Desktop/myproject")
 
-births<-read.csv("births.csv")
+births<-read.csv("data/births.csv")
 births <- clean_names(births)
 
 # restrict to adult moms only
