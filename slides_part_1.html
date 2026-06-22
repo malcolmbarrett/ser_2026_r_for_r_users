@@ -221,7 +221,7 @@ Louisa Smith
 <p>“Here’s the script – <code>final_analysis_FINAL_v2.R</code>. It definitely works, just run it! The data’s attached, plus the Table 1 doc I’ve been updating. Good luck! – Sam”</p>
 </blockquote>
 <div class="fragment">
-<p>Attached: <code>final_analysis_FINAL_v2.R</code>, <code>births.csv</code>, <code>new_births_2024.csv</code>, and <code>Table1_DRAFT_manuscript.docx</code>.</p>
+<p>Attached: <code>final_analysis_FINAL_v2.R</code>, <code>births.csv</code>, and <code>Table1_DRAFT_manuscript.docx</code>.</p>
 </div>
 </section>
 <section id="you-open-it-and-start-running" class="slide level2">
@@ -349,16 +349,15 @@ Louisa Smith
 <section id="section" class="slide level2">
 <h2></h2>
 
-<img data-src="images/paste-7.png" class="r-stretch"></section></section>
-<section id="activity" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
+<img data-src="images/paste-7.png" class="r-stretch"></section>
+<section id="set-up-the-project" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Set up the project</h2>
 <ul>
-<li class="fragment">Start a new R project (<strong>File → New Project → New Directory → New Project.</strong>, or use the upper-right-corner drop-down)</li>
-<li class="fragment">Add a <code>data</code> folder (either through RStudio or your file explorer)</li>
-<li class="fragment">Move the files from Sam into the appropriate places in the project folder</li>
+<li>Start a new R project (<strong>File → New Project → New Directory → New Project.</strong>, or use the upper-right-corner drop-down)</li>
+<li>Add a <code>data</code> folder (either through RStudio or your file explorer)</li>
+<li>Move the files from Sam into the appropriate places in the project folder</li>
 </ul>
-</section>
-
+</section></section>
 <section>
 <section id="file-paths" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>File paths</h1>
@@ -416,19 +415,18 @@ Louisa Smith
 </div>
 </div>
 </div>
-</section></section>
-<section id="activity-1" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-<p>Start rewriting the script (save a new, better version to work on)</p>
-<ul>
-<li class="fragment">Delete the <code>setwd()</code> line, and rewrite the <code>read.csv()</code> line to use <code>here()</code>
-<ul>
-<li class="fragment">You might need to <code>install.packages("here")</code> first</li>
-</ul></li>
-<li class="fragment">Run that line to make sure you can read in the data!</li>
-</ul>
 </section>
-
+<section id="start-rewriting-the-script" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Start rewriting the script</h2>
+<p>Save a new, better version to work on.</p>
+<ul>
+<li>Delete the <code>setwd()</code> line, and rewrite the <code>read.csv()</code> line to use <code>here()</code>
+<ul>
+<li>You might need to <code>install.packages("here")</code> first</li>
+</ul></li>
+<li>Run that line to make sure you can read in the data!</li>
+</ul>
+</section></section>
 <section>
 <section id="blank-slate-r" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Blank-slate R</h1>
@@ -469,7 +467,9 @@ Louisa Smith
 </section>
 <section id="error-object-not-found" class="slide level2">
 <h2>Error: object not found</h2>
+<div class="fragment">
 <p>Where does <code>age_min</code> come from? It’s <strong>never defined in the script</strong>. Sam typed <code>age_min &lt;- 18</code> in the console months ago, and it’s been sitting in their environment ever since.</p>
+</div>
 <div class="fragment">
 <p>This is <em>hidden state</em> – the analysis depends on something that isn’t in the code.</p>
 </div>
@@ -578,24 +578,22 @@ Louisa Smith
 </div>
 <div class="fragment">
 <ul>
-<li class="fragment">attach two datasets with a shared column name and one silently masks the other</li>
-<li class="fragment">forget to <code>detach()</code> and the clutter follows you all session</li>
+<li>attach two datasets with a shared column name and one silently masks the other</li>
+<li>forget to <code>detach()</code> and the clutter follows you all session</li>
 </ul>
 <p>Refer to columns explicitly (<code>births$x</code>, or <code>with()</code>, or stay inside dplyr functions).</p>
 </div>
-</section></section>
-<section id="activity-2" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-<p>Hunt the hidden state</p>
+</section>
+<section id="hunt-the-hidden-state" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Hunt the hidden state</h2>
 <p>Sam’s environment was full of things the script quietly depends on. Find as many as you can:</p>
 <ul>
-<li class="fragment">objects used but never <strong>defined</strong> in the script</li>
-<li class="fragment">functions called but never <strong>defined</strong></li>
-<li class="fragment">packages used but never <strong>loaded</strong> with <code>library()</code></li>
+<li>objects used but never <strong>defined</strong> in the script</li>
+<li>functions called but never <strong>defined</strong></li>
+<li>packages used but never <strong>loaded</strong> with <code>library()</code></li>
 </ul>
 <p>Just make a list for now – we’ll fix them next.</p>
-</section>
-
+</section></section>
 <section>
 <section id="reproducibility" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Reproducibility</h1>
@@ -696,6 +694,8 @@ Louisa Smith
 </section>
 <section id="the-renv.lock-file" class="slide level2">
 <h2>The <code>renv.lock</code> file</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
 <pre><code>{
   "R": {
     "Version": "4.3.1",
@@ -717,22 +717,22 @@ Louisa Smith
     ...
   }
 }</code></pre>
+</div><div class="column" style="width:45%;">
 <p>We’re not going to practice this, but there is helpful documentation: <a href="https://rstudio.github.io/renv/articles/renv.html" class="uri">https://rstudio.github.io/renv/articles/renv.html</a></p>
-</section></section>
-<section id="activity-3" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-<p>Make it run, start to finish</p>
-<ol type="1">
-<li class="fragment">Move <code>library()</code> calls to the top; move the figure <strong>after</strong> the data it plots.</li>
-<li class="fragment">Fix the hidden state you found previously (define the objects, load the packages, replace Sam’s helper).
-<ul>
-<li class="fragment">set <code>min_age</code> to 18, <code>bad_ids</code> to 1:3, <code>bw_cutoff</code> to 2500, and replace <code>make_or_table()</code> with <code>tidy()</code></li>
-</ul></li>
-<li class="fragment"><strong>Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>) for a clean slate.</li>
-<li class="fragment">Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.</li>
-</ol>
+</div></div>
 </section>
-
+<section id="make-it-run-start-to-finish" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Make it run, start to finish</h2>
+<ol type="1">
+<li>Move <code>library()</code> calls to the top; move the figure <strong>after</strong> the data it plots.</li>
+<li>Fix the hidden state you found previously (define the objects, load the packages, replace Sam’s helper).
+<ul>
+<li>set <code>min_age</code> to 18, <code>bad_ids</code> to 1:3, <code>bw_cutoff</code> to 2500, and replace <code>make_or_table()</code> with <code>tidy()</code></li>
+</ul></li>
+<li><strong>Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>) for a clean slate.</li>
+<li>Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.</li>
+</ol>
+</section></section>
 <section>
 <section id="code-style" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Code style</h1>
@@ -785,6 +785,7 @@ Louisa Smith
 <li class="fragment"><strong>Indent</strong> nested code; delete dead commented-out code (save in separate file?)</li>
 <li class="fragment">Keep lines short enough to read without scrolling</li>
 </ul>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -798,6 +799,7 @@ Louisa Smith
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="dont-do-it-by-hand-use-a-formatter" class="slide level2 smaller">
 <h2>Don’t do it by hand – use a formatter</h2>
@@ -806,39 +808,37 @@ Louisa Smith
 <p><strong>styler</strong> (R package)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li class="fragment">RStudio → <strong>Addins → Style active file</strong></li>
-<li class="fragment">or <code>styler::style_file("R/01_clean.R")</code></li>
-<li class="fragment"><a href="https://styler.r-lib.org" class="uri">https://styler.r-lib.org</a></li>
+<li>RStudio → <strong>Addins → Style active file</strong></li>
+<li>or <code>styler::style_file("script.R")</code></li>
+<li><a href="https://styler.r-lib.org" class="uri">https://styler.r-lib.org</a></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Air</strong> (newer, very fast)</p>
 <ul>
-<li class="fragment">Format-on-save in your editor</li>
-<li class="fragment"><strong>Built into Positron</strong></li>
-<li class="fragment">Install for use in RStudio: <a href="https://posit-dev.github.io/air/editor-rstudio.html" class="uri">https://posit-dev.github.io/air/editor-rstudio.html</a></li>
+<li>Format-on-save in your editor</li>
+<li><strong>Built into Positron</strong></li>
+<li>Install for use in RStudio: <a href="https://posit-dev.github.io/air/editor-rstudio.html" class="uri">https://posit-dev.github.io/air/editor-rstudio.html</a>
+<ul>
+<li>(can’t use in Quarto documents in RStudio yet)</li>
+</ul></li>
 </ul>
 </div></div>
-</section></section>
-<section id="activity-4" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-<p>Clean it up</p>
-<ol type="1">
-<li class="fragment">Install and run <code>styler::style_file()</code> on your script (Addins → Style active file), or install Air and format document.</li>
-<li class="fragment">Compare before and after!</li>
-<li class="fragment">Now fix what a formatter <strong>won’t</strong>: cryptic names, <code>=</code> → <code>&lt;-</code> inconsistency, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
-</ol>
 </section>
-
+<section id="clean-it-up" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Clean it up</h2>
+<ol type="1">
+<li>Install and run <code>styler::style_file()</code> on your script (Addins → Style active file), or install Air and format document.</li>
+<li>Compare before and after!</li>
+<li>Now fix what a formatter <strong>won’t</strong>: cryptic names, <code>=</code> → <code>&lt;-</code> inconsistency, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
+</ol>
+</section></section>
 <section>
 <section id="reproducible-reporting" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Reproducible reporting</h1>
 
 </section>
-<section id="section-1" class="slide level2" data-background-color="#23373B">
-<h2></h2>
-<div style="font-size:1.4em">
-<p><strong>Plot twist</strong></p>
-</div>
+<section id="plot-twist" class="slide level2">
+<h2>Plot twist</h2>
 <p><em>“Restrict to mothers aged 20 and older, not 18.”</em></p>
 <div class="fragment">
 <p>Change <code>age_min &lt;- 20</code> in <strong>one</strong> place, re-run, and every number updates.</p>
@@ -869,19 +869,18 @@ Louisa Smith
 <p>One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it!</p>
 </div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 
-<img data-src="images/paste-9.png" class="r-stretch"></section></section>
-<section id="activity-5" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
+<img data-src="images/paste-9.png" class="r-stretch"></section>
+<section id="generate-table-1" class="slide level2 activity-slide" data-background-color="#0072B2">
+<h2>Generate Table 1</h2>
 <ul>
-<li class="fragment">Add a <code>tbl_summary()</code> call to your script to generate Table 1</li>
-<li class="fragment">Run the code with <code>age_min</code> set to 18, then with <code>age_min</code> set to 20</li>
-<li class="fragment">Open up the browser version of the table and copy into a Word doc</li>
+<li>Add a <code>tbl_summary()</code> call to your script to generate Table 1</li>
+<li>Run the code with <code>age_min</code> set to 18, then with <code>age_min</code> set to 20</li>
+<li>Open up the browser version of the table and copy into a Word doc</li>
 </ul>
-</section>
-
+</section></section>
 <section>
 <section id="quarto" class="title-slide slide level1 center" data-background-color="#23373B">
 <h1>Quarto</h1>
@@ -945,8 +944,8 @@ Louisa Smith
 <p>Some <em>italic text</em></p>
 <p>Some <strong>bold text</strong></p>
 <ul>
-<li class="fragment">Eggs</li>
-<li class="fragment">Milk</li>
+<li>Eggs</li>
+<li>Milk</li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
@@ -968,6 +967,7 @@ Louisa Smith
 <span id="cb36-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
 <span id="cb36-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Chunks run in order, continuously, like a single script, from a fresh session</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href=""></a><span class="in">```{r}</span></span>
 <span id="cb37-2"><a href=""></a>x <span class="sc">+</span> <span class="dv">4</span></span>
@@ -976,7 +976,6 @@ Louisa Smith
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
-<p>Chunks run in order, continuously, like a single script, from a fresh session</p>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>You can also use other languages, like Python!</p></li></ol></aside></section>
 <section id="quarto-workflow" class="slide level2">
 <h2>Quarto workflow</h2>
@@ -1014,7 +1013,7 @@ Louisa Smith
 <p>That <code>`r `</code> chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself – no more hand-typed numbers.</p>
 </div>
 </section>
-<section id="you-can-pull-numbers-directly-from-tables" class="slide level2 smaller">
+<section id="you-can-pull-numbers-directly-from-tables" class="slide level2">
 <h2>You can pull numbers directly from tables</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a>The median material age was `r inline_text(table1, variable = "mat_age", </span>
 <span id="cb41-2"><a href=""></a>column = "stat_0")`.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1055,19 +1054,14 @@ Louisa Smith
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="activity-6" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-
 </section>
-<section id="turn-the-analysis-into-a-report" class="slide level2 activity-slide">
+<section id="turn-the-analysis-into-a-report" class="slide level2 activity-slide" data-background-color="#0072B2">
 <h2>Turn the analysis into a report</h2>
 <ol type="1">
-<li class="fragment"><strong>File → New File → Quarto Document.</strong></li>
-<li class="fragment">Move your cleaning + model + table code into code chunks.</li>
-<li class="fragment">Write one sentence of results using <strong>inline R code</strong> (about whatever you want).</li>
-<li class="fragment">Click <strong>Render</strong>, then change <code>age_min</code> and re-render. Watch every number – table and text – update itself.</li>
+<li><strong>File → New File → Quarto Document.</strong></li>
+<li>Move your cleaning + model + table code into code chunks.</li>
+<li>Write one sentence of results using <strong>inline R code</strong> (about whatever you want).</li>
+<li>Click <strong>Render</strong>, then change <code>age_min</code> and re-render. Watch every number – table and text – update itself.</li>
 </ol>
 </section></section>
 <section>
@@ -1151,22 +1145,17 @@ run_all.R        # source() them in order</code></pre>
 <p>I gave a talk introducing <code>targets</code> a few years ago: <a href="https://www.louisahsmith.com/talks/2023-05-31/slides#/title-slide" class="uri">https://www.louisahsmith.com/talks/2023-05-31/slides#/title-slide</a></p>
 <p>The documentation is very thorough: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></p>
 
-<img data-src="images/paste-10.png" class="r-stretch"></section></section>
-<section>
-<section id="activity-7" class="title-slide slide level1 activity-slide center" data-background-color="#0072B2">
-<h1>Activity</h1>
-
-</section>
-<section id="split-it-up" class="slide level2 activity-slide">
+<img data-src="images/paste-10.png" class="r-stretch"></section>
+<section id="split-it-up" class="slide level2 activity-slide" data-background-color="#0072B2">
 <h2>Split it up</h2>
 <p>Carve your (pre-Quarto) working script into numbered pieces and save them into the appropriate directory:</p>
 <ol type="1">
-<li class="fragment"><code>R/00_setup.R</code> – <code>library()</code> calls, read + clean the data</li>
-<li class="fragment"><code>R/01_model.R</code> – fit the models</li>
-<li class="fragment"><code>R/02_figures-tables.R</code> – analyze the results</li>
-<li class="fragment"><code>run_all.R</code> – <code>source()</code> them in order
+<li><code>R/00_setup.R</code> – <code>library()</code> calls, read + clean the data</li>
+<li><code>R/01_model.R</code> – fit the models</li>
+<li><code>R/02_figures-tables.R</code> – analyze the results</li>
+<li><code>run_all.R</code> – <code>source()</code> them in order
 <ul>
-<li class="fragment">make sure you are referring to the file paths where they are saved!</li>
+<li>make sure you are referring to the file paths where they are saved!</li>
 </ul></li>
 </ol>
 <p>Restart R and source <code>run_all.R</code>. Does it run cleanly?</p>

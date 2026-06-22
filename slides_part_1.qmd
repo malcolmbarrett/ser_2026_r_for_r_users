@@ -24,7 +24,7 @@ Sam, a graduate student on your research team, just graduated and left for a new
 
 . . .
 
-Attached: `final_analysis_FINAL_v2.R`, `births.csv`, `new_births_2024.csv`, and `Table1_DRAFT_manuscript.docx`.
+Attached: `final_analysis_FINAL_v2.R`, `births.csv`, and `Table1_DRAFT_manuscript.docx`.
 
 ## You open it and start running
 
@@ -145,11 +145,13 @@ You can have multiple projects open at once in different RStudio sessions!
 
 ![](images/paste-7.png)
 
-# Activity {.activity-slide background-color="#0072B2"}
+## Set up the project {.activity-slide background-color="#0072B2"}
 
+:::nonincremental
 - Start a new R project (**File → New Project → New Directory → New Project.**, or use the upper-right-corner drop-down)
 - Add a `data` folder (either through RStudio or your file explorer)
 - Move the files from Sam into the appropriate places in the project folder
+:::
 
 # File paths {background-color="#23373B"}
 
@@ -219,13 +221,15 @@ here::here("data/births.csv")
 You can do this with any function from any package -- we'll talk more about it in a bit
 :::
 
-# Activity {.activity-slide background-color="#0072B2"}
+## Start rewriting the script {.activity-slide background-color="#0072B2"}
 
-Start rewriting the script (save a new, better version to work on)
+Save a new, better version to work on.
 
+:::nonincremental
 - Delete the `setwd()` line, and rewrite the `read.csv()` line to use `here()`
   - You might need to `install.packages("here")` first
 - Run that line to make sure you can read in the data!
+:::
 
 # Blank-slate R {background-color="#23373B"}
 
@@ -267,6 +271,8 @@ Error: object 'age_min' not found
 :::
 
 ## Error: object not found
+
+. . .
 
 Where does `age_min` come from? It's **never defined in the script**. Sam typed `age_min <- 18` in the console months ago, and it's been sitting in their environment ever since.
 
@@ -419,20 +425,22 @@ The attached copy is a **snapshot**. Edit `births` and the attached `birth_weigh
 
 . . .
 
+::: {.nonincremental}
 - attach two datasets with a shared column name and one silently masks the other
 - forget to `detach()` and the clutter follows you all session
 
 Refer to columns explicitly (`births$x`, or `with()`, or stay inside dplyr functions).
+:::
 
-# Activity {.activity-slide background-color="#0072B2"}
-
-Hunt the hidden state
+## Hunt the hidden state {.activity-slide background-color="#0072B2"}
 
 Sam's environment was full of things the script quietly depends on. Find as many as you can:
 
+::: nonincremental
 - objects used but never **defined** in the script
 - functions called but never **defined**
 - packages used but never **loaded** with `library()`
+:::
 
 Just make a list for now -- we'll fix them next.
 
@@ -550,6 +558,10 @@ renv::restore()     # reproduce that exact set on another machine
 
 ## The `renv.lock` file
 
+
+::: {.columns}
+
+::: {.column width="55%"}
 ```
 {
   "R": {
@@ -573,18 +585,31 @@ renv::restore()     # reproduce that exact set on another machine
   }
 }
 ```
+:::
+
+::: {.column width="45%"}
 
 We're not going to practice this, but there is helpful documentation: <https://rstudio.github.io/renv/articles/renv.html>
 
-# Activity {.activity-slide background-color="#0072B2"}
 
-Make it run, start to finish
+:::
 
+:::
+
+
+
+
+
+
+## Make it run, start to finish {.activity-slide background-color="#0072B2"}
+
+:::nonincremental
 1.  Move `library()` calls to the top; move the figure **after** the data it plots.
 2.  Fix the hidden state you found previously (define the objects, load the packages, replace Sam's helper).
     - set `min_age` to 18, `bad_ids` to 1:3, `bw_cutoff` to 2500, and replace `make_or_table()` with `tidy()`
 3.  **Restart R** (`Cmd/Ctrl + Shift + F10`) for a clean slate.
 4.  Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.
+:::
 
 # Code style {background-color="#23373B"}
 
@@ -644,6 +669,8 @@ if (x == T) {...}
 - **Indent** nested code; delete dead commented-out code (save in separate file?)
 - Keep lines short enough to read without scrolling
 
+. . .
+
 ::: callout-note
 Reference: <https://r4ds.hadley.nz/workflow-style>
 :::
@@ -651,43 +678,44 @@ Reference: <https://r4ds.hadley.nz/workflow-style>
 ## Don't do it by hand -- use a formatter {.smaller}
 
 ::::: columns
-::: {.column width="50%"}
+:::: {.column width="50%"}
 **styler** (R package)
+
 
 ``` r
 install.packages("styler")
 ```
-
+:::nonincremental
 - RStudio → **Addins → Style active file**
-- or `styler::style_file("R/01_clean.R")`
+- or `styler::style_file("script.R")`
 - <https://styler.r-lib.org>
 :::
+::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 **Air** (newer, very fast)
 
+:::nonincremental
 - Format-on-save in your editor
 - **Built into Positron**
 - Install for use in RStudio: <https://posit-dev.github.io/air/editor-rstudio.html>
+  - (can't use in Quarto documents in RStudio yet)
 :::
+::::
 :::::
 
 
-# Activity {.activity-slide background-color="#0072B2"}
+## Clean it up {.activity-slide background-color="#0072B2"}
 
-Clean it up
-
+:::nonincremental
 1.  Install and run `styler::style_file()` on your script (Addins → Style active file), or install Air and format document.
 2.  Compare before and after!
 3.  Now fix what a formatter **won't**: cryptic names, `=` → `<-` inconsistency, magic numbers, anything else that's not aesthetically pleasing to you!
+:::
 
 # Reproducible reporting {background-color="#23373B"}
 
-##  {background-color="#23373B"}
-
-::: {style="font-size:1.4em"}
-**Plot twist**
-:::
+##  Plot twist
 
 *"Restrict to mothers aged 20 and older, not 18."*
 
@@ -734,11 +762,13 @@ One function, a real Table 1, recomputed from the data every time. Change the da
 
 ![](images/paste-9.png)
 
-# Activity {.activity-slide background-color="#0072B2"}
+## Generate Table 1 {.activity-slide background-color="#0072B2"}
 
+:::nonincremental
 - Add a `tbl_summary()` call to your script to generate Table 1
 - Run the code with `age_min` set to 18, then with `age_min` set to 20
 - Open up the browser version of the table and copy into a Word doc
+:::
 
 # Quarto {background-color="#23373B"}
 
@@ -810,8 +840,10 @@ Some *italic text*
 
 Some **bold text**
 
+:::nonincremental
 - Eggs
 - Milk
+:::
 
 ```{r}
 x <- 3
@@ -833,12 +865,12 @@ Everything within the chunks has to be valid R[^1]
 x <- 3
 ```
 
+Chunks run in order, continuously, like a single script, from a fresh session
+
 ```{r}
 #| echo: fenced
 x + 4
 ```
-
-Chunks run in order, continuously, like a single script, from a fresh session
 
 ## Quarto workflow
 
@@ -884,7 +916,7 @@ There were 1960 participants in the study.
 
 That `` `r ` `` chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself -- no more hand-typed numbers.
 
-## You can pull numbers directly from tables {.smaller}
+## You can pull numbers directly from tables
 
 ``` markdown
 The median material age was `r knitr::inline_expr('inline_text(table1, variable = "mat_age", \ncolumn = "stat_0")')`.
@@ -910,14 +942,14 @@ When you click **Render**, Quarto runs the whole document in a **fresh R session
 If your `.qmd` renders, it's reproducible by construction -- hidden state and out-of-order code can't survive a render. That alone is a great reason to move analyses into Quarto.
 :::
 
-# Activity {.activity-slide background-color="#0072B2"}
+## Turn the analysis into a report {.activity-slide background-color="#0072B2"}
 
-## Turn the analysis into a report {.activity-slide}
-
+:::nonincremental
 1.  **File → New File → Quarto Document.**
 2.  Move your cleaning + model + table code into code chunks.
 3.  Write one sentence of results using **inline R code** (about whatever you want).
 4.  Click **Render**, then change `age_min` and re-render. Watch every number -- table and text -- update itself.
+:::
 
 # Organizing & scaling {background-color="#23373B"}
 
@@ -1005,17 +1037,17 @@ The documentation is very thorough: <https://books.ropensci.org/targets/>
 
 ![](images/paste-10.png)
 
-# Activity {.activity-slide background-color="#0072B2"}
-
-## Split it up {.activity-slide}
+## Split it up {.activity-slide background-color="#0072B2"}
 
 Carve your (pre-Quarto) working script into numbered pieces and save them into the appropriate directory:
 
+:::nonincremental
 1.  `R/00_setup.R` -- `library()` calls, read + clean the data
 2.  `R/01_model.R` -- fit the models
 3.  `R/02_figures-tables.R` -- analyze the results
 4.  `run_all.R` -- `source()` them in order
     - make sure you are referring to the file paths where they are saved!
+:::
 
 Restart R and source `run_all.R`. Does it run cleanly?
 
