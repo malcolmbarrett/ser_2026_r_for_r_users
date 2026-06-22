@@ -1,0 +1,2401 @@
+id,mat_age,mat_bmi,parity,education,smoker,ges_age,birth_weight,race_eth
+1,34,24.7,2,HS,No,37.9,3846,Hispanic
+2,32,28.8,0,Some college,No,36.3,2749,Hispanic
+3,28,20.9,0,HS,No,38,3096,White
+4,28,25,2,Less than HS,No,39,3429,White
+5,35,21.7,3,College+,No,39.1,3420,White
+6,36,31.6,0,HS,No,37.9,3240,White
+7,32,27.2,1,Some college,No,39.9,3028,White
+8,28,26.2,1,HS,No,37.7,2683,White
+9,22,23.4,1,College+,No,38.3,3826,White
+10,23,32.9,2,Less than HS,Yes,38.7,2586,White
+11,20,28.4,0,Some college,No,37.8,2860,Black
+12,32,27.5,0,College+,No,39.5,3527,Hispanic
+13,34,31.9,0,Some college,No,36.7,2741,White
+14,31,29,2,HS,No,40.2,3583,White
+15,15,29.8,0,HS,No,38.5,3387,Hispanic
+16,28,28.8,2,Less than HS,Yes,35.5,2904,Hispanic
+17,24,30.8,0,Some college,No,37.9,3097,Black
+18,31,22.1,2,Less than HS,No,40.1,3856,Black
+19,20,27.4,2,Less than HS,Yes,41,3415,White
+20,18,22.1,0,Some college,Yes,39.8,3565,White
+21,35,22.3,2,Some college,No,40.2,3300,White
+22,31,27.4,0,Less than HS,No,38.8,2419,White
+23,35,24.5,2,HS,No,38.4,3265,Hispanic
+24,28,25.3,1,Some college,No,39.3,3766,Hispanic
+25,31,27.2,1,Less than HS,Yes,36.9,2821,Hispanic
+26,21,26.2,0,Less than HS,No,40.3,3369,Black
+27,28,25.6,0,HS,Yes,34.6,2904,White
+28,33,28.6,2,College+,No,39.2,3370,Hispanic
+29,18,30.1,0,College+,No,38.4,3481,Black
+30,28,26.4,0,College+,Yes,38.1,2993,Hispanic
+31,21,22.7,3,College+,No,41.3,3554,White
+32,27,28.1,3,Some college,No,38.5,2859,White
+33,26,31.1,3,College+,No,41,3413,Hispanic
+34,36,28,0,College+,No,41.1,3636,Hispanic
+35,26,19.8,1,HS,No,42,4374,Hispanic
+36,31,28.3,3,Less than HS,Yes,36.5,2965,Black
+37,31,31.5,3,Some college,No,37.3,2977,Black
+38,26,37,0,College+,Yes,39.6,3505,White
+39,26,15,0,HS,No,40.7,3479,Black
+40,31,18.4,3,College+,No,38.3,3397,White
+41,24,24.1,0,HS,No,38.1,3294,Hispanic
+42,29,34.7,0,Some college,No,39.3,4335,Black
+43,32,29.5,1,College+,No,37.7,3055,Hispanic
+44,40,24.5,2,College+,No,39.2,3850,White
+45,22,19.5,0,Some college,Yes,37.6,2970,Hispanic
+46,30,18.8,0,Less than HS,No,38.4,3382,Black
+47,31,15,2,College+,No,38.4,3651,Black
+48,33,23.1,2,HS,No,36.9,2918,Black
+49,33,27.2,0,HS,No,38.6,2974,Black
+50,40,29.3,1,Some college,Yes,35.9,2293,White
+51,26,21.2,2,HS,No,41.4,3310,Hispanic
+52,25,29,0,Some college,No,41.7,4243,White
+53,25,26.8,0,Some college,No,38.9,2910,Hispanic
+54,23,23,1,HS,No,40.1,3547,Hispanic
+55,25,41,2,College+,No,37.4,3448,White
+56,21,30.6,0,College+,Yes,35.9,2936,Hispanic
+57,34,22.3,0,HS,No,36.3,2971,Hispanic
+58,28,27.3,1,HS,Yes,37.3,3269,White
+59,35,31.4,2,Less than HS,No,36.4,3212,Hispanic
+60,29,25.7,1,HS,No,39.4,3582,White
+61,38,18.6,3,Less than HS,Yes,36.5,2585,Black
+62,34,23.9,1,Some college,Yes,37.5,3155,Hispanic
+63,32,20.7,0,Some college,No,37.2,2936,Black
+64,30,24.3,0,College+,No,40.2,3250,Black
+65,38,31.6,1,Some college,No,36.2,2470,White
+66,28,28,3,HS,No,40.7,3740,White
+67,18,23.3,2,Some college,Yes,38,3166,White
+68,33,25.7,1,HS,No,39.8,3328,Black
+69,32,29.7,2,Some college,No,40.2,3776,White
+70,17,19.2,2,Some college,No,40.6,3699,White
+71,35,29,0,College+,Yes,39.1,2973,White
+72,22,24.9,2,HS,No,37.3,2791,Black
+73,31,31.1,1,Less than HS,Yes,37.7,3087,White
+74,29,34.2,1,Some college,No,36.2,2805,Black
+75,30,24.9,0,Some college,Yes,37.8,2811,Black
+76,27,27.8,1,HS,No,38.2,3909,White
+77,37,24.7,0,Less than HS,No,40.6,2895,White
+78,33,23.7,3,Some college,Yes,34.7,2640,Hispanic
+79,23,21.8,0,HS,No,39.4,3626,Hispanic
+80,29,22,2,Less than HS,No,39.3,3868,Black
+81,22,30.3,3,College+,No,40.6,3427,White
+82,34,26.3,0,College+,No,37.3,3606,White
+83,34,32.3,1,HS,No,39.6,4209,White
+84,19,24.5,0,HS,No,38.9,3652,White
+85,30,25,0,College+,No,39.2,3177,White
+86,35,31.1,3,HS,No,36.8,3857,Hispanic
+87,28,26.7,0,Less than HS,No,41.8,3166,Black
+88,28,30,2,HS,No,41.5,4118,White
+89,28,30.1,3,College+,Yes,37.5,2690,Black
+90,33,25.8,1,Less than HS,No,41,3575,Hispanic
+91,22,24.2,0,Some college,No,34.8,1667,White
+92,26,31,1,HS,No,39.7,3653,White
+93,25,29.6,0,Less than HS,No,36,2789,White
+94,33,23.4,0,College+,No,37.4,3428,White
+95,32,28.6,1,HS,No,37.9,3596,White
+96,18,24.7,0,College+,No,37.6,2954,Black
+97,23,23.6,0,Less than HS,Yes,36.6,2475,Black
+98,23,36.2,1,HS,Yes,37.1,2550,Black
+99,29,31.5,0,College+,No,39.7,3437,Hispanic
+100,35,20.8,2,HS,No,40.2,3253,White
+101,41,16.2,1,Less than HS,No,38,3272,Black
+102,31,30,1,Some college,No,39.7,3991,Hispanic
+103,35,29.6,0,College+,No,38.5,3442,White
+104,30,27.6,1,Some college,No,38.2,3434,Black
+105,22,27.2,0,College+,No,39.6,3397,Hispanic
+106,31,23.2,0,Less than HS,No,38.4,3909,Black
+107,28,31.9,0,Less than HS,No,41.6,3878,White
+108,35,24.4,1,Some college,No,38.2,3726,White
+109,26,18.2,1,College+,No,40.2,3354,Hispanic
+110,23,30.7,1,HS,No,39.2,3341,Hispanic
+111,22,22.3,0,HS,Yes,39.1,2628,White
+112,35,23.2,0,College+,No,39.7,4066,Black
+113,25,26.7,2,College+,No,40.8,4131,Hispanic
+114,29,23,2,Some college,Yes,37.8,2793,Black
+115,26,31.9,0,Less than HS,No,37.8,3279,Black
+116,19,25.9,1,HS,No,36.9,3398,White
+117,39,22.4,1,HS,Yes,37.9,3139,Hispanic
+118,32,33.9,0,Less than HS,Yes,37.4,3545,White
+119,28,21.5,0,Some college,No,40.1,2948,Hispanic
+120,34,35.6,1,Some college,No,39.3,3774,Hispanic
+121,28,27.1,1,Some college,No,38.9,3321,White
+122,27,32.2,0,HS,No,41,4115,White
+123,22,23.2,2,College+,No,40.4,3546,Hispanic
+124,28,17.4,1,College+,No,36.3,3198,Black
+125,25,33,1,College+,No,38.4,3071,White
+126,29,23.7,1,Some college,No,37.5,3360,White
+127,23,23.2,0,Less than HS,No,40.3,3131,Hispanic
+128,23,32.5,1,Some college,No,39.1,3792,White
+129,26,27,3,College+,No,40.6,3695,White
+130,32,25.8,0,College+,No,38.7,3629,White
+131,24,18.8,1,College+,No,38.9,3220,White
+132,30,29.5,2,College+,No,39.3,3317,White
+133,25,33.8,0,Some college,Yes,39.2,2582,White
+134,29,26.8,0,HS,No,39,3560,Hispanic
+135,38,25.4,2,College+,Yes,38,2498,Black
+136,24,30.4,2,HS,No,40.1,3154,Hispanic
+137,22,21.8,3,College+,No,37.5,3041,White
+138,32,30.5,2,Some college,No,39.3,4016,White
+139,31,25.3,0,HS,No,38.1,3684,Black
+140,27,17.1,3,College+,No,41,3289,White
+141,32,18.2,2,College+,No,37.5,2819,White
+142,22,17.4,1,College+,No,39.1,3564,Black
+143,25,35,1,Some college,No,40.1,3665,Hispanic
+144,39,23.8,0,Less than HS,No,36.9,3142,Hispanic
+145,34,17.9,0,College+,No,38.5,4185,Hispanic
+146,33,23.3,2,College+,Yes,37.5,2392,White
+147,39,30.1,0,Some college,No,37.7,3297,White
+148,30,26.9,0,Less than HS,No,39.7,3113,White
+149,34,29.5,2,Some college,No,36.2,2472,White
+150,35,27.1,0,College+,No,39.2,3304,White
+151,23,34.3,0,Some college,Yes,38.8,3665,Hispanic
+152,29,29.9,0,Less than HS,No,37.3,3453,Hispanic
+153,42,24.9,3,Some college,No,36.9,2416,White
+154,36,22.6,1,HS,No,39.1,3168,White
+155,25,29.7,0,College+,No,39.5,3322,Black
+156,15,23.6,0,HS,No,39.7,3367,White
+157,31,26.7,0,Some college,No,37.7,3363,Hispanic
+158,27,28.3,0,HS,Yes,39.7,3085,White
+159,25,29.3,0,Some college,Yes,39,3354,White
+160,31,21.7,1,HS,No,38.4,3386,White
+161,39,28.8,1,Some college,No,39.8,3839,White
+162,29,32.1,2,HS,No,38,3779,White
+163,29,24.9,1,HS,No,39.1,3113,White
+164,38,29.3,2,Less than HS,No,39.9,3800,White
+165,27,29.6,0,Some college,No,38,2965,Hispanic
+166,26,23.6,0,Some college,No,38.9,3110,White
+167,30,29.5,0,HS,No,38,3252,White
+168,20,23,0,College+,Yes,36,2618,White
+169,36,24.8,1,HS,Yes,36,2559,Black
+170,41,20.7,0,HS,No,35.4,3287,White
+171,27,26,2,HS,No,40.8,3599,Hispanic
+172,34,27.2,1,HS,No,40.3,3714,White
+173,26,24.9,0,Some college,No,39.3,3437,Hispanic
+174,30,19.2,0,HS,No,39.8,4017,Black
+175,31,19,2,Some college,No,38.3,2711,Hispanic
+176,35,27.4,0,Some college,No,40.5,2820,White
+177,36,31.7,0,College+,No,38.3,2913,Hispanic
+178,30,28.2,2,Some college,No,37.9,3006,White
+179,33,25.7,0,HS,Yes,37.1,3233,White
+180,27,24.2,1,Less than HS,Yes,37.8,3266,White
+181,33,30.1,1,HS,Yes,36.8,3016,Hispanic
+182,30,21.7,1,Some college,No,39.7,3490,Hispanic
+183,33,33.7,1,College+,No,39.5,3908,Black
+184,25,19,0,College+,No,39.3,3422,Hispanic
+185,27,21.7,1,Some college,No,36.9,3124,Hispanic
+186,33,16.9,1,Some college,No,38.2,3852,Black
+187,34,21.7,1,Some college,No,38.8,3280,Black
+188,27,20.6,1,Some college,No,37.4,3408,Black
+189,25,26,1,Some college,No,40,3706,White
+190,32,31.4,0,Some college,No,38.7,3301,Hispanic
+191,26,23.8,0,Some college,No,36.7,3015,Hispanic
+192,23,20.8,1,Some college,Yes,35.9,2148,Hispanic
+193,32,20.4,2,College+,No,38.2,3565,Black
+194,35,27.1,1,Some college,No,38.4,3416,White
+195,36,23.6,1,College+,No,38,3291,White
+196,32,19.7,0,College+,No,36.8,2984,Hispanic
+197,36,34.5,2,Less than HS,No,40,3344,White
+198,32,24.5,0,HS,No,38.1,3375,White
+199,42,37.1,1,Less than HS,No,36.5,3406,Black
+200,19,38.5,0,Some college,No,38,3453,Hispanic
+201,29,20.9,2,HS,No,39,3703,White
+202,32,26.8,1,HS,No,38.1,2993,Hispanic
+203,25,26.5,1,College+,No,36.4,2931,Black
+204,30,34.9,0,Some college,No,37.4,3570,Hispanic
+205,35,26.9,2,HS,Yes,33.7,2850,Hispanic
+206,23,22.2,0,HS,No,40.8,4078,White
+207,25,21.6,0,HS,No,38.3,2432,Hispanic
+208,30,24.4,2,College+,No,38.5,3621,Hispanic
+209,34,23.8,1,College+,No,38.8,2955,White
+210,31,28.5,2,Some college,No,37.2,2783,White
+211,25,26.3,1,College+,No,37.9,3107,White
+212,32,32.9,1,Some college,Yes,37.8,3602,Hispanic
+213,26,33.1,0,College+,No,41.5,3905,Black
+214,15,23.8,2,College+,Yes,38.6,2807,White
+215,33,19.3,0,Some college,No,38,3669,White
+216,31,33.3,3,College+,No,39.6,3328,White
+217,33,30.6,0,Some college,No,38.3,4415,White
+218,32,18.9,1,Some college,No,38.3,2877,White
+219,26,22.1,1,HS,No,38.9,3253,Black
+220,35,25.4,0,Less than HS,No,35.7,3019,White
+221,25,25.4,0,College+,Yes,38.1,2869,White
+222,37,31.4,3,College+,Yes,36.7,2572,Black
+223,30,31.8,1,Some college,No,39.8,4017,Hispanic
+224,29,15,0,HS,No,38.3,3288,White
+225,29,29.4,0,HS,No,39,2938,White
+226,30,23.7,0,Less than HS,Yes,37.1,2301,Hispanic
+227,29,29.7,0,HS,No,38.4,3927,White
+228,32,25.3,0,Some college,No,38,3118,White
+229,28,29.6,0,Less than HS,No,38.6,3525,White
+230,32,28.6,0,Less than HS,No,38.8,3452,Black
+231,36,26.4,1,HS,No,37.3,3479,Black
+232,33,23.2,2,HS,No,40.2,3698,White
+233,28,27.5,2,HS,No,39.5,2968,White
+234,27,20.4,3,Less than HS,No,37.4,3044,Hispanic
+235,29,21,1,College+,No,41.5,3607,White
+236,29,24.1,0,HS,No,38.6,3581,White
+237,29,28.3,2,College+,No,37.5,2933,Black
+238,26,26.9,2,HS,Yes,38.8,3007,White
+239,29,16.7,0,Some college,Yes,38.9,3353,White
+240,24,20.5,1,College+,No,39.4,2697,White
+241,30,30.7,3,Some college,No,38.5,3905,Black
+242,35,32.5,1,Less than HS,No,39.9,3870,Hispanic
+243,37,16.1,0,HS,No,38.5,3134,Hispanic
+244,35,25.8,3,College+,Yes,38.4,2542,White
+245,24,20.7,1,Some college,No,37.7,2252,Black
+246,39,29.8,0,College+,No,37.7,3156,White
+247,26,27.1,0,College+,No,38.7,3459,Black
+248,30,32.5,0,Some college,Yes,39.5,3009,Hispanic
+249,23,25.6,3,Less than HS,No,39.6,3403,White
+250,30,17.3,1,Less than HS,Yes,38.8,2775,White
+251,39,25.1,0,HS,No,39.7,4223,White
+252,30,25.7,0,HS,No,38.1,3737,White
+253,35,26.8,1,Less than HS,No,38,3556,White
+254,27,21.9,0,Less than HS,No,40.7,3551,White
+255,30,25.7,0,Some college,No,39.7,3178,Black
+256,20,28,1,Less than HS,No,38.2,3150,Black
+257,30,29.3,2,Less than HS,No,35.9,3259,White
+258,28,27.6,0,HS,No,39.2,4124,White
+259,32,28.1,0,HS,No,38.5,3973,White
+260,23,22.6,0,Some college,No,40.3,3719,Hispanic
+261,28,20.3,2,Some college,Yes,39.3,3051,Hispanic
+262,27,24.1,0,Some college,No,36.7,2517,White
+263,32,19.3,1,Some college,No,41.6,4318,Black
+264,25,22.2,1,HS,No,42,3872,Hispanic
+265,15,23.3,1,Some college,No,37.1,3801,White
+266,32,23,1,HS,No,40.1,3708,Black
+267,26,32.1,1,Less than HS,Yes,36.3,3619,Black
+268,33,25.1,1,HS,No,40.6,3878,Hispanic
+269,32,27.1,0,HS,No,36.1,3858,Hispanic
+270,34,22.8,0,College+,No,37.4,3174,Black
+271,34,29.6,1,Less than HS,No,38.8,3472,White
+272,28,26.2,0,HS,No,39.5,2891,Black
+273,22,23.2,0,Some college,No,39.3,3428,Hispanic
+274,25,18.8,1,Some college,No,39.9,2449,White
+275,32,31.6,1,Less than HS,Yes,39.2,2776,White
+276,29,27.1,2,Less than HS,No,38.8,3941,White
+277,26,24.5,3,HS,No,37.5,2934,White
+278,20,29.9,1,College+,No,39.3,3652,Hispanic
+279,24,28.1,0,HS,No,40.1,4028,Black
+280,28,33.5,0,Less than HS,No,37.3,3466,White
+281,33,22.7,0,College+,No,39.6,3622,Hispanic
+282,30,26.4,2,Less than HS,No,39.1,2687,Black
+283,37,24.2,3,College+,No,40.5,3186,White
+284,30,22.6,0,HS,No,38.5,3330,White
+285,32,17,1,College+,No,38,3305,White
+286,27,20.2,0,College+,No,41.6,3447,White
+287,25,26.4,0,HS,No,37.8,3305,White
+288,29,25.2,0,HS,Yes,39.8,3601,White
+289,35,25.5,1,College+,No,37.1,3715,White
+290,43,34.6,2,Less than HS,Yes,37.3,2707,Hispanic
+291,25,15.2,1,HS,No,41.5,3623,White
+292,33,27.6,0,College+,No,39.4,3402,Black
+293,38,21.3,3,College+,No,36.8,3539,Hispanic
+294,27,28.8,0,College+,No,41.5,4103,White
+295,31,30,2,College+,No,37.7,3335,White
+296,33,17.5,1,College+,No,38.4,2923,White
+297,36,32,1,HS,No,38.2,3299,Black
+298,22,26.4,3,HS,No,39.2,4325,Hispanic
+299,22,23.5,0,HS,No,38.3,3401,White
+300,30,31.4,0,HS,No,41.8,3092,White
+301,33,23.6,1,Some college,Yes,37.7,3006,White
+302,26,23.6,1,Some college,No,40.9,3965,White
+303,27,27.8,0,HS,No,41.2,3494,Hispanic
+304,35,25.4,3,College+,No,38.9,3292,Hispanic
+305,38,22.5,0,College+,No,40,3416,White
+306,31,21.2,2,College+,No,39,3629,Black
+307,28,37.3,0,HS,No,37.3,3465,White
+308,33,27,1,College+,No,37.3,3441,White
+309,30,21.8,0,HS,No,40.1,3746,White
+310,36,21.7,1,Some college,Yes,37.3,3287,Black
+311,31,27.5,1,College+,No,41,3134,Hispanic
+312,22,31.6,1,College+,No,41.1,3513,White
+313,20,26.6,2,HS,No,38.9,3019,White
+314,24,34,0,Some college,No,40.3,2909,Hispanic
+315,45,32.8,0,College+,No,38.4,3368,White
+316,27,23.4,0,Some college,Yes,37.9,2886,White
+317,29,25.7,1,Some college,No,38.9,3565,White
+318,29,20.7,1,Some college,No,40,3695,Black
+319,35,25.2,0,Some college,No,36.2,3146,Black
+320,25,21.2,0,Some college,No,37.4,3367,Hispanic
+321,23,26.9,0,Some college,No,38,3925,White
+322,30,31.9,2,Some college,No,39.1,4061,Black
+323,31,33.6,2,Less than HS,No,38.4,3055,Hispanic
+324,25,32,0,College+,No,38.9,3192,Hispanic
+325,44,29.4,0,HS,No,40.5,3673,Black
+326,28,22.3,1,Some college,No,39.5,3556,White
+327,23,29.7,0,College+,No,41.4,3620,White
+328,33,25.3,1,HS,No,38.1,3382,White
+329,18,27.3,1,Some college,No,39.5,3191,Hispanic
+330,27,22.4,0,Some college,No,40,3256,Black
+331,29,27.5,0,College+,No,41.1,3246,White
+332,26,16.7,1,HS,No,38.5,3154,White
+333,36,28.5,1,Some college,Yes,38.1,3655,Hispanic
+334,26,22.3,3,College+,No,41,4346,White
+335,35,36.4,0,HS,No,36.7,2644,Hispanic
+336,21,29.8,2,HS,No,41.5,4034,White
+337,37,24,0,HS,No,35.9,3150,White
+338,18,24.6,2,College+,No,41.2,3449,White
+339,29,36.7,2,College+,Yes,41,3728,White
+340,31,26.9,1,HS,Yes,37.2,2847,Hispanic
+341,25,27.7,1,HS,No,39.7,3354,Black
+342,20,28.1,1,Some college,No,38.9,4211,Hispanic
+343,31,15,1,College+,No,37.6,3041,White
+344,29,28.8,1,HS,No,40.2,3788,Hispanic
+345,33,30.4,0,Less than HS,No,39.5,3898,Hispanic
+346,37,32.6,0,HS,No,38.2,3834,White
+347,23,35.1,1,HS,No,40.7,3498,Black
+348,32,22.9,1,College+,Yes,37.4,3138,White
+349,23,29.3,1,HS,Yes,37.6,3971,White
+350,36,35.6,0,College+,No,37.8,3354,Hispanic
+351,27,21.4,2,Some college,No,39.1,3493,Hispanic
+352,33,20.1,1,College+,Yes,37.5,2444,Hispanic
+353,33,25.1,0,Some college,No,39.9,3451,White
+354,25,27.8,2,HS,No,39,3322,White
+355,18,15,0,HS,Yes,39.1,3094,White
+356,26,25.9,2,Some college,No,41.5,3645,White
+357,33,22.9,1,HS,No,38.5,4066,White
+358,33,29.9,1,HS,No,38.6,3700,Black
+359,35,19.7,1,HS,Yes,37.8,3363,Hispanic
+360,23,30.8,3,HS,Yes,37.3,3122,Hispanic
+361,28,31.8,2,College+,No,36.2,3003,Black
+362,32,24.2,0,HS,No,40.1,3888,Hispanic
+363,25,29.5,0,Less than HS,No,37.6,2671,White
+364,25,28.9,0,College+,No,38.8,4066,Hispanic
+365,31,25.6,0,Some college,No,39.5,4700,Black
+366,26,19.2,1,College+,No,38,3544,Hispanic
+367,30,31.9,0,College+,No,37.7,3362,White
+368,30,27,0,Some college,Yes,36.7,3030,Hispanic
+369,32,28.2,0,College+,No,37.3,3556,White
+370,25,30.1,0,College+,Yes,38.8,2831,White
+371,39,18.9,0,Less than HS,No,39.1,2705,White
+372,27,25.4,0,HS,Yes,36.7,3584,Black
+373,27,27,0,Some college,No,39.2,3082,Hispanic
+374,28,20.2,2,Some college,Yes,37.5,3508,White
+375,29,25.6,2,Some college,No,39.5,3346,Hispanic
+376,28,17.2,0,College+,No,37.3,3981,White
+377,28,25.8,0,Some college,Yes,39.8,3998,White
+378,26,34,1,HS,No,42,3705,White
+379,42,25.3,0,Less than HS,Yes,35.7,2687,White
+380,24,22.9,0,Less than HS,No,40.5,3522,Black
+381,30,26.3,0,HS,Yes,36.9,2947,White
+382,28,24.1,1,College+,No,39.7,3859,White
+383,30,35.6,1,Less than HS,No,39,3304,Black
+384,29,15,0,College+,Yes,36.4,2570,Hispanic
+385,37,27.7,0,Less than HS,No,37.9,2391,White
+386,31,17.6,2,Some college,No,39,3563,Hispanic
+387,20,29.9,0,College+,No,39.8,3170,White
+388,34,29.7,0,College+,No,40.3,3570,White
+389,28,29.2,0,College+,Yes,38.1,3249,White
+390,36,32.3,1,Some college,No,39.2,3659,Hispanic
+391,29,23.1,0,Some college,No,37.8,3291,White
+392,33,15,1,Some college,No,38.9,3274,White
+393,34,18,0,Less than HS,No,38.2,3303,Hispanic
+394,23,34.9,2,Some college,Yes,35.5,2923,Hispanic
+395,37,20.1,0,Less than HS,No,39.5,3839,Hispanic
+396,32,30.9,1,Less than HS,No,39.2,3398,Black
+397,27,17.6,0,College+,Yes,37.7,2244,White
+398,28,27,0,Some college,Yes,38.2,2979,White
+399,22,30,0,Some college,No,41.6,4362,White
+400,28,22.4,2,Some college,No,38.6,3477,Hispanic
+401,40,16.6,2,HS,No,41.7,2930,White
+402,33,26.6,0,HS,No,37.3,3026,White
+403,30,20.2,1,College+,No,37.8,3449,White
+404,24,28.1,0,Some college,No,38.3,3246,Black
+405,34,22.6,0,Less than HS,No,38.9,3772,White
+406,18,20.1,1,Some college,Yes,35.8,3103,Hispanic
+407,30,24,1,Some college,No,42,4276,Hispanic
+408,28,25.6,0,HS,Yes,35.8,3842,Hispanic
+409,31,28.4,1,College+,Yes,36.5,3339,Hispanic
+410,33,34,1,Some college,No,39,4026,Black
+411,37,30.2,1,College+,No,38.1,3746,White
+412,29,24.1,0,Less than HS,No,38.1,3326,Hispanic
+413,34,28.3,1,College+,No,38.4,3570,White
+414,33,26.2,1,HS,No,40.9,3603,White
+415,33,22.1,0,Some college,No,37.6,2817,Black
+416,29,24,0,Some college,No,40.9,3526,White
+417,23,18.6,2,HS,No,37.3,3411,Hispanic
+418,25,15,0,College+,No,40.6,3362,Hispanic
+419,20,31.5,0,College+,No,37.9,3256,Hispanic
+420,32,36.2,1,Some college,Yes,37,3096,Hispanic
+421,20,24.8,2,Some college,No,37.9,3293,White
+422,38,21,2,College+,No,38.9,3072,Hispanic
+423,28,33.3,0,HS,No,38.8,3865,White
+424,27,28.1,0,HS,No,39.2,3435,White
+425,34,23.5,0,Some college,No,39.2,3092,Hispanic
+426,27,27.9,0,Less than HS,No,38.1,2544,White
+427,37,15,2,HS,No,40.1,3497,Hispanic
+428,21,35.5,1,Some college,No,38.2,3549,White
+429,33,18.8,1,Some college,No,42,3716,White
+430,37,18.4,3,Some college,No,37.7,2833,White
+431,41,23.1,2,Some college,Yes,36.9,2923,Hispanic
+432,37,22.2,1,Less than HS,No,37.8,2893,White
+433,34,22.1,0,Less than HS,No,38.9,3372,Hispanic
+434,24,22.7,0,Some college,Yes,38,3174,Black
+435,34,30.7,0,College+,No,42,4676,White
+436,34,19.1,0,Some college,No,37.8,2841,Black
+437,20,27.5,2,HS,No,37.6,3325,White
+438,24,25.2,1,Some college,No,39.6,2673,White
+439,26,21.4,0,Less than HS,No,41.3,3739,White
+440,29,30,0,College+,Yes,36.5,3040,White
+441,26,24.2,0,HS,No,37.9,3581,White
+442,38,21.4,1,College+,No,38.5,2672,White
+443,28,22.2,2,HS,No,39.2,3987,Hispanic
+444,27,23.6,1,College+,No,39.4,3532,Hispanic
+445,32,20.7,0,Some college,No,38.4,3179,White
+446,27,25.3,1,College+,No,38.9,3389,White
+447,22,25.7,3,HS,No,37.3,3041,Black
+448,26,25.4,1,HS,No,40.3,3304,Black
+449,30,27.1,0,HS,No,38.6,3382,White
+450,27,34.4,1,College+,No,37.5,3697,Hispanic
+451,23,25.5,2,HS,No,41.4,3494,Hispanic
+452,34,30.1,0,College+,Yes,39.5,3468,White
+453,24,25,1,Some college,No,37,2944,Black
+454,17,24.7,1,Less than HS,No,37.5,3037,Hispanic
+455,33,25.7,0,Less than HS,No,38.3,3473,White
+456,34,26.7,0,College+,No,39.2,3997,White
+457,32,22.8,0,HS,Yes,42,3118,White
+458,33,33.3,2,Less than HS,No,40.1,3891,White
+459,22,29.8,2,College+,No,40.3,3810,White
+460,36,27.8,2,HS,No,38.3,3515,Hispanic
+461,33,18.3,0,College+,No,42,3768,White
+462,32,27.8,2,HS,No,37.9,3581,White
+463,32,28.2,0,HS,No,41,4539,Black
+464,35,23.3,0,Some college,Yes,36.5,3317,White
+465,20,31.1,1,HS,No,38.8,3552,Black
+466,29,40.5,3,HS,No,42,3167,Hispanic
+467,30,29,0,Less than HS,No,36.6,2900,White
+468,36,33.4,0,College+,No,41,3663,Hispanic
+469,39,23.7,0,College+,Yes,38.2,3487,White
+470,26,29.9,3,Some college,No,40.1,3303,White
+471,33,24.7,1,College+,Yes,38.3,3187,Hispanic
+472,28,36.3,0,College+,Yes,38.7,3176,Hispanic
+473,27,28,0,Some college,Yes,38.1,3531,White
+474,29,33.3,0,College+,No,38.5,2749,Hispanic
+475,28,20.9,1,HS,Yes,37.1,2758,Hispanic
+476,29,22.3,0,HS,Yes,37.3,3554,Hispanic
+477,29,19.4,1,HS,No,37.5,2901,Hispanic
+478,25,34.9,2,Some college,No,37.1,3099,Hispanic
+479,26,33.2,0,Some college,Yes,39,3515,White
+480,33,25.4,2,College+,No,36.9,3268,White
+481,31,21,3,HS,No,38.9,3372,Hispanic
+482,26,28.8,0,College+,No,39.7,3230,Hispanic
+483,25,27.7,1,HS,Yes,33.5,3045,Hispanic
+484,32,32.6,0,College+,No,39.2,3616,White
+485,24,19.5,2,Some college,No,37.7,2304,White
+486,31,20.6,1,Less than HS,No,38.6,3255,Black
+487,28,18.3,2,Some college,No,40,3448,Black
+488,30,32.2,0,College+,No,40.8,3266,White
+489,26,32,2,HS,Yes,40.1,3688,White
+490,34,29.4,0,HS,No,38.2,3415,Black
+491,29,25.5,3,HS,No,38.5,2947,White
+492,28,25.9,0,HS,No,40.2,3699,Hispanic
+493,31,33,0,HS,No,37.2,3400,White
+494,28,26.4,3,Some college,No,40.3,3420,White
+495,24,21.9,1,Less than HS,No,37.2,2941,Black
+496,30,18.9,0,College+,No,38.4,3398,Hispanic
+497,26,29.4,1,Some college,No,38.5,3211,White
+498,34,27.9,0,Some college,No,37.6,3049,Hispanic
+499,21,30.3,1,HS,No,37.7,3102,Black
+500,32,26.6,0,HS,No,39.6,2767,Hispanic
+501,33,20.8,0,Less than HS,No,37.1,2600,Hispanic
+502,25,18.9,0,Some college,No,38.4,3397,Black
+503,33,18.3,1,College+,No,40,4389,White
+504,29,26.3,1,Some college,No,40.1,3382,Black
+505,41,24.5,0,Some college,No,36.9,2373,White
+506,24,17,0,Some college,No,36.6,2750,Black
+507,18,20.6,0,College+,No,39.4,3816,Hispanic
+508,39,22.8,0,College+,No,39.3,2360,White
+509,29,27.8,0,Some college,No,38.6,3423,White
+510,23,26.8,0,Some college,No,40,3458,White
+511,29,30,1,Some college,Yes,39.4,3736,Hispanic
+512,31,18,0,College+,No,38.8,3410,White
+513,24,19.2,0,Some college,No,42,3708,Hispanic
+514,34,20.5,0,Some college,No,40,3270,White
+515,26,29.1,0,Some college,No,37.6,3797,White
+516,24,26,1,College+,No,39.7,3330,White
+517,25,26.7,1,College+,No,39.8,2722,White
+518,27,27.6,0,HS,Yes,39.1,3000,Hispanic
+519,28,22.7,1,Some college,No,41,4328,Hispanic
+520,17,20.1,0,College+,No,39.2,3681,Black
+521,25,24,0,College+,No,38.2,3333,Black
+522,27,25,0,Some college,No,40.1,3749,Hispanic
+523,25,23.9,2,HS,No,41.6,3601,White
+524,18,27.4,0,Some college,Yes,38.3,3112,Hispanic
+525,27,35.8,1,Some college,No,38.6,2832,Hispanic
+526,38,26.8,1,College+,No,36.6,3379,White
+527,23,25.4,1,College+,No,37.8,3140,Black
+528,33,26.3,1,HS,No,37.6,2795,Hispanic
+529,33,32.2,1,College+,No,42,3440,White
+530,31,18.1,0,HS,No,38.5,2551,White
+531,24,20.6,3,HS,No,40.9,3557,White
+532,23,26.1,0,Some college,No,40,3454,White
+533,28,27.9,0,College+,No,39.1,3515,White
+534,32,18.6,2,Less than HS,No,39.5,3984,Hispanic
+535,30,38.2,1,Some college,No,40.6,3996,White
+536,40,31.2,0,Some college,No,40.1,4287,Hispanic
+537,28,19.6,1,Some college,No,38.9,3792,White
+538,24,26,0,College+,Yes,39.6,3513,Hispanic
+539,19,28.5,1,College+,No,39.7,3403,White
+540,30,24.6,0,HS,Yes,37.1,2858,Hispanic
+541,23,29.9,1,HS,Yes,36.9,3438,Black
+542,26,26.9,2,College+,No,38.8,3603,White
+543,31,31.3,0,Some college,No,38.9,3251,Hispanic
+544,23,26.2,1,Some college,No,41.3,4189,White
+545,27,32.7,0,College+,No,38.5,3724,White
+546,38,23.6,2,College+,No,38.1,3218,Hispanic
+547,33,32.3,1,Less than HS,No,38.3,3174,White
+548,25,26.1,3,College+,No,36.5,3027,White
+549,27,26.5,1,College+,No,38.1,3673,Black
+550,29,20.9,2,Some college,No,40.3,3270,White
+551,33,31.1,0,HS,No,39.5,3390,Hispanic
+552,31,24.2,1,HS,No,39.2,3170,White
+553,31,24.9,3,HS,Yes,36.6,2778,Hispanic
+554,28,27.6,1,Some college,Yes,38.9,3581,White
+555,28,18.3,2,College+,No,38.9,3005,Hispanic
+556,30,23.6,2,HS,No,37.8,3239,White
+557,20,21.8,0,College+,No,36.2,3447,Hispanic
+558,37,27.5,3,Some college,No,38.6,3160,White
+559,27,16,1,Some college,Yes,37.6,3212,Black
+560,32,20,2,Some college,No,38.8,3301,White
+561,36,30.5,1,HS,No,42,3767,Hispanic
+562,40,25.7,0,College+,Yes,38.9,3704,Black
+563,26,19.3,0,Some college,No,40.3,3160,Hispanic
+564,28,21.2,2,HS,No,38.7,3068,Black
+565,20,30.4,1,College+,Yes,37.6,2411,Hispanic
+566,30,25.2,0,Less than HS,No,39.2,2910,Black
+567,29,24.5,0,HS,No,38.5,3294,White
+568,32,17.5,0,HS,Yes,37,3219,White
+569,30,26.6,0,Less than HS,Yes,37.4,2976,Hispanic
+570,19,27.3,0,College+,No,39.7,3674,White
+571,24,23.9,3,HS,No,37.7,2555,White
+572,24,31,0,Less than HS,No,40.1,3697,Black
+573,33,27.1,1,Some college,No,38.3,3494,White
+574,21,23.5,1,HS,No,37.9,3530,Hispanic
+575,34,34.5,0,HS,No,36.1,2402,White
+576,37,28.5,0,Some college,No,37.9,2688,White
+577,26,25.8,1,Some college,No,37.2,3504,Hispanic
+578,28,22.6,2,Some college,Yes,38.4,2924,Hispanic
+579,35,30,1,HS,No,38.6,3358,White
+580,21,32.1,1,HS,No,37.6,3170,White
+581,22,24.9,0,HS,Yes,40.7,2977,White
+582,34,37.2,3,Some college,Yes,35.2,3063,Black
+583,19,28.2,1,Some college,No,39.8,3578,White
+584,24,27.2,3,Some college,No,40.2,3275,Black
+585,33,22.5,0,HS,No,39.6,4289,Black
+586,30,30.7,0,Less than HS,No,38.3,3792,White
+587,30,22.5,1,College+,No,41.4,4158,White
+588,24,20.7,3,Less than HS,No,40,2477,Hispanic
+589,39,26.3,2,HS,No,38.7,3382,Hispanic
+590,37,24.8,0,College+,No,38.1,2777,Black
+591,29,22.1,0,Some college,No,39.2,3401,Hispanic
+592,22,32.5,1,HS,No,41,3220,Hispanic
+593,22,30,3,Some college,Yes,38,3509,Black
+594,32,25.3,0,College+,No,37.3,3137,White
+595,27,28.2,2,College+,No,39.3,3968,Hispanic
+596,27,34.5,1,College+,No,37.7,3221,Hispanic
+597,27,30.7,0,College+,No,38.1,3254,White
+598,37,33.8,1,HS,Yes,37.7,2670,Hispanic
+599,32,25.5,0,HS,No,38,2744,Black
+600,27,24.3,1,Some college,No,37.5,3137,Hispanic
+601,15,26,2,College+,No,38.5,2977,White
+602,36,27.4,0,Some college,No,39.9,3532,Black
+603,32,28.6,0,HS,Yes,39,2138,White
+604,30,25.2,1,HS,No,38.9,3367,Black
+605,30,26.8,1,Less than HS,No,39,3467,White
+606,24,30.3,0,Some college,No,36.6,3038,Hispanic
+607,28,22.4,0,HS,No,39.2,3367,Black
+608,17,17.4,2,HS,No,36.4,2525,Black
+609,29,26.1,0,College+,No,40.2,3207,Hispanic
+610,26,27.6,1,Less than HS,No,38.4,3344,Hispanic
+611,22,21.9,1,HS,No,39,3700,Black
+612,36,22.3,0,College+,No,36.6,3398,Hispanic
+613,25,28.9,3,HS,No,38.3,3207,White
+614,38,22,1,College+,No,37.7,3103,White
+615,32,26.3,2,Some college,No,40,4217,White
+616,24,19.5,0,College+,No,40.2,3273,Hispanic
+617,34,20.9,1,College+,No,37.4,3200,Hispanic
+618,41,29.5,3,HS,Yes,36.2,1966,White
+619,29,29.4,0,College+,No,40.3,4601,White
+620,30,23.3,2,Some college,No,38.6,4306,White
+621,33,29.9,1,HS,No,40.6,3789,Hispanic
+622,23,31.5,0,HS,Yes,39.2,2783,Black
+623,27,27.5,1,Some college,No,40.6,2798,White
+624,25,20.6,0,College+,No,38.6,3884,White
+625,28,16.9,0,Some college,No,41,3221,Hispanic
+626,34,32.2,0,HS,Yes,36.4,3795,White
+627,27,19.4,0,HS,No,39,3890,White
+628,23,25.3,0,College+,No,37.6,3262,Black
+629,28,19.1,0,College+,No,37.9,3000,White
+630,28,27.2,0,HS,No,40,3484,White
+631,21,20.3,1,Less than HS,No,37.6,3547,Hispanic
+632,23,27.9,1,College+,No,39.8,3676,White
+633,20,20.8,3,HS,Yes,36.2,2911,White
+634,27,23.8,1,College+,No,39.5,3943,Hispanic
+635,25,30.9,1,Some college,No,38.1,3599,White
+636,36,31.5,0,College+,No,38.7,3622,White
+637,23,25,1,Some college,Yes,38.3,3629,White
+638,33,30.7,0,College+,No,42,4049,White
+639,30,19.3,0,College+,No,37.6,3533,White
+640,37,23.4,0,College+,No,40.2,3060,Hispanic
+641,25,33.6,0,College+,No,41.9,3726,White
+642,26,26.3,1,College+,No,39.6,4090,White
+643,33,22.7,0,Some college,Yes,37.1,2663,White
+644,33,33.5,0,Less than HS,Yes,37.3,3463,White
+645,30,28.4,1,HS,No,41.6,4458,White
+646,22,30.9,0,College+,Yes,39.7,3367,Hispanic
+647,24,21.3,0,Less than HS,No,41.2,3263,Black
+648,40,32.8,0,HS,No,37.7,3127,White
+649,26,20.9,3,HS,No,41,3785,White
+650,18,21.1,1,HS,No,37.5,3674,Black
+651,34,25.6,0,College+,Yes,36,2982,Hispanic
+652,24,22.1,2,College+,Yes,37.6,2555,White
+653,27,25,2,College+,Yes,37,2638,White
+654,27,37.1,0,HS,No,40.8,4489,White
+655,32,17.3,1,HS,No,38.2,3228,Black
+656,35,18.1,1,College+,No,38.9,3655,Hispanic
+657,25,29.9,2,College+,Yes,37.4,2929,White
+658,27,31.2,1,College+,No,39.8,4024,White
+659,28,30.9,1,Some college,No,35.8,2962,White
+660,29,26.9,1,Some college,No,40.1,4298,Hispanic
+661,32,29.3,1,College+,No,39,3409,White
+662,26,28.7,1,Some college,No,37.6,2889,White
+663,30,19.3,1,HS,No,39,3253,Hispanic
+664,34,23.9,0,HS,Yes,38.2,2870,Black
+665,20,30,2,HS,Yes,36.8,2375,Black
+666,32,18.9,1,Some college,Yes,40.1,3606,White
+667,25,30.5,0,Some college,No,37.8,3549,White
+668,34,19.3,0,College+,No,39.5,3998,Hispanic
+669,29,22.5,1,College+,No,36.6,3138,White
+670,27,23.2,0,College+,Yes,39.3,3217,Hispanic
+671,32,35.7,1,HS,No,39.4,4128,Hispanic
+672,28,15,2,Less than HS,No,39.6,3776,Hispanic
+673,28,26.3,2,HS,Yes,37.5,3034,White
+674,25,30,0,Some college,Yes,38,3275,Black
+675,27,25.3,2,HS,No,39.1,3738,White
+676,24,27.8,1,College+,No,36.6,3321,White
+677,29,37.8,2,Some college,No,37.4,3537,White
+678,29,33.1,0,Some college,Yes,39.4,3427,White
+679,32,35.9,2,College+,No,39.1,3545,White
+680,21,33.9,0,College+,No,41,4371,White
+681,28,36.7,0,Some college,No,39.2,3060,White
+682,32,37.1,0,College+,No,37.5,3022,White
+683,31,18.5,1,Some college,Yes,35.6,2626,Hispanic
+684,45,32.5,0,College+,No,37.6,3110,White
+685,32,27.8,3,HS,No,36.8,3132,Hispanic
+686,28,20.3,1,Some college,No,39.4,4010,Hispanic
+687,33,15.8,2,Some college,No,42,3968,White
+688,29,17.8,2,College+,Yes,37.2,3350,White
+689,26,21.7,0,College+,Yes,39.7,2586,Black
+690,23,27,2,Some college,No,40.2,3444,Hispanic
+691,27,27.6,0,College+,No,41.2,4039,White
+692,28,26,3,College+,No,37.6,3082,White
+693,34,22.2,1,College+,No,39.8,3619,White
+694,34,30.8,2,HS,No,38.1,3690,Black
+695,33,27.1,0,Some college,No,38.2,3061,Black
+696,25,28.8,2,College+,No,38.1,2961,Hispanic
+697,27,26.5,1,Less than HS,No,37.3,3446,Hispanic
+698,38,21.2,2,Less than HS,Yes,38.9,2929,Hispanic
+699,39,31.7,0,College+,Yes,37.3,3010,White
+700,20,19.7,0,College+,No,37.6,2793,Black
+701,24,32.5,2,HS,No,37.3,3248,Hispanic
+702,35,30.6,0,College+,Yes,37.6,3003,Hispanic
+703,28,26.8,1,Some college,No,37.9,2926,Hispanic
+704,24,30.8,2,Less than HS,No,38.9,4347,Hispanic
+705,26,30.5,1,College+,No,38.4,3444,Black
+706,23,28.8,1,Some college,Yes,36.6,3506,White
+707,29,21.7,0,College+,No,38.1,2883,Hispanic
+708,26,25.3,0,HS,No,38.8,3144,White
+709,32,25.8,1,College+,No,39.2,3429,White
+710,32,28.4,1,HS,No,37.9,3828,Hispanic
+711,26,19.3,0,Less than HS,No,39.5,3989,Hispanic
+712,26,28.7,1,HS,No,38.1,2952,Black
+713,30,22,2,Some college,No,39.1,3380,White
+714,31,26.7,0,Less than HS,Yes,35.9,2784,Hispanic
+715,38,32.9,1,Some college,No,35.3,3278,Hispanic
+716,27,23.3,2,Less than HS,No,39.1,3215,Hispanic
+717,28,26.9,3,Some college,No,39.9,3309,White
+718,39,26.5,3,College+,No,37.8,3721,Black
+719,32,19.7,1,Some college,No,40,2765,Hispanic
+720,30,23.6,0,Less than HS,Yes,38.8,3211,Black
+721,34,24.6,2,Some college,Yes,37.5,3478,Hispanic
+722,23,26.2,0,Some college,No,39.9,3565,Hispanic
+723,26,28.5,2,Some college,No,40.9,3791,White
+724,29,19.4,1,College+,No,41.5,3313,White
+725,24,35.2,0,HS,No,38.7,3406,Black
+726,34,20.5,0,HS,No,39.8,3792,Hispanic
+727,33,15,0,Less than HS,No,40.6,3896,Hispanic
+728,35,27.3,2,HS,No,40,3656,Hispanic
+729,34,15.8,2,College+,Yes,35.6,2339,Black
+730,28,31.7,1,College+,No,39.8,3003,White
+731,23,26.7,0,College+,No,37.9,2523,Black
+732,35,24.2,1,College+,Yes,36.1,3612,Hispanic
+733,22,25.1,1,College+,Yes,38.5,2813,White
+734,30,26.4,0,Less than HS,No,39.5,3019,White
+735,20,25.2,0,College+,No,39.5,3564,White
+736,27,24,3,College+,No,37.5,3379,Hispanic
+737,35,20.5,2,HS,No,40.6,3619,Black
+738,31,27.3,2,Some college,No,37.3,3681,Hispanic
+739,38,25.2,0,College+,No,39.2,2315,Hispanic
+740,22,20.5,3,College+,No,40.8,4261,Black
+741,28,21.9,1,Less than HS,No,40.1,3826,White
+742,22,23.7,0,College+,No,38.4,3234,Hispanic
+743,34,34.8,1,Some college,Yes,36.4,3229,Black
+744,25,20.9,0,College+,Yes,38.5,3225,White
+745,22,26.2,0,College+,No,36.8,3399,White
+746,29,23.4,3,College+,No,40.2,3833,White
+747,28,21.1,0,HS,No,39.2,3311,White
+748,27,29.7,0,College+,No,36.1,3173,White
+749,35,24.8,0,Less than HS,No,38.4,3567,Hispanic
+750,27,22.9,1,Some college,No,40.5,3287,White
+751,28,19,0,Some college,No,40.6,3468,Black
+752,32,20.1,0,Some college,No,38,3134,Hispanic
+753,40,40.3,0,College+,No,36.9,3949,Hispanic
+754,29,31.4,1,HS,Yes,40,2902,White
+755,35,30.6,1,College+,Yes,35.6,2929,White
+756,27,24.4,0,Some college,No,38.8,2770,Hispanic
+757,28,24.4,3,Some college,No,39.1,3173,Hispanic
+758,30,27.5,1,Less than HS,No,40.2,4022,Hispanic
+759,22,23.2,2,Less than HS,No,41.5,3591,White
+760,42,25.4,3,Some college,No,40.5,3782,Black
+761,24,22.7,0,HS,No,39.7,3831,White
+762,28,25.1,0,Less than HS,No,39.3,3489,Hispanic
+763,19,36.6,0,HS,No,39,2735,White
+764,28,29.6,2,College+,No,38.5,3288,Hispanic
+765,18,25.9,0,College+,No,40.7,3455,White
+766,25,29.5,2,Some college,No,37.4,3208,White
+767,27,31.5,1,College+,No,39.6,3704,White
+768,30,34.5,1,Less than HS,No,38.8,3762,Hispanic
+769,15,17,1,HS,No,38.3,3734,Hispanic
+770,28,26.2,0,College+,Yes,36.6,3324,Hispanic
+771,26,19.7,1,Less than HS,No,39.2,3416,White
+772,33,28,2,HS,No,37,2550,White
+773,27,18.1,1,HS,No,37.5,2502,White
+774,29,24.5,2,HS,No,40.3,3295,Hispanic
+775,27,23.6,2,Some college,Yes,38,3264,White
+776,34,29.7,0,Some college,Yes,35.7,3154,Hispanic
+777,22,28,1,College+,No,37.8,3226,White
+778,23,26.4,0,Some college,No,40.5,2953,White
+779,32,20.1,1,College+,No,39,3319,Black
+780,33,21,0,Less than HS,No,37.8,3058,White
+781,30,30.2,1,Some college,No,37.7,3717,White
+782,37,26.2,1,Less than HS,No,39.1,3712,Black
+783,28,15,1,Some college,No,38.9,2606,Hispanic
+784,26,21.6,0,Some college,No,38.2,2748,Hispanic
+785,30,29.1,0,College+,No,39.1,2682,White
+786,24,25,1,Some college,No,39.4,3410,White
+787,20,30.9,0,College+,No,39.4,3478,Black
+788,29,23.8,1,HS,No,40.8,3886,Black
+789,32,27.9,0,Some college,No,39.7,3242,White
+790,27,27.8,1,Less than HS,Yes,38,2867,White
+791,32,22.9,1,Some college,No,38.4,3367,White
+792,25,28.3,0,College+,No,41.6,3679,White
+793,38,24.9,2,HS,No,37,3481,White
+794,32,24.4,0,Less than HS,No,38,3286,Black
+795,24,22.9,2,HS,No,39.3,3072,White
+796,45,23.2,1,College+,No,37,3343,White
+797,35,25.8,0,College+,No,39.9,4388,White
+798,35,27.2,0,Some college,No,39.2,3995,White
+799,24,26.7,1,College+,No,41.2,3082,Black
+800,35,27.9,0,Some college,Yes,36.1,3227,White
+801,28,28,1,Some college,No,37.3,3300,White
+802,28,29.1,1,HS,No,38.2,3461,White
+803,35,24.4,1,HS,No,38,2993,Hispanic
+804,27,22.1,0,Some college,Yes,39.8,2858,White
+805,22,28.4,1,Less than HS,No,39.5,3383,Black
+806,35,31.7,1,Less than HS,No,38.7,3359,Black
+807,23,27.5,0,HS,No,36.6,2726,White
+808,26,18.9,3,Less than HS,No,40.7,2968,Hispanic
+809,30,31.8,3,College+,Yes,37.3,1944,Black
+810,37,29.5,0,Less than HS,No,37.9,3407,White
+811,26,24.1,2,Less than HS,Yes,39.1,3317,Hispanic
+812,34,33.8,0,Some college,No,41.5,4887,Hispanic
+813,28,29.2,0,Some college,No,38.1,3977,Hispanic
+814,23,29.1,2,Less than HS,No,38.9,2875,White
+815,30,20.4,0,College+,No,36.5,2956,White
+816,28,25.5,3,Some college,Yes,40,2755,Black
+817,32,27.5,2,Some college,No,40.3,2957,White
+818,23,25.4,0,College+,Yes,38.3,3827,Hispanic
+819,25,23,1,Some college,No,39.3,3580,White
+820,28,22.9,3,Some college,Yes,36.9,3088,White
+821,24,15,0,HS,Yes,37.5,2899,White
+822,26,17.5,2,Some college,Yes,40.1,3391,Hispanic
+823,29,20.6,3,College+,No,40.4,4031,Hispanic
+824,32,23.5,1,HS,No,40.7,3943,Black
+825,25,22.7,0,College+,No,36.2,2948,Black
+826,36,20.4,0,HS,Yes,40,3146,White
+827,27,27.9,1,Some college,No,36.8,3683,Hispanic
+828,28,27.8,1,College+,No,38.9,3828,White
+829,23,30.3,0,Some college,No,40.6,3855,White
+830,23,29.1,3,College+,No,41.6,3411,White
+831,30,32.1,0,Some college,No,39.3,3158,White
+832,22,20.4,3,College+,No,39.7,3810,Black
+833,28,23.9,2,HS,No,38.4,3348,Black
+834,34,30.8,2,HS,No,37.8,3000,White
+835,24,18.3,2,College+,No,38.1,2952,Black
+836,31,34.4,2,Some college,No,38.4,3553,Black
+837,26,26.7,3,College+,No,39.7,3846,Hispanic
+838,22,26.9,1,College+,No,39.5,3955,White
+839,36,21,0,College+,Yes,36.3,2793,Hispanic
+840,24,15.2,2,Some college,Yes,37.9,2506,Hispanic
+841,20,28.2,0,College+,No,37.3,3864,Hispanic
+842,41,28.7,1,Some college,No,40.2,2970,White
+843,41,23.3,0,Some college,No,40.2,3697,Hispanic
+844,19,18.8,0,Some college,Yes,35.1,3239,Hispanic
+845,34,24.6,1,Some college,No,40.8,2883,Hispanic
+846,38,31.9,1,HS,No,38,3049,White
+847,35,30.4,1,Some college,No,36.8,2918,White
+848,32,21.4,0,Some college,No,36.2,3438,Hispanic
+849,42,33.6,2,College+,No,38.6,3520,White
+850,24,25,2,College+,No,39,3767,Hispanic
+851,31,34.7,2,College+,No,40.2,3450,Black
+852,29,26.7,3,HS,No,40.7,3398,Hispanic
+853,38,24,0,Some college,Yes,35.1,2616,White
+854,27,31.4,2,Less than HS,No,40.5,2883,White
+855,20,25.5,0,College+,No,38.3,2874,Black
+856,31,18.2,0,HS,Yes,36.9,2719,White
+857,37,34.5,1,Some college,No,35.6,2956,White
+858,25,29.5,1,College+,No,37.4,3298,Hispanic
+859,27,39.8,0,Some college,No,38.8,3202,White
+860,26,24,1,Some college,No,36.8,3576,Hispanic
+861,23,24.2,0,Some college,No,40.6,3841,White
+862,21,30.6,1,College+,No,38.8,3230,Black
+863,26,21.7,0,Some college,No,37.8,3319,White
+864,30,18,1,Some college,No,39.5,3338,White
+865,31,20.7,0,Some college,No,37.2,3499,Hispanic
+866,27,32.6,1,College+,No,40.1,3557,Black
+867,35,21.6,2,College+,No,41.2,4324,Black
+868,28,30.3,0,HS,No,37.5,3253,Hispanic
+869,25,24.6,2,Some college,Yes,39,2819,Hispanic
+870,29,25.5,0,College+,No,39.3,3085,White
+871,35,30.1,0,College+,No,41.1,3577,Black
+872,33,31.2,2,Some college,No,39.8,3852,Hispanic
+873,28,29.2,0,Some college,No,38.5,3724,Black
+874,24,28.2,0,College+,No,39.3,3789,Hispanic
+875,38,18.8,2,College+,No,39.6,3242,White
+876,40,24.6,0,HS,No,39.7,3555,White
+877,26,17.9,1,Some college,No,39.9,4071,White
+878,30,30.9,0,Some college,Yes,38.7,3180,Hispanic
+879,29,31.2,1,Some college,Yes,38,4005,White
+880,26,18,2,HS,No,39.5,3480,Black
+881,33,27.8,2,HS,No,39.3,3615,Black
+882,18,20.3,0,HS,No,38.9,3253,Hispanic
+883,27,35.1,0,College+,No,36.9,3173,Hispanic
+884,30,24.6,1,HS,No,39.6,3563,Hispanic
+885,33,25.9,0,College+,No,40.7,3066,White
+886,32,27.7,0,College+,No,38.1,3160,White
+887,32,25.8,0,HS,No,38.7,3481,Hispanic
+888,37,29.2,0,College+,No,39.1,3569,White
+889,33,19.2,0,College+,No,40.1,2705,White
+890,34,32,1,College+,Yes,34.6,2180,Hispanic
+891,27,28.5,0,HS,No,39.4,3390,White
+892,37,24.8,0,College+,No,37,3038,Hispanic
+893,26,23.5,1,College+,No,40,4124,Hispanic
+894,23,15.7,3,College+,No,37.7,3161,White
+895,34,15.1,0,College+,No,40.2,3603,White
+896,19,19,1,HS,Yes,38.2,2945,White
+897,30,15,2,HS,No,36.7,3199,Hispanic
+898,42,33.8,0,College+,No,39,3458,Black
+899,36,30.2,1,HS,No,37.4,3705,White
+900,29,23,1,Some college,No,40.5,3415,White
+901,32,29.4,0,College+,No,41.1,3633,Black
+902,26,29.6,1,HS,Yes,36.3,2928,White
+903,20,33.7,0,HS,No,41.3,3747,Hispanic
+904,30,18.9,3,Some college,No,37.7,3496,Hispanic
+905,34,23.6,0,Less than HS,No,41.3,4082,White
+906,29,36.1,2,College+,No,36.5,3479,White
+907,25,19.1,0,College+,Yes,37.2,3039,White
+908,28,29.8,2,HS,No,38.7,2788,White
+909,29,30.7,0,College+,No,35.5,3395,White
+910,40,27.1,2,College+,No,39,3307,White
+911,29,20.9,1,College+,No,38.8,4242,Hispanic
+912,28,28.5,0,Less than HS,No,40.6,3629,White
+913,22,25,2,HS,No,38.8,3178,Hispanic
+914,32,23.7,1,Some college,No,37.3,3281,White
+915,29,20.4,2,College+,No,39.5,3164,Black
+916,25,24.2,3,HS,No,42,3420,White
+917,32,28.3,0,Some college,No,38.5,2797,Hispanic
+918,30,20.5,1,College+,No,40.4,3352,White
+919,29,19.9,2,HS,No,42,4471,Black
+920,31,25.4,0,College+,Yes,37.5,3318,Black
+921,30,32.4,0,Less than HS,No,39.3,3589,Hispanic
+922,32,21.9,1,College+,No,38.3,3352,Hispanic
+923,35,24.2,0,College+,No,39.8,3283,White
+924,29,25.3,3,Some college,No,38.5,2735,Black
+925,26,25,2,College+,Yes,36.8,2758,White
+926,27,23.3,0,College+,No,38.5,2968,Black
+927,20,19.6,0,HS,No,39,3034,Black
+928,33,27.7,2,Some college,No,40.5,3742,Hispanic
+929,34,31.9,0,HS,Yes,39.6,3278,Hispanic
+930,37,23,2,Some college,No,39.7,2868,Hispanic
+931,25,23.3,0,Less than HS,Yes,35.8,2809,Hispanic
+932,35,27.2,3,Some college,No,38,2915,Black
+933,22,23.1,0,Less than HS,Yes,37.3,3432,White
+934,34,31,0,Less than HS,No,39.6,3020,Hispanic
+935,41,27.2,2,HS,Yes,36.5,2933,Hispanic
+936,30,32.4,2,Some college,Yes,37.7,3163,White
+937,36,23.5,2,College+,Yes,35.3,2532,Hispanic
+938,30,31.1,1,Some college,No,42,3892,Hispanic
+939,24,33.8,1,Some college,No,39.6,3392,Hispanic
+940,25,29,0,College+,Yes,39.8,2769,White
+941,24,21.8,2,Some college,No,41.3,4099,Hispanic
+942,36,23.6,0,HS,No,38.7,3135,White
+943,24,22.9,0,College+,No,39.1,3108,Hispanic
+944,27,28.8,2,HS,No,38.7,2750,White
+945,31,24.7,1,Some college,No,40.3,3511,White
+946,36,24.1,1,College+,No,40.8,4172,White
+947,29,23.8,1,Less than HS,Yes,37.4,3025,White
+948,31,24.1,1,College+,No,37.8,3141,Hispanic
+949,24,20.9,1,HS,No,39.5,3543,White
+950,32,28,1,HS,No,38.5,3239,White
+951,38,25.4,1,HS,No,40.2,3685,White
+952,37,26.4,0,Some college,No,36.4,3004,Hispanic
+953,18,29,1,HS,No,39,3307,White
+954,32,30.8,0,Some college,No,37.3,3371,Black
+955,25,33.5,0,Some college,No,38.4,3871,Hispanic
+956,20,26.1,1,HS,No,40,3847,Hispanic
+957,31,27.4,0,HS,No,38.7,2778,Black
+958,28,33,1,Some college,Yes,37.5,3103,White
+959,29,21.6,0,Some college,No,40.5,3958,Black
+960,34,29.8,1,College+,No,37.1,3067,Hispanic
+961,35,28.2,1,Some college,Yes,39.8,2763,Hispanic
+962,25,28.6,1,College+,No,40.9,3696,Hispanic
+963,33,19,3,Some college,No,38.6,3656,Hispanic
+964,18,33.2,0,College+,No,39,2554,White
+965,26,23.3,0,Some college,Yes,36.2,2759,White
+966,27,26.3,1,College+,No,41.6,3021,Hispanic
+967,27,24.6,1,College+,Yes,36.5,3586,White
+968,31,17.9,3,Some college,No,38.7,3509,White
+969,19,26.2,0,Some college,No,38.1,3484,Hispanic
+970,20,29.4,2,Some college,No,35.7,2593,White
+971,34,20.3,2,HS,Yes,38.2,3025,Black
+972,26,25.6,1,Some college,No,40.3,3367,Hispanic
+973,23,25.4,1,HS,No,41.9,3611,White
+974,27,23.6,0,HS,No,37.5,3095,White
+975,32,27.2,0,College+,Yes,40.2,3401,White
+976,30,26.7,1,Less than HS,No,41.2,3581,White
+977,30,21.2,0,Less than HS,No,39,3172,White
+978,35,28,0,Some college,No,39.2,3973,Black
+979,24,20.7,0,HS,Yes,41.2,3168,Hispanic
+980,18,28.2,1,College+,No,40,3481,Hispanic
+981,21,32.8,1,College+,Yes,39,3637,White
+982,30,25.5,2,HS,No,40.7,2895,Hispanic
+983,27,22.2,1,Less than HS,No,39.2,3253,Hispanic
+984,19,29.4,1,College+,No,38.7,3441,Hispanic
+985,22,23.6,1,College+,No,38.4,3510,White
+986,31,29.2,0,College+,No,41.1,3866,Black
+987,29,33.2,0,Some college,No,38.3,2967,Hispanic
+988,18,26.2,1,Some college,No,38.5,3280,White
+989,24,31.3,0,College+,No,38.8,3782,Black
+990,27,25.6,2,College+,No,39.2,3785,Hispanic
+991,24,20.7,2,Some college,No,42,3376,White
+992,33,22,3,Some college,No,36.1,3291,White
+993,27,29.2,1,College+,No,40.5,3577,Hispanic
+994,22,33.8,0,HS,No,38.5,3412,White
+995,32,24.6,2,HS,No,38.2,4499,White
+996,35,26.7,1,Some college,Yes,35.5,2181,White
+997,18,25.1,0,Less than HS,No,38.2,3264,White
+998,27,24.7,0,Some college,No,38.4,3009,Hispanic
+999,21,25,1,College+,No,37.1,2944,White
+1000,33,27,1,Some college,No,40.4,4056,White
+1001,29,16.7,3,Some college,No,38.7,2880,Black
+1002,26,29.7,0,Some college,Yes,37,3456,Hispanic
+1003,24,23.3,1,College+,No,41.6,3690,Hispanic
+1004,27,24.9,1,College+,No,39.6,3692,Hispanic
+1005,28,27.7,1,College+,No,38.8,3505,Hispanic
+1006,25,21,2,HS,No,37.6,3445,Hispanic
+1007,24,30.5,1,Some college,No,37.6,3667,White
+1008,21,28.7,3,Some college,Yes,37.3,3331,White
+1009,31,19.1,2,College+,No,39,2827,Hispanic
+1010,26,27.4,1,College+,Yes,35.8,2543,Hispanic
+1011,32,23.8,0,College+,No,39.2,2966,White
+1012,33,23.5,2,HS,No,35.4,2390,White
+1013,23,22.1,1,Some college,No,38.8,3129,White
+1014,28,18.4,1,College+,No,38.5,3571,Black
+1015,16,24.3,0,HS,No,38.2,3363,Black
+1016,25,26.5,0,College+,No,39.3,3984,White
+1017,33,20.7,2,College+,No,39.5,3770,White
+1018,25,26.6,2,HS,No,39.1,3038,Hispanic
+1019,21,24.3,0,College+,No,42,3532,Hispanic
+1020,30,22.1,0,Some college,No,38.8,2479,White
+1021,29,31.7,2,HS,No,39.5,4227,White
+1022,27,17.5,0,Less than HS,No,39.3,3564,Hispanic
+1023,19,37.4,0,College+,No,39.3,3251,Hispanic
+1024,28,32.3,0,Some college,No,38,3170,Hispanic
+1025,29,24.3,1,College+,No,41,2827,Hispanic
+1026,28,29.3,1,HS,No,41.1,3271,White
+1027,23,22.7,0,Some college,No,39,3248,White
+1028,39,32.6,1,Less than HS,No,36.3,3112,Hispanic
+1029,38,35.7,1,HS,No,39.1,3793,Black
+1030,27,17.3,2,Some college,No,38.3,2580,Hispanic
+1031,25,22.1,3,Some college,No,41.8,4085,Hispanic
+1032,24,23.2,2,College+,No,41.7,4004,Hispanic
+1033,31,27.3,1,Some college,No,38.9,3284,White
+1034,23,38.9,0,HS,No,39.7,3608,White
+1035,23,20.3,1,HS,Yes,35.1,2446,Black
+1036,26,27.4,1,HS,No,39.4,3965,Black
+1037,37,24.4,0,College+,No,39.1,3421,White
+1038,22,32.8,2,Some college,No,39.2,3267,Hispanic
+1039,35,23,1,HS,No,38.8,2824,Hispanic
+1040,29,27.9,3,HS,No,39.1,4309,White
+1041,19,23.8,1,HS,No,40.4,3431,White
+1042,35,23.2,3,Some college,No,38.4,2701,Black
+1043,29,36,1,HS,Yes,38.9,4155,Black
+1044,27,29,1,Some college,No,36.9,3125,White
+1045,30,26,1,HS,No,39.1,3173,White
+1046,35,26.9,0,HS,No,38.3,3589,Hispanic
+1047,32,33.6,0,HS,No,40.4,3086,White
+1048,22,31.7,1,Some college,No,38.8,4305,Hispanic
+1049,20,21.9,2,Some college,No,38.8,3431,Hispanic
+1050,27,15.8,0,Less than HS,No,39.3,3006,White
+1051,32,26.3,0,College+,No,38.6,2889,Black
+1052,30,21.5,2,HS,No,38.6,2789,Black
+1053,29,17.9,0,Less than HS,No,39.1,2681,Hispanic
+1054,27,18.8,0,Some college,Yes,36.7,2807,White
+1055,41,21,0,Some college,No,40.1,3393,Hispanic
+1056,27,27.3,1,College+,No,39.9,4045,Black
+1057,32,24.3,0,HS,No,40.5,3649,White
+1058,25,26.2,1,Some college,Yes,37.3,3442,White
+1059,33,28.3,1,College+,No,39,3432,Hispanic
+1060,35,29.8,2,College+,Yes,38.5,3816,Hispanic
+1061,30,19.8,1,HS,No,36.6,2684,Hispanic
+1062,29,31.6,1,Less than HS,No,39.2,2937,Hispanic
+1063,24,26.4,2,College+,No,37.1,3503,White
+1064,19,26.7,0,Some college,No,40.3,3658,Hispanic
+1065,17,30.2,2,HS,No,38.4,2847,White
+1066,32,31,1,HS,Yes,37.3,3115,Black
+1067,27,23.2,0,Some college,No,37.7,3542,White
+1068,30,19.9,0,Less than HS,No,41.4,4069,White
+1069,28,28.9,1,Some college,No,38.7,3110,White
+1070,37,34.7,0,Less than HS,No,40.8,3487,Hispanic
+1071,19,24.1,0,HS,No,39.4,3160,Hispanic
+1072,26,22.1,1,College+,No,39.2,2995,White
+1073,35,32.7,3,HS,No,38.7,3104,White
+1074,31,22.8,0,HS,Yes,40.6,3636,White
+1075,36,33.9,0,Some college,Yes,37.1,3116,Hispanic
+1076,33,27.5,2,Less than HS,No,39.3,2956,White
+1077,28,15,1,Some college,No,40.8,4151,White
+1078,29,33.3,2,College+,No,37.3,3339,White
+1079,33,25.8,3,HS,No,38,2923,White
+1080,24,24.5,0,Some college,No,38.4,3014,White
+1081,37,28.9,1,Some college,No,40.1,3817,White
+1082,30,27.8,2,College+,No,40.9,3234,White
+1083,33,30.7,0,HS,No,39.2,3649,Hispanic
+1084,30,22.3,2,Some college,No,39.8,3619,Hispanic
+1085,29,26.6,3,HS,No,38.2,3536,White
+1086,38,32.1,2,HS,No,41.3,3965,White
+1087,26,26.1,3,Less than HS,No,38.8,3128,White
+1088,28,19.7,0,Some college,No,34.8,2893,White
+1089,35,30.6,0,HS,Yes,35.9,2308,White
+1090,31,28,1,College+,No,39.7,3520,Black
+1091,20,23.1,0,College+,No,39.7,3376,Hispanic
+1092,35,25.7,1,HS,No,40.3,3446,White
+1093,26,35,0,College+,Yes,37,3697,Hispanic
+1094,29,15.4,0,Some college,No,37.6,3677,Black
+1095,24,29.6,1,Some college,No,40.4,3407,Hispanic
+1096,26,33.2,0,Some college,No,38.3,3403,Black
+1097,26,25,3,Some college,No,38.7,3341,White
+1098,22,30.2,1,Some college,No,39.4,3420,Hispanic
+1099,30,23.5,0,HS,No,39.4,3738,Hispanic
+1100,19,21,2,HS,No,39.1,3058,White
+1101,32,28.1,0,HS,No,37.8,3211,White
+1102,31,16.7,1,Some college,No,37.5,3337,Hispanic
+1103,25,26.4,1,HS,Yes,33.8,2316,Hispanic
+1104,25,35.6,1,HS,No,39,4042,White
+1105,26,22,0,HS,No,39.3,3687,Black
+1106,35,31.7,1,HS,No,39.5,3440,Hispanic
+1107,43,26.3,0,College+,No,37.4,3069,Hispanic
+1108,27,31.8,2,HS,No,36.6,3609,White
+1109,29,15.3,3,College+,No,39.4,2362,White
+1110,26,26.7,1,Some college,Yes,40.6,2960,White
+1111,30,29.3,1,College+,Yes,36.7,2983,White
+1112,29,22.3,0,College+,Yes,40.6,3248,White
+1113,25,17.5,0,Less than HS,No,39.6,3408,White
+1114,34,33.3,0,HS,No,39.3,3211,White
+1115,27,21.7,2,College+,No,38.4,3386,Hispanic
+1116,23,21.7,0,HS,Yes,39.7,3667,White
+1117,27,19.3,3,Less than HS,No,40.2,2953,White
+1118,37,30.5,1,HS,No,39.1,3251,Hispanic
+1119,27,29.2,1,College+,No,38.3,3011,Hispanic
+1120,29,33.3,1,HS,No,40,3649,White
+1121,30,31.6,2,HS,No,39.6,3145,White
+1122,28,27.3,1,College+,No,39.5,2945,White
+1123,29,26.5,0,College+,Yes,38.4,3148,Hispanic
+1124,28,24.6,0,Some college,No,37.7,3191,White
+1125,37,23.3,0,Some college,No,39.3,3233,White
+1126,32,22.8,0,HS,Yes,36.2,2809,Hispanic
+1127,34,20.7,0,College+,Yes,35.4,2071,White
+1128,24,31.3,1,Some college,No,40.5,3204,Hispanic
+1129,37,20.7,0,Some college,No,38.1,3092,White
+1130,27,27.7,3,HS,No,37.6,3090,Black
+1131,31,21.2,0,Some college,No,38,3626,Black
+1132,28,26.5,0,Less than HS,No,39.4,3186,Hispanic
+1133,30,20.7,1,Some college,No,40.6,3676,Black
+1134,35,30.3,0,HS,No,35.8,2663,White
+1135,25,28.8,0,College+,No,40.1,3162,Black
+1136,36,22.1,1,College+,No,38.8,3417,White
+1137,28,23.8,0,College+,No,40.7,3954,Black
+1138,25,25.8,0,College+,Yes,37.7,2942,Black
+1139,32,20.5,0,Some college,No,40.1,3199,Black
+1140,28,25.6,1,Less than HS,No,41,4431,White
+1141,26,26.5,1,College+,No,37.2,3113,White
+1142,22,27.4,0,Some college,No,40,2941,White
+1143,31,27.1,2,HS,No,38.8,3378,Black
+1144,40,24.8,3,College+,No,36.7,2830,White
+1145,20,34.6,1,Less than HS,No,35.7,3491,White
+1146,22,21.6,1,Some college,No,39.6,3754,White
+1147,36,26.5,0,HS,No,39.8,3500,Black
+1148,31,35.1,1,College+,Yes,38.5,2579,Hispanic
+1149,21,19.2,1,Some college,Yes,38.3,3584,White
+1150,30,26.8,3,College+,No,37.1,3287,White
+1151,27,32.4,1,Some college,No,40.1,3151,White
+1152,33,19.2,0,Some college,No,42,3539,White
+1153,27,34.1,2,Some college,No,41.2,3827,White
+1154,37,26.1,0,Some college,No,38.5,3519,White
+1155,28,33.4,1,Less than HS,No,39.9,3161,Hispanic
+1156,26,37.1,1,Some college,Yes,38.1,3241,White
+1157,30,20.1,2,Some college,Yes,38.3,3144,White
+1158,30,30.6,0,Some college,No,38.9,3869,Black
+1159,28,26.2,0,HS,No,37.1,3057,White
+1160,26,22.3,1,College+,No,38.6,2719,White
+1161,31,25.6,1,HS,No,38.4,4028,White
+1162,33,30.5,0,Some college,No,39.8,2944,White
+1163,29,18.7,3,College+,No,37.3,3500,White
+1164,30,24.3,0,HS,No,40.6,3605,Black
+1165,22,32.8,1,Some college,No,37.1,3049,Hispanic
+1166,29,26.3,2,HS,No,40.6,3216,White
+1167,15,32.9,0,Some college,No,40.2,3785,Black
+1168,28,20.1,3,Some college,Yes,37.4,3167,Black
+1169,31,20.9,0,Less than HS,Yes,38.9,3129,White
+1170,36,23,2,Some college,No,38.1,3079,Hispanic
+1171,37,33,0,Less than HS,No,37.9,3378,White
+1172,31,36.8,0,HS,No,39.7,3867,White
+1173,26,22,1,College+,No,40,3879,White
+1174,35,26,1,College+,No,40.1,3856,White
+1175,34,29.6,1,College+,No,37.5,3240,Hispanic
+1176,32,20.2,1,HS,Yes,37.1,3103,White
+1177,29,37.7,0,College+,No,38.3,2890,White
+1178,35,24.2,3,College+,No,39,3390,Hispanic
+1179,34,16.4,1,HS,No,40.3,3211,White
+1180,25,23.7,0,College+,No,39.9,3651,Hispanic
+1181,32,28.1,0,Less than HS,Yes,40.5,2491,Black
+1182,42,26.5,0,HS,Yes,39.3,4426,Hispanic
+1183,28,36.8,0,College+,No,39.9,4218,Hispanic
+1184,26,25.1,1,HS,No,40.5,3269,White
+1185,32,25.6,1,Some college,No,38.1,3233,White
+1186,36,24.2,2,HS,No,38.7,3506,White
+1187,23,25.4,0,Some college,Yes,38.1,2795,Black
+1188,37,30,0,HS,No,38.9,3446,White
+1189,29,18.6,2,College+,Yes,38.8,2956,Hispanic
+1190,29,23.6,1,College+,No,37.1,3334,White
+1191,35,35.3,1,College+,No,37.6,3509,Hispanic
+1192,27,21.9,0,College+,Yes,36.4,2993,White
+1193,35,23.3,0,HS,No,40.7,3989,White
+1194,33,27,1,Some college,Yes,35.6,2885,Hispanic
+1195,36,37.3,3,Some college,Yes,36.4,2707,White
+1196,29,28.8,1,HS,No,37,3253,White
+1197,28,20.3,2,Some college,Yes,40.5,3376,White
+1198,23,22.9,0,HS,No,39.6,3273,White
+1199,23,18.3,2,HS,No,37.9,3913,White
+1200,29,20.2,0,College+,Yes,37.1,2917,White
+1201,23,15,0,HS,No,37.3,3928,Hispanic
+1202,33,34,2,College+,Yes,37.5,3195,Hispanic
+1203,20,25.8,2,College+,No,40.2,3362,Hispanic
+1204,35,23.5,2,College+,Yes,38.2,3920,White
+1205,24,26.6,1,College+,No,39.4,3124,White
+1206,27,32.2,0,College+,No,38.7,3375,Hispanic
+1207,23,27.3,1,Less than HS,No,38.9,2995,Black
+1208,30,23,0,Some college,No,38,3537,White
+1209,33,26.7,2,Some college,Yes,36,2988,White
+1210,32,22.6,0,Some college,No,38.8,3353,Hispanic
+1211,32,31.3,0,Some college,No,39,2987,Hispanic
+1212,33,25.2,1,Some college,No,39,2942,Hispanic
+1213,26,37.6,2,Less than HS,No,41,3085,Hispanic
+1214,29,26.8,2,Some college,No,40.9,3635,Hispanic
+1215,43,26.4,0,HS,No,38.2,3570,White
+1216,31,24.9,0,College+,No,41.1,3850,White
+1217,34,24.4,1,College+,Yes,36,2338,Black
+1218,27,27.1,2,HS,No,39.7,3669,Black
+1219,21,19.5,0,Some college,No,37.7,2320,White
+1220,23,32.5,2,College+,No,38.8,3258,Black
+1221,41,32.6,1,College+,Yes,38.7,3631,White
+1222,31,18.6,2,HS,Yes,35.5,1714,Hispanic
+1223,24,24.4,0,HS,No,41.8,4208,Hispanic
+1224,27,29.9,1,College+,No,38.3,3515,White
+1225,28,34.2,0,College+,No,40.6,3839,Hispanic
+1226,39,28,0,College+,No,37.3,3132,White
+1227,30,27.4,1,HS,Yes,37.5,3845,Hispanic
+1228,31,35.1,1,College+,No,38.6,3951,Black
+1229,28,16.5,0,College+,No,37.9,3374,White
+1230,31,18.6,0,Less than HS,No,40.9,3508,White
+1231,33,30.7,0,Some college,No,37.8,3390,White
+1232,30,22.7,0,College+,No,40.6,3789,White
+1233,28,23.9,0,Some college,No,39.6,3275,Black
+1234,30,26.5,1,College+,No,40.3,3076,Hispanic
+1235,29,21.4,0,College+,No,36,3451,White
+1236,24,21.8,0,College+,No,39.4,3442,Hispanic
+1237,27,27.6,0,College+,No,36.6,3862,White
+1238,25,29.2,1,Some college,No,42,3650,Hispanic
+1239,24,21.4,2,Less than HS,No,41.9,3482,Hispanic
+1240,20,20.7,1,College+,No,38.6,3248,Black
+1241,38,32.9,2,HS,Yes,37.6,2639,Hispanic
+1242,31,26,1,HS,No,35.9,2451,Black
+1243,34,31.2,0,Some college,No,35.5,2535,Black
+1244,33,24.1,2,College+,No,40.3,3044,White
+1245,25,27.8,0,HS,No,40.6,2868,White
+1246,28,25.1,2,HS,No,38.6,3241,Hispanic
+1247,22,35.4,2,Some college,No,38,2803,White
+1248,20,22,0,Less than HS,No,40.4,3821,White
+1249,29,25.5,1,HS,Yes,39.5,3837,White
+1250,31,24.9,0,Some college,No,37.2,3036,Hispanic
+1251,32,21.8,1,HS,No,39.5,3156,Black
+1252,35,28.2,0,HS,No,37.7,3152,Hispanic
+1253,17,16.7,1,Less than HS,Yes,37.7,2916,White
+1254,29,27.4,3,HS,No,37.9,2957,White
+1255,24,32.1,2,HS,Yes,38.7,3371,White
+1256,28,22.9,2,Some college,No,39.2,3017,Hispanic
+1257,36,25.2,0,HS,No,40.6,4065,Hispanic
+1258,28,33.6,0,Some college,Yes,37.2,3558,Hispanic
+1259,30,26.8,1,College+,No,37.9,3180,White
+1260,27,16,1,Some college,No,38.4,2683,White
+1261,23,30.2,1,HS,No,37.4,3693,White
+1262,25,21.4,0,Some college,No,40.2,3224,Black
+1263,21,25.3,2,HS,No,39.2,3135,White
+1264,20,23.5,1,Less than HS,No,41.3,4140,Black
+1265,29,26,1,HS,No,39.3,3304,White
+1266,35,24.1,0,HS,No,39.7,3502,White
+1267,27,25.4,0,College+,No,38.2,4025,White
+1268,26,15,0,Some college,No,37.3,2710,Black
+1269,27,22.6,1,HS,No,37.5,3330,White
+1270,34,27.7,0,College+,No,38.6,3514,White
+1271,29,28.3,2,College+,No,36.2,3169,Hispanic
+1272,33,32.6,1,Less than HS,No,39.7,4007,Hispanic
+1273,42,26.2,1,Some college,No,36.1,3570,White
+1274,35,29.6,1,HS,No,39,3130,Hispanic
+1275,29,27.6,2,College+,No,40.1,3525,White
+1276,37,21.6,1,HS,No,38.5,3222,White
+1277,27,28.4,2,HS,No,38.8,3922,White
+1278,32,27.3,1,HS,No,40.3,3210,White
+1279,25,23.8,1,HS,No,39.7,3579,Black
+1280,23,17.8,3,Less than HS,No,40.6,3083,White
+1281,27,25.2,2,Less than HS,No,39.1,4117,White
+1282,22,15,1,Some college,No,40,3719,White
+1283,35,18.3,0,College+,Yes,38.1,3074,White
+1284,25,19.4,2,College+,Yes,37.6,3078,Hispanic
+1285,41,25.3,0,College+,Yes,38.7,2963,Hispanic
+1286,36,21.9,1,Some college,No,41.5,3471,Hispanic
+1287,40,28.4,2,HS,No,38.8,3755,Black
+1288,18,31.3,1,College+,Yes,41.5,3683,Hispanic
+1289,27,27,0,Some college,No,39.7,3744,Black
+1290,33,29.3,1,Some college,No,38.8,3513,Hispanic
+1291,29,40.8,0,Some college,No,40.5,3452,Hispanic
+1292,15,25,0,College+,Yes,37,3158,White
+1293,33,27.4,1,HS,No,37.7,3238,Black
+1294,23,25.2,2,Some college,No,37.9,3378,White
+1295,31,27.7,3,College+,No,40.1,3729,White
+1296,40,23.1,2,Some college,No,39.7,3387,White
+1297,32,15.8,1,HS,No,39.6,2863,White
+1298,22,22.1,0,Less than HS,Yes,37.4,3508,Hispanic
+1299,32,27.3,1,Some college,No,38.9,3381,Hispanic
+1300,25,25,1,Less than HS,No,37.2,3251,White
+1301,34,22.2,0,Some college,Yes,39.2,2811,White
+1302,34,31.5,0,HS,No,40.7,3299,White
+1303,27,15.6,1,College+,No,36.7,3354,Hispanic
+1304,41,24.2,0,HS,Yes,37.6,2652,White
+1305,31,22.9,1,HS,Yes,37.8,3416,White
+1306,33,23.7,0,HS,No,39.4,3309,White
+1307,34,27.5,1,Some college,No,38,3402,Black
+1308,40,34.3,0,HS,No,35.4,2967,Black
+1309,36,34.8,1,College+,No,41.9,3663,Hispanic
+1310,31,33.8,0,College+,Yes,37.9,3217,Black
+1311,31,26.2,2,College+,No,39.3,3498,White
+1312,28,20.2,2,Some college,No,39.2,3085,Hispanic
+1313,37,29.8,0,College+,Yes,38.6,2456,White
+1314,30,15,1,College+,Yes,38.1,3426,Black
+1315,29,20.8,1,HS,Yes,37.8,4158,White
+1316,30,28.6,1,HS,No,40.6,3694,White
+1317,25,29.5,3,HS,No,37.4,3203,White
+1318,33,22.5,3,Some college,Yes,37.3,3047,White
+1319,29,30.8,0,Some college,No,39.4,3130,Hispanic
+1320,22,30.5,2,College+,No,40.5,3481,Black
+1321,31,28.4,1,College+,No,38.6,3898,Hispanic
+1322,33,31,3,Less than HS,No,39.3,3589,White
+1323,24,21.1,0,HS,No,38.2,2805,Black
+1324,29,28.6,2,HS,No,39.5,3846,White
+1325,22,21.4,1,College+,No,36,2856,White
+1326,25,25.7,1,Some college,No,38.1,3503,White
+1327,34,28.5,2,Less than HS,Yes,37.6,2654,White
+1328,22,27.9,1,HS,Yes,39.6,3533,Hispanic
+1329,30,30.4,1,HS,No,36,3052,White
+1330,35,24.4,1,HS,No,38.8,2876,White
+1331,28,29.4,0,HS,No,41,3523,Hispanic
+1332,28,28.9,1,Less than HS,No,37.9,3501,White
+1333,24,19.6,1,Some college,No,37,3103,White
+1334,32,27.4,0,HS,No,39.9,3819,Hispanic
+1335,24,18.8,1,Some college,Yes,38.3,3280,White
+1336,29,31.9,1,Less than HS,Yes,37.5,2984,Hispanic
+1337,31,26.2,0,HS,No,37.5,3081,White
+1338,27,22.8,2,HS,No,37.1,3759,Hispanic
+1339,27,23.4,1,Some college,Yes,38.3,2434,White
+1340,36,22.1,1,College+,Yes,35.8,2780,White
+1341,37,34.7,1,Some college,No,40.1,4186,Hispanic
+1342,42,30.5,2,Less than HS,No,37.5,2948,Hispanic
+1343,27,20.2,2,Less than HS,No,40.1,3576,Black
+1344,33,30,2,College+,No,38.6,3147,Hispanic
+1345,32,20.4,0,Some college,Yes,37.2,2399,White
+1346,25,25.3,0,Less than HS,No,37.3,3338,White
+1347,27,20.8,0,HS,No,36.2,3127,Hispanic
+1348,30,16.3,0,HS,No,36.3,2773,Black
+1349,27,15,1,Some college,No,37.3,2935,Black
+1350,31,34.7,1,Some college,No,39.9,3332,White
+1351,25,30.4,1,Some college,Yes,38.1,2823,White
+1352,43,23.5,0,Less than HS,Yes,37.5,3263,Hispanic
+1353,22,24.2,2,Less than HS,No,38,2737,White
+1354,33,30.4,0,College+,No,38.6,2970,Black
+1355,29,27.7,1,College+,No,41.6,3578,White
+1356,35,27.8,1,Less than HS,No,39.2,3498,Hispanic
+1357,40,25.5,2,Some college,No,39,3270,Hispanic
+1358,36,20.4,0,Some college,No,40.7,3980,Black
+1359,26,15.3,2,HS,No,37.8,2759,White
+1360,30,28,0,Some college,No,39,3859,White
+1361,25,33.2,3,HS,No,41.6,3789,White
+1362,21,19.7,0,Some college,No,37.9,3766,Black
+1363,40,30.4,1,HS,No,39.1,3771,Hispanic
+1364,31,28.6,1,Some college,No,39.5,3789,Hispanic
+1365,31,23.5,1,College+,No,37.3,3086,White
+1366,26,23.6,1,Some college,No,36.3,2764,White
+1367,31,25.5,2,HS,No,37.4,2616,White
+1368,29,17.8,0,HS,No,40,3834,White
+1369,22,37.4,0,Some college,No,38.3,3411,White
+1370,24,18,1,College+,No,36.8,3393,White
+1371,28,28.3,1,HS,No,36.4,3225,White
+1372,25,28.2,1,HS,No,39,3908,Hispanic
+1373,38,26.1,0,HS,No,38.5,2871,White
+1374,23,27.1,2,HS,No,39,3505,Black
+1375,25,24.2,0,College+,No,39.9,2661,White
+1376,27,29.5,1,College+,No,39.8,4118,Black
+1377,28,18.8,2,Less than HS,Yes,36.2,2700,White
+1378,24,25,0,College+,No,37.8,3238,Hispanic
+1379,28,32.8,1,Some college,No,37.5,3870,White
+1380,29,21.9,0,Some college,No,40.2,2965,White
+1381,24,25.9,1,College+,No,38.7,3751,White
+1382,34,22.6,1,Less than HS,No,38.8,3001,White
+1383,26,24.8,1,Some college,No,39.7,4016,White
+1384,25,30,0,Some college,Yes,39,2541,White
+1385,24,33.5,0,Less than HS,No,39,3528,Black
+1386,27,27.3,0,Less than HS,Yes,39.2,3183,Hispanic
+1387,24,22.3,1,Some college,Yes,38.7,3007,Hispanic
+1388,25,26.8,0,HS,No,38.9,3380,White
+1389,28,33.2,3,HS,No,37.8,3888,White
+1390,29,23.8,3,HS,No,38.7,3720,White
+1391,30,21,0,College+,Yes,35.2,2315,White
+1392,34,23.8,0,Some college,No,39,3604,Hispanic
+1393,36,26.6,1,College+,Yes,38.6,3209,Hispanic
+1394,29,27.6,1,College+,No,37.6,3027,White
+1395,31,29.8,2,College+,No,40.7,3355,White
+1396,31,23,0,Less than HS,No,36,3495,White
+1397,23,25.9,1,HS,No,37.7,4041,White
+1398,31,29.3,2,Less than HS,No,38,2848,White
+1399,27,32.6,0,HS,No,39,4186,White
+1400,37,38.7,0,Some college,No,38.3,4294,Hispanic
+1401,28,22.8,1,HS,Yes,38.1,3048,Black
+1402,35,15.2,1,HS,No,37.1,3088,Hispanic
+1403,26,26.7,0,HS,Yes,37.8,3261,Black
+1404,16,21.5,1,HS,No,37,3517,Hispanic
+1405,35,27,0,College+,No,38.4,3478,White
+1406,38,17.4,1,HS,No,38.8,3442,White
+1407,23,28.7,0,College+,No,37.2,3141,Black
+1408,21,24.5,2,HS,No,40.9,3996,Hispanic
+1409,27,15,2,HS,No,37.6,3463,White
+1410,25,18.8,1,Less than HS,No,38.3,2886,Black
+1411,43,18.5,1,HS,Yes,37.6,2825,White
+1412,30,26.1,1,HS,No,36,2746,Hispanic
+1413,27,21.2,2,HS,No,39.1,3102,White
+1414,38,19.7,1,Less than HS,No,38.3,3256,Hispanic
+1415,27,23.4,0,College+,No,39.2,3182,White
+1416,29,22.5,0,Some college,No,39.9,3336,White
+1417,31,21.1,0,College+,No,38.6,3004,Black
+1418,25,29.4,1,HS,No,40,3701,Hispanic
+1419,29,23.5,3,Some college,No,41.1,3897,White
+1420,31,28,0,College+,No,40.4,4130,White
+1421,30,30.6,2,HS,Yes,38.6,2889,Hispanic
+1422,34,31.3,0,HS,Yes,37.6,2615,White
+1423,32,15,1,College+,Yes,36.2,2568,White
+1424,30,28.4,0,Some college,No,38.6,3095,White
+1425,25,25,3,HS,No,39.4,2982,White
+1426,33,25.7,2,College+,No,40,3193,Hispanic
+1427,34,25.6,1,College+,No,37.1,3360,White
+1428,28,27.1,1,College+,No,40.9,4445,Hispanic
+1429,23,33.4,0,HS,No,41.4,4022,White
+1430,28,31.8,1,College+,No,37.5,2909,White
+1431,27,38.9,2,HS,No,37.7,3410,Hispanic
+1432,32,30.5,2,Less than HS,Yes,38.5,4234,White
+1433,30,22.2,1,Some college,No,40.8,3474,Black
+1434,21,15,0,Some college,No,38.2,2774,Hispanic
+1435,41,29.7,0,Some college,No,39.5,3366,White
+1436,22,32.7,0,College+,No,40.2,3455,Hispanic
+1437,29,29.6,0,College+,No,38.5,2960,Hispanic
+1438,37,28.9,0,College+,No,37.5,3183,Hispanic
+1439,21,26.5,1,HS,No,41.2,3562,White
+1440,31,27.6,2,Less than HS,No,37.7,3797,Hispanic
+1441,33,24.6,2,HS,No,40,3705,White
+1442,28,31.4,0,Some college,No,40.5,3080,Hispanic
+1443,21,28.2,0,Some college,No,41.6,3849,Hispanic
+1444,25,24.2,0,Some college,No,37.7,3146,White
+1445,34,35.3,1,HS,Yes,39.9,3325,Black
+1446,27,33.6,2,College+,No,36.9,3605,Hispanic
+1447,27,23,1,HS,No,39.2,3153,Black
+1448,30,23,1,Some college,No,37.3,2984,Black
+1449,34,25.1,1,Some college,No,36.7,2232,White
+1450,28,17.7,1,College+,No,39.6,3177,Hispanic
+1451,36,29.9,1,Less than HS,No,37.3,2884,White
+1452,24,25.1,0,College+,No,39.8,3082,Hispanic
+1453,30,27.8,0,College+,Yes,36.9,3010,Black
+1454,41,17.3,2,Some college,No,38.8,4143,White
+1455,30,22.7,2,HS,No,39.2,4225,Hispanic
+1456,31,18.8,0,HS,No,38.2,3825,White
+1457,30,16.7,0,College+,No,40.4,3702,White
+1458,41,28.6,2,Some college,No,41.2,4212,White
+1459,26,26.1,1,College+,No,41.3,3045,Black
+1460,27,25.9,2,College+,No,38.5,3123,White
+1461,26,24.4,2,HS,No,42,4101,White
+1462,26,32.4,1,College+,No,38,3414,White
+1463,31,26.9,0,HS,No,40.4,3288,Black
+1464,42,19,0,Less than HS,No,38,3031,White
+1465,34,27.3,2,Less than HS,No,41.2,3461,Hispanic
+1466,27,23.8,1,HS,Yes,37,3280,White
+1467,30,24.2,2,HS,Yes,36.3,2832,Hispanic
+1468,25,22.5,0,College+,Yes,37.3,2327,Hispanic
+1469,30,27.2,0,HS,No,36.5,2369,Black
+1470,35,30.5,2,College+,Yes,36.4,2614,Black
+1471,25,37.2,2,College+,No,41,3058,Hispanic
+1472,19,31.1,1,College+,No,39.6,3725,Black
+1473,28,29.8,1,College+,No,38.6,3163,White
+1474,28,25.2,1,Some college,No,37.9,3373,Black
+1475,28,32.4,1,HS,Yes,35.5,3307,White
+1476,35,33.7,0,College+,No,39.4,3721,White
+1477,33,28.2,1,HS,Yes,38.7,2996,Black
+1478,27,31.9,3,HS,No,38.3,3254,White
+1479,35,19.3,0,Less than HS,Yes,37.7,2386,Hispanic
+1480,33,26.7,0,Some college,No,38,3714,Hispanic
+1481,26,27.1,0,College+,Yes,37.6,3268,Hispanic
+1482,39,24.4,1,Some college,No,37.7,3162,Hispanic
+1483,31,31.3,1,Less than HS,Yes,37.5,2564,Black
+1484,26,23.8,0,HS,No,41.4,3886,Hispanic
+1485,27,21.2,1,College+,No,35.8,3516,White
+1486,33,33.3,0,HS,Yes,38.2,3327,Black
+1487,23,26.8,0,College+,No,39,2967,Hispanic
+1488,29,31.9,0,HS,No,39.9,3312,White
+1489,25,20.2,0,College+,No,38.8,3001,Black
+1490,36,27.5,1,HS,No,38.8,2769,Hispanic
+1491,32,29.1,0,HS,No,37.5,2514,White
+1492,42,22.8,0,Some college,No,39.7,3330,White
+1493,29,30.7,2,College+,No,38.2,3226,Black
+1494,28,26.5,1,HS,No,38.8,3408,Hispanic
+1495,20,28.8,2,Some college,No,42,3602,Hispanic
+1496,20,15,0,HS,Yes,38.1,3651,Black
+1497,30,22.8,0,College+,No,38.5,2759,Hispanic
+1498,31,20.1,1,College+,No,39.7,3026,White
+1499,32,27.6,0,Less than HS,No,38.8,3592,White
+1500,24,34.1,1,HS,Yes,38.9,3282,White
+1501,43,38.7,0,Some college,No,37.2,3593,Black
+1502,28,27.8,1,HS,No,38.5,3282,Black
+1503,33,34.4,2,College+,No,41.9,4099,Hispanic
+1504,23,27.8,3,Some college,No,39.3,2980,White
+1505,27,32.6,2,Less than HS,No,38.3,3336,Black
+1506,29,31,0,College+,No,39.2,3124,White
+1507,36,16.9,0,HS,No,38.6,2301,White
+1508,28,22.9,2,College+,No,41.2,2944,White
+1509,38,23.4,1,Some college,No,38.7,3641,Hispanic
+1510,37,28.5,0,Some college,No,37.8,3079,White
+1511,31,24.9,1,HS,No,39.6,3403,Hispanic
+1512,37,25.8,0,Some college,No,35.9,2781,Hispanic
+1513,28,30.3,0,HS,No,38.4,3079,Black
+1514,25,29.1,0,Less than HS,No,38,3341,White
+1515,28,23.9,1,HS,Yes,37.6,3548,Hispanic
+1516,27,27.1,2,HS,No,39.7,3347,White
+1517,39,32.2,3,Some college,No,38.3,3337,White
+1518,26,32,2,College+,No,39.2,3459,Hispanic
+1519,32,28,0,HS,No,38.8,3320,Black
+1520,31,19.2,1,HS,No,38.3,3211,White
+1521,34,28.6,0,College+,No,36.5,3168,Hispanic
+1522,24,32.9,1,HS,No,39,3529,White
+1523,41,32.8,0,Some college,No,40.4,3382,White
+1524,39,28.8,1,College+,No,38.5,3236,Hispanic
+1525,15,35.1,0,HS,No,40.8,3729,Black
+1526,31,24.4,0,Some college,No,37.1,2847,Black
+1527,37,37.7,0,College+,Yes,38.1,2630,Hispanic
+1528,37,30.8,0,HS,No,37.3,2946,Hispanic
+1529,31,25.6,0,Some college,Yes,38.4,3630,White
+1530,29,25.8,1,HS,No,39.3,3082,White
+1531,29,25,1,College+,No,35.7,3065,White
+1532,23,27.1,1,Some college,No,38.5,2797,Black
+1533,25,23.5,3,College+,No,40.2,2873,White
+1534,25,24.6,0,HS,No,41.6,3201,Hispanic
+1535,37,24,1,Less than HS,No,37.3,3410,Black
+1536,32,33.4,1,Some college,No,40,3686,Black
+1537,31,25.8,1,HS,Yes,38.3,3024,Black
+1538,27,28.8,0,HS,No,40,3595,White
+1539,22,25,0,College+,No,40.3,3653,White
+1540,29,25,0,Some college,Yes,35.3,2786,Hispanic
+1541,23,21.8,0,Some college,No,36.9,3134,Hispanic
+1542,25,21.8,0,Some college,No,35.3,2770,White
+1543,30,28.8,0,Less than HS,No,35.8,3235,White
+1544,42,25.9,1,HS,No,40.1,3370,Hispanic
+1545,26,27.2,1,HS,Yes,38.1,3393,Hispanic
+1546,32,28.8,0,Some college,No,39.3,3094,White
+1547,19,20.6,2,HS,No,36.6,3439,White
+1548,34,29.8,1,Some college,No,39.6,3021,Hispanic
+1549,31,35.8,3,Less than HS,No,37.4,3174,Hispanic
+1550,32,27.9,1,HS,No,42,3776,White
+1551,20,16.1,1,Some college,Yes,38.3,2320,White
+1552,26,20.6,0,HS,No,38.7,3525,Black
+1553,23,19,2,Some college,No,38.6,3469,White
+1554,17,23.7,2,Some college,No,39.4,3400,Hispanic
+1555,16,25.4,0,College+,No,39.7,3697,White
+1556,21,24,0,Some college,No,39.2,2388,Hispanic
+1557,19,28,0,Some college,No,41.3,3858,White
+1558,32,23.2,0,HS,No,41.8,4429,Hispanic
+1559,32,21.1,0,College+,No,41.5,3653,Hispanic
+1560,26,18.6,0,Some college,No,41.9,3583,White
+1561,24,21.7,2,Some college,No,40.9,3835,Hispanic
+1562,29,27.2,3,College+,No,36.7,2708,Hispanic
+1563,36,23.3,2,College+,No,39.5,3743,Hispanic
+1564,27,16.2,2,Some college,No,40.2,3329,Black
+1565,29,22.1,3,College+,No,38.6,2981,White
+1566,32,20.8,3,HS,No,38.8,3187,Hispanic
+1567,31,26.6,2,Some college,No,37.6,3327,White
+1568,29,29.1,0,College+,Yes,39.2,3978,White
+1569,33,28.1,1,College+,No,39.2,3452,White
+1570,19,28.7,1,College+,Yes,38.2,3029,White
+1571,33,31.5,1,HS,No,40.2,4372,Hispanic
+1572,29,27.7,0,Some college,No,39.7,2993,Hispanic
+1573,33,20,3,Some college,No,39,3482,White
+1574,31,26.5,0,College+,No,42,4044,White
+1575,31,27.1,0,College+,No,36.7,3385,Hispanic
+1576,25,32.5,0,Some college,No,38.6,3509,White
+1577,33,24.6,0,HS,No,37.5,3342,White
+1578,28,27.6,1,HS,No,40.5,3949,White
+1579,18,30,1,HS,Yes,35.8,2624,White
+1580,26,31.5,0,HS,No,37.7,2969,Hispanic
+1581,36,22.1,2,Some college,No,37.4,2829,White
+1582,23,34.9,2,College+,No,38.4,4179,Hispanic
+1583,27,28.5,0,HS,Yes,37.1,2374,Hispanic
+1584,36,23.2,0,Some college,No,38.4,2911,Hispanic
+1585,24,35,0,College+,No,38.7,3859,White
+1586,23,21.3,1,HS,No,37.7,3363,Hispanic
+1587,21,28.8,0,College+,No,41.9,3420,Black
+1588,35,27.6,0,Some college,No,38.3,3337,White
+1589,30,25.4,1,Less than HS,No,38.1,3021,White
+1590,27,28.2,2,HS,No,38.9,2539,White
+1591,26,24.4,0,College+,Yes,37.8,2779,Hispanic
+1592,37,17.2,1,HS,No,39.1,3403,White
+1593,22,26.5,0,College+,Yes,38.7,3764,White
+1594,34,29.2,1,HS,Yes,38.7,3766,White
+1595,28,21.8,1,HS,No,40.3,3723,White
+1596,34,15.1,0,Some college,No,38.5,2950,White
+1597,28,30.9,1,College+,No,39.2,3759,Black
+1598,25,29.3,1,College+,No,36.9,2904,Hispanic
+1599,33,21.8,1,HS,No,38.7,3165,Hispanic
+1600,25,29.3,2,Some college,Yes,38.9,2527,Hispanic
+1601,32,31,0,College+,No,38.9,3415,White
+1602,39,22.9,2,HS,Yes,36.9,2260,Hispanic
+1603,23,19,1,Some college,Yes,35.2,2534,Hispanic
+1604,25,15,0,HS,No,37.5,3054,White
+1605,24,29.4,1,Some college,No,39.7,4000,White
+1606,24,29.5,0,College+,No,39.5,3133,White
+1607,34,32.1,1,College+,No,37.7,2848,White
+1608,23,30.3,0,College+,No,37.5,2545,White
+1609,28,31.4,1,HS,No,40.9,2605,White
+1610,20,24.5,0,Less than HS,No,39.6,3253,White
+1611,24,23.5,1,HS,No,39.1,3530,Black
+1612,30,22.4,3,College+,No,40.9,3709,White
+1613,37,21,0,College+,No,38.9,3693,White
+1614,33,29.8,1,Less than HS,No,38.4,3859,White
+1615,33,32.7,0,Some college,No,36.2,3982,White
+1616,31,24.2,0,Less than HS,Yes,36,2832,Hispanic
+1617,36,27.8,0,Some college,No,40.5,4019,White
+1618,30,31.1,3,HS,No,38,3289,Hispanic
+1619,32,19.7,1,College+,No,38.8,3477,Black
+1620,33,25.6,1,HS,Yes,37.6,3547,White
+1621,33,21.6,0,HS,Yes,38.5,2853,Black
+1622,24,22.6,3,HS,Yes,39,3393,White
+1623,25,20.8,0,Some college,Yes,36.8,2430,Black
+1624,28,28.8,1,College+,No,39.2,3217,Black
+1625,42,20.9,2,Some college,No,39.6,3340,Hispanic
+1626,27,24.9,1,HS,No,38.1,3448,Hispanic
+1627,21,29.8,1,HS,No,38.4,2772,White
+1628,27,23.4,0,Some college,No,38,2870,Hispanic
+1629,17,25.4,1,Some college,Yes,36.7,3127,Hispanic
+1630,27,24.6,3,College+,No,39.4,3682,White
+1631,32,25.1,1,Some college,No,37.8,2550,Hispanic
+1632,39,38.3,0,College+,No,36.8,3333,Hispanic
+1633,34,21.1,1,HS,No,39.7,3193,Hispanic
+1634,26,28.2,0,HS,No,37.9,2679,Black
+1635,30,29.9,0,Less than HS,No,38.6,2703,White
+1636,33,20.2,0,Less than HS,Yes,37.7,3149,White
+1637,38,29.5,0,HS,Yes,35.7,2849,White
+1638,28,26.6,1,HS,Yes,36.3,2851,White
+1639,25,25,2,Some college,No,39.9,2771,Black
+1640,35,35.3,2,HS,No,38.4,3169,Black
+1641,30,25.5,0,HS,Yes,38,3549,Black
+1642,37,28.4,0,College+,No,38.8,2608,Hispanic
+1643,20,21,1,Some college,No,39.5,4043,Hispanic
+1644,32,23.1,0,College+,No,39.1,3556,White
+1645,28,23.4,1,College+,No,39.5,3902,Hispanic
+1646,32,25.4,0,HS,No,41.7,3402,White
+1647,29,28.2,2,College+,No,39.5,3086,Hispanic
+1648,19,25.1,0,Some college,No,37.9,3360,White
+1649,35,28.9,3,College+,No,37.2,2935,Hispanic
+1650,33,30.8,0,Less than HS,No,39.7,3195,White
+1651,26,27.1,0,College+,No,42,3601,Hispanic
+1652,24,18.4,1,Some college,No,42,3808,Hispanic
+1653,29,25.6,2,Some college,No,38.4,2926,White
+1654,31,23.7,2,College+,No,38.4,2942,White
+1655,30,23.8,0,College+,No,38.5,3418,White
+1656,33,15,2,College+,No,39.6,3755,Black
+1657,26,21.9,0,HS,Yes,37.2,3191,Hispanic
+1658,26,24,1,Some college,No,37.9,3077,Hispanic
+1659,27,27,2,Some college,No,38.6,3472,White
+1660,23,29,3,HS,No,36.8,3496,White
+1661,28,29.4,1,HS,No,41.7,3729,Hispanic
+1662,33,26.7,1,HS,No,38.9,3315,Black
+1663,22,26.3,0,HS,No,39.9,3506,White
+1664,23,26.7,2,HS,No,40.4,3854,Black
+1665,23,21.5,0,HS,No,35.9,3071,White
+1666,33,23.9,2,College+,No,40.7,3024,Hispanic
+1667,32,29.1,1,Some college,No,37.2,3183,White
+1668,36,24.9,0,Less than HS,No,38.7,3543,Hispanic
+1669,22,20.1,1,HS,No,42,3494,White
+1670,27,28.1,0,Less than HS,No,42,3712,White
+1671,32,15,2,College+,No,37.2,2616,Black
+1672,35,28,1,HS,No,38.1,3616,White
+1673,29,26.6,2,College+,Yes,40.8,3771,Black
+1674,32,23.7,2,Less than HS,No,38.3,3535,White
+1675,30,27.5,0,Some college,No,38.9,3835,Hispanic
+1676,19,29,1,College+,No,38.5,3574,White
+1677,25,20.2,1,HS,No,39.1,2550,Hispanic
+1678,35,23.8,1,Some college,Yes,35,2937,Black
+1679,30,24.7,0,HS,No,38.7,3349,White
+1680,20,33.8,0,Less than HS,No,37.8,4390,Hispanic
+1681,26,27.4,3,College+,Yes,38.4,3575,Black
+1682,24,20,1,HS,No,36.1,3020,White
+1683,33,29.5,2,Less than HS,Yes,38.1,3487,Hispanic
+1684,36,28.8,1,HS,No,37.4,3593,White
+1685,22,27.9,1,Less than HS,No,38.9,3012,Hispanic
+1686,30,21.6,2,College+,No,38.1,3000,Black
+1687,28,25.6,0,Some college,Yes,36.6,3087,White
+1688,37,26.8,0,HS,No,39.5,3052,White
+1689,25,16.7,0,Some college,No,39.7,3368,White
+1690,33,15,0,HS,No,42,3655,Hispanic
+1691,27,20.9,2,College+,No,39.2,3408,White
+1692,25,28.3,2,Less than HS,Yes,38.7,3418,White
+1693,30,15,0,Some college,No,40.6,3656,White
+1694,31,36.8,0,HS,No,41.4,2801,Black
+1695,28,33.3,0,Some college,No,39.9,4096,White
+1696,29,15,0,College+,No,37.5,3052,White
+1697,21,35.3,1,Some college,Yes,37.3,2875,White
+1698,22,23.3,0,College+,No,38.3,3453,Black
+1699,28,27.3,1,HS,Yes,36.7,3120,Hispanic
+1700,33,27.9,1,College+,No,36.3,2806,Black
+1701,25,16,1,Some college,Yes,38.5,3495,White
+1702,26,25.3,1,College+,No,38.8,3256,White
+1703,25,28.5,3,HS,No,40.2,3794,White
+1704,29,15.9,0,Some college,Yes,37.3,2341,Hispanic
+1705,29,24.6,1,Some college,No,40.1,3330,White
+1706,24,34.4,2,Some college,No,37.4,3156,White
+1707,37,24,0,College+,No,39.6,3519,White
+1708,23,26.1,1,HS,Yes,37.4,2558,White
+1709,34,27.5,1,College+,No,37.8,3807,White
+1710,44,25.8,3,HS,No,40.4,3835,White
+1711,18,29.1,1,Some college,Yes,36.6,2900,White
+1712,32,18.2,0,College+,No,40.2,4389,Hispanic
+1713,34,36.1,2,College+,No,37.2,3614,White
+1714,31,24.7,1,HS,No,40.3,4304,Hispanic
+1715,29,24.1,1,HS,No,38.3,3230,White
+1716,26,30.2,0,College+,No,36.9,3244,Black
+1717,24,29.2,0,Some college,No,38.5,3753,White
+1718,23,26.2,1,College+,No,39.9,2815,Black
+1719,24,24.6,0,Some college,No,39,3773,Black
+1720,34,28.9,1,HS,No,39.3,3871,White
+1721,33,29.1,3,College+,No,37.4,3054,White
+1722,32,24.7,1,Less than HS,No,41.1,3987,White
+1723,29,24,1,Some college,No,41.6,4445,White
+1724,24,26.1,1,HS,No,39.6,3502,Black
+1725,29,31.2,1,Less than HS,No,36.8,3489,White
+1726,25,23.1,2,College+,No,39.5,3098,Hispanic
+1727,39,24.6,1,HS,No,38.4,3065,White
+1728,32,30,3,Some college,No,40.8,3232,Black
+1729,36,32.3,1,HS,No,37.6,2726,White
+1730,29,20.7,2,Less than HS,Yes,39.5,3470,White
+1731,32,25,0,Some college,No,39.3,3148,White
+1732,28,27.1,1,College+,No,36.9,2698,Black
+1733,33,35.8,1,HS,No,39,3174,Black
+1734,36,28.8,2,HS,No,38.3,3503,White
+1735,30,32.9,3,HS,No,39.6,3197,Hispanic
+1736,21,18.3,2,College+,No,39.7,3150,White
+1737,30,30.2,1,HS,No,38.4,3128,White
+1738,26,25.1,0,HS,No,39.2,3188,Black
+1739,27,26.6,0,College+,No,41.1,4031,Hispanic
+1740,29,26.9,2,College+,No,40.7,3032,Hispanic
+1741,25,15,1,Some college,No,41.2,4441,Hispanic
+1742,30,19.3,0,College+,No,38.5,3187,Hispanic
+1743,33,31.2,1,College+,No,37.7,3396,Hispanic
+1744,29,36.9,1,HS,No,38.1,4309,Hispanic
+1745,31,28.6,1,College+,Yes,37.4,3528,White
+1746,30,24.1,1,Some college,Yes,36.2,2494,Hispanic
+1747,23,19.2,2,Some college,No,36.9,2500,Black
+1748,29,28.5,2,HS,No,41.3,3548,Hispanic
+1749,33,20.7,1,College+,No,38.1,3266,White
+1750,37,21.4,1,HS,No,39.4,3643,Hispanic
+1751,30,27.3,0,College+,Yes,36.8,3069,White
+1752,28,24.5,3,College+,No,38.7,3675,White
+1753,24,21.4,2,College+,No,38.7,4053,White
+1754,26,26.6,0,College+,No,39.8,3645,Hispanic
+1755,29,19.6,1,HS,No,38.8,3316,White
+1756,32,24.7,0,College+,No,36.5,2463,White
+1757,24,30.7,0,College+,No,38.3,3318,Hispanic
+1758,26,22.5,0,HS,Yes,38.9,3570,Hispanic
+1759,27,27,1,HS,No,38,2985,Black
+1760,30,29.1,1,HS,No,41.2,3563,Hispanic
+1761,31,32.7,1,HS,No,39.9,3939,White
+1762,28,19.7,1,Less than HS,Yes,35.1,2339,Black
+1763,24,27.1,1,Some college,No,41.9,4379,Black
+1764,26,27.2,1,Some college,No,39,3705,White
+1765,31,31.3,0,HS,No,35.6,3357,White
+1766,15,31.4,0,HS,No,37.3,3098,White
+1767,29,17,0,Some college,No,41.3,3698,White
+1768,23,27.2,0,College+,No,39.2,3882,Black
+1769,36,25.7,1,Some college,No,39,2993,White
+1770,30,23.8,0,College+,No,39.6,3671,Black
+1771,30,19.9,1,HS,Yes,34.9,3385,White
+1772,18,27.4,1,HS,Yes,35.4,3050,Hispanic
+1773,36,28.9,1,HS,Yes,36.3,2888,Hispanic
+1774,33,26.9,0,HS,Yes,37.6,3047,Black
+1775,28,15,3,Some college,No,38.6,2917,White
+1776,25,35.9,0,College+,No,39.5,3661,Hispanic
+1777,26,19.6,1,College+,Yes,37.6,3130,Hispanic
+1778,35,30.2,2,Less than HS,No,38.1,3311,White
+1779,33,22.2,1,College+,No,39.2,3845,Black
+1780,32,25.6,2,HS,Yes,40.2,3635,Hispanic
+1781,31,28.2,1,Some college,Yes,35.8,3235,Hispanic
+1782,26,26.7,1,Some college,Yes,39.5,3159,Hispanic
+1783,27,32,0,HS,No,39.4,3163,White
+1784,33,28.3,0,HS,No,38.1,3932,White
+1785,23,20.6,0,Less than HS,No,41.1,3369,Black
+1786,27,32.4,2,HS,No,40.6,3464,Black
+1787,29,27.7,3,Some college,No,39,3740,Black
+1788,31,26.5,0,Less than HS,No,39.7,3222,Black
+1789,23,34.1,1,HS,Yes,37.9,2746,White
+1790,29,26.3,1,HS,No,38.1,3505,White
+1791,38,21.6,2,HS,No,37,2893,Hispanic
+1792,19,30.1,1,College+,No,41.4,3397,Hispanic
+1793,20,33.7,1,College+,Yes,39.4,3492,White
+1794,27,27.5,0,HS,No,39.7,3265,Black
+1795,35,28.7,1,HS,No,38.4,2743,White
+1796,30,22.4,3,Some college,No,39.1,3775,Black
+1797,22,27.7,0,HS,No,38.5,3575,White
+1798,30,30.5,2,College+,Yes,38.1,2675,White
+1799,31,27.2,3,Some college,No,37.2,2208,White
+1800,26,22,1,HS,No,39.3,3932,White
+1801,23,28.4,0,College+,No,39.3,3575,Hispanic
+1802,36,27.6,0,Some college,No,39.7,3824,Hispanic
+1803,28,28,0,College+,Yes,39,3186,Hispanic
+1804,33,25.7,2,Less than HS,No,39.7,4257,White
+1805,29,17.4,1,HS,No,36.2,3150,White
+1806,27,30.1,3,HS,No,39.5,3568,Black
+1807,31,22.5,0,College+,Yes,38.9,2910,Black
+1808,26,28.9,1,Less than HS,No,39.6,3975,White
+1809,23,34.7,2,College+,No,38.9,3485,Hispanic
+1810,32,22.6,1,Some college,No,39.3,3366,White
+1811,41,26.7,0,Some college,No,36.6,3188,Black
+1812,21,21.4,0,Some college,Yes,34.7,2547,Hispanic
+1813,25,24.5,0,College+,No,40,3449,Hispanic
+1814,23,26.9,0,Less than HS,No,38.6,3335,White
+1815,32,26.4,0,HS,No,38.1,3375,Black
+1816,37,22.4,0,College+,Yes,36.9,2993,Black
+1817,38,22.3,2,Some college,No,36.9,2625,Hispanic
+1818,31,26.6,1,College+,No,37.3,3162,Black
+1819,25,26.2,0,HS,No,40.3,3578,White
+1820,31,33.5,0,HS,No,37.3,3388,White
+1821,27,22.1,2,Some college,Yes,37.6,3148,White
+1822,30,23.4,3,College+,No,41.1,3893,Black
+1823,44,29.4,1,Less than HS,Yes,38.6,2898,Hispanic
+1824,34,28.9,1,College+,Yes,37.4,2799,White
+1825,28,26.8,2,College+,No,39.9,3480,White
+1826,40,21.6,0,Less than HS,Yes,35.6,2786,White
+1827,36,24.1,0,HS,No,37.9,3837,Hispanic
+1828,30,24.1,1,Less than HS,Yes,38,2985,White
+1829,29,28,0,HS,No,39.6,3454,White
+1830,34,30.7,2,HS,No,38.7,2989,Black
+1831,24,27.6,2,HS,No,40.1,4146,White
+1832,30,27,3,Less than HS,Yes,36.7,2716,White
+1833,26,23.9,1,College+,No,37.9,3517,Black
+1834,24,22.9,0,College+,No,37.9,2901,Black
+1835,23,22.2,1,Less than HS,No,35.6,3383,White
+1836,37,16.7,2,Less than HS,No,38,3419,White
+1837,25,25.3,2,College+,No,37.5,3777,Hispanic
+1838,32,25.3,1,College+,No,38.6,2813,White
+1839,33,16.1,1,HS,Yes,38.1,3517,White
+1840,33,20.3,1,Less than HS,No,41.9,4025,Black
+1841,27,32,0,College+,No,40,3610,White
+1842,21,15,0,College+,Yes,38.2,2915,Black
+1843,38,24.8,1,HS,No,39.3,3578,Hispanic
+1844,34,23.5,0,Less than HS,No,39,3385,Hispanic
+1845,34,18.4,1,College+,No,39.5,3291,Hispanic
+1846,35,26.8,1,College+,Yes,38.4,3866,White
+1847,28,23.6,1,HS,No,38,3338,Black
+1848,30,32.1,2,College+,Yes,38.3,3328,Hispanic
+1849,33,30.2,3,College+,No,40.6,3770,White
+1850,39,15,2,College+,No,38.4,2713,Hispanic
+1851,39,22.8,0,Some college,No,39.6,3538,White
+1852,39,24.3,2,Some college,No,39.7,3670,Black
+1853,20,21.6,0,Some college,No,36.9,3020,White
+1854,23,25.1,2,HS,No,39.6,2476,Black
+1855,39,26.9,1,HS,No,37.8,2624,White
+1856,25,21.8,1,HS,No,39,3587,White
+1857,25,37,0,HS,No,38.6,4020,Hispanic
+1858,34,31.8,0,Some college,Yes,37.5,2933,White
+1859,34,27.5,2,Some college,No,42,3999,Hispanic
+1860,35,30.9,1,Less than HS,No,39.1,3713,White
+1861,29,15,3,HS,No,38.6,3569,White
+1862,30,22.1,0,College+,No,39.9,2850,White
+1863,37,23.5,1,HS,No,41,4455,White
+1864,29,29.6,2,Less than HS,No,41.2,4074,White
+1865,26,18.6,1,HS,No,37.2,3062,Black
+1866,31,25.3,1,HS,No,41.1,3645,Black
+1867,27,25.3,1,College+,No,39.9,3801,White
+1868,15,33.8,1,HS,Yes,39.7,3347,Hispanic
+1869,33,30.5,2,HS,No,39.6,3591,Hispanic
+1870,31,24.5,2,Less than HS,No,39.2,3227,Black
+1871,29,31.5,0,College+,Yes,38.1,3184,White
+1872,19,22.9,0,College+,No,38.1,2777,Black
+1873,26,20.9,2,Some college,No,36.7,3027,Black
+1874,34,22.1,0,HS,No,38.5,4005,White
+1875,28,28.1,1,HS,No,39.8,3707,Black
+1876,33,18.9,1,College+,Yes,36.9,2907,Black
+1877,39,32.2,0,College+,No,38.7,3258,White
+1878,30,28,2,Some college,No,38.6,3342,White
+1879,28,24.7,1,HS,Yes,37.3,2896,Hispanic
+1880,27,30.6,2,Less than HS,No,38.9,2991,White
+1881,34,20,0,HS,No,38.3,2826,White
+1882,32,25.8,0,HS,No,40.9,3965,White
+1883,28,26.7,2,Some college,No,37,3265,Hispanic
+1884,26,27,0,College+,No,40,3487,Hispanic
+1885,30,19.9,1,Some college,No,40.1,3729,Black
+1886,33,21.2,2,Less than HS,No,39.4,4128,White
+1887,33,32.6,0,HS,No,36.8,2258,White
+1888,29,22.4,1,HS,No,38.6,3639,White
+1889,21,20.7,1,College+,No,37.3,2897,White
+1890,25,26.3,1,College+,No,38.5,2977,Black
+1891,22,24,3,Less than HS,No,39.4,2816,Hispanic
+1892,28,25.5,0,HS,No,39.7,3878,Hispanic
+1893,32,29.4,0,HS,No,37.8,3091,Hispanic
+1894,28,31,0,HS,No,37.4,3599,White
+1895,21,35.1,0,HS,No,38.8,2734,White
+1896,29,20.1,0,College+,No,39.5,3669,White
+1897,15,20.8,0,Some college,No,36.6,3630,White
+1898,26,22.4,2,College+,No,37.7,3805,Black
+1899,34,26.9,2,HS,No,39.1,2981,Hispanic
+1900,32,23.6,1,HS,No,37.5,3765,White
+1901,33,29.2,1,College+,No,40.2,4069,Hispanic
+1902,38,29.9,0,Some college,No,38.5,2834,White
+1903,29,32.5,1,HS,No,40.1,3869,Hispanic
+1904,35,24.2,2,College+,No,40.4,3864,White
+1905,28,19.2,0,College+,No,36.2,2724,Black
+1906,27,24,0,Some college,Yes,39.6,3705,White
+1907,26,29.2,0,College+,Yes,36.7,2999,White
+1908,30,24.2,0,Less than HS,Yes,34.2,2887,White
+1909,32,28.6,1,Some college,No,38.7,3676,Hispanic
+1910,26,31.7,0,College+,No,37,2510,Hispanic
+1911,31,21.4,1,Some college,Yes,37.6,2713,White
+1912,24,23.9,0,College+,Yes,35.3,2993,White
+1913,42,28.5,1,HS,No,37.9,2858,White
+1914,37,35.8,3,College+,No,38,3535,White
+1915,26,19.4,1,Some college,No,37.2,3695,Black
+1916,28,31.2,1,Some college,No,41.2,3881,Hispanic
+1917,23,19.9,3,Some college,No,39.6,3282,Black
+1918,21,20,0,College+,No,38.5,3510,Black
+1919,28,27,1,College+,No,38.7,3454,Black
+1920,36,21.5,0,College+,Yes,36.9,2688,White
+1921,33,25,1,Less than HS,Yes,38.7,2944,Hispanic
+1922,25,31.8,0,Some college,Yes,38.6,2727,White
+1923,28,19.9,0,HS,No,37.3,2930,White
+1924,22,26.3,2,College+,No,40.6,3790,White
+1925,23,32.9,0,HS,No,39.6,3014,White
+1926,34,26.7,3,HS,No,42,3589,White
+1927,32,19,0,Some college,No,40.5,3384,Black
+1928,27,34.6,1,HS,No,39.4,3479,Hispanic
+1929,36,32.7,0,Some college,Yes,36.3,3330,White
+1930,21,33.8,1,Some college,No,39.5,4057,Black
+1931,30,31.3,2,Less than HS,No,35.8,2392,White
+1932,31,31.5,0,Some college,No,39.5,3690,White
+1933,29,23,2,HS,No,39.6,3203,Black
+1934,28,22.1,1,College+,No,38.7,2842,Hispanic
+1935,24,33.9,1,Less than HS,No,38.8,3948,White
+1936,30,19.5,0,Some college,No,38.8,2394,White
+1937,29,22.4,2,Less than HS,Yes,38.7,3701,White
+1938,38,22.5,2,Some college,No,38.7,3054,Black
+1939,31,33.5,0,HS,No,40.5,3397,White
+1940,39,27.3,0,Some college,No,38.6,3533,White
+1941,28,25.9,2,HS,No,38.3,3533,Black
+1942,23,21.1,0,College+,Yes,39.4,3218,White
+1943,24,34,1,Some college,No,40.7,3990,White
+1944,30,25.6,2,Some college,No,39.4,3384,White
+1945,17,31.5,0,College+,No,41.2,3197,White
+1946,39,26,2,Some college,Yes,40.1,3024,White
+1947,30,24.9,0,Some college,Yes,38.3,3264,White
+1948,35,28.6,0,College+,No,38.8,2900,Black
+1949,20,20.2,3,Some college,No,39.7,3065,White
+1950,35,30.6,0,Some college,No,39.8,3276,White
+1951,34,28.1,1,HS,Yes,38.8,3477,White
+1952,26,30.7,0,HS,No,39.6,3308,Black
+1953,31,25.4,1,College+,Yes,37.1,2809,Black
+1954,26,22.4,1,Less than HS,No,37.8,3110,Hispanic
+1955,31,26.5,1,HS,No,38.8,3849,Hispanic
+1956,23,34.6,0,Some college,No,37.3,3346,Hispanic
+1957,15,22.2,1,Less than HS,Yes,37,3299,Hispanic
+1958,27,32.1,3,Less than HS,No,38.9,3866,Hispanic
+1959,35,26.1,1,HS,Yes,38.4,3458,White
+1960,19,21.2,0,Some college,No,40.6,3048,Hispanic
+1961,28,21.1,0,HS,No,37.8,3113,Hispanic
+1962,31,21.8,0,Some college,No,40.6,3513,White
+1963,30,25,3,College+,No,40.4,4380,White
+1964,23,24.9,1,HS,Yes,36.8,2525,Hispanic
+1965,23,24.4,1,Some college,Yes,38.7,3085,Hispanic
+1966,26,19.8,1,College+,No,39.1,3794,Hispanic
+1967,35,25.4,2,HS,No,39.5,3540,Hispanic
+1968,31,32.4,1,College+,Yes,36.8,2858,White
+1969,25,25.6,2,Less than HS,No,38.3,3534,Black
+1970,30,33.7,1,HS,Yes,39.4,3057,Hispanic
+1971,31,30.2,1,HS,No,40.3,3362,Black
+1972,27,21.2,0,Some college,No,38.2,3298,White
+1973,28,22.9,0,Some college,No,38.5,2943,White
+1974,29,34.2,0,HS,No,38.8,3843,Black
+1975,30,22.2,3,Some college,Yes,35.6,2932,White
+1976,27,28.5,1,HS,No,39.2,3322,White
+1977,36,23.3,0,Some college,No,37.1,2643,White
+1978,27,23.3,2,Some college,No,39.9,3931,White
+1979,35,19.5,0,Some college,No,38.5,3106,Hispanic
+1980,34,24.8,1,HS,No,40,3499,Hispanic
+1981,31,29.2,1,HS,No,38,3712,Black
+1982,29,24.1,2,College+,No,41.1,3398,White
+1983,24,33.5,3,HS,No,39.2,3242,White
+1984,26,22.2,0,HS,No,39.1,4081,Hispanic
+1985,35,28.8,0,Some college,No,36,2914,White
+1986,35,29.5,0,College+,No,40.3,3770,Hispanic
+1987,24,22.8,1,Some college,Yes,37.9,3250,White
+1988,39,29.2,2,HS,Yes,37.1,2142,White
+1989,24,27.6,1,HS,No,40.5,4013,Hispanic
+1990,20,21.3,0,Less than HS,No,36.7,3017,White
+1991,20,26.5,0,HS,No,38.4,2923,Black
+1992,23,23.8,2,Some college,No,39.2,3360,Hispanic
+1993,30,25.7,1,College+,Yes,38.1,3218,Hispanic
+1994,31,23.8,2,Less than HS,No,39.6,3426,Black
+1995,31,33.5,0,College+,No,38.6,3775,Hispanic
+1996,26,26.7,0,Some college,No,39.1,3054,White
+1997,30,20.8,1,HS,No,40.9,3022,White
+1998,36,23.5,3,HS,Yes,36.2,3366,White
+1999,31,25.4,0,Less than HS,No,38.9,3679,Hispanic
+2000,25,16.4,0,HS,No,37.7,3284,Black
+2001,35,33.3,3,College+,No,37,3218,White
+2002,22,30.1,2,Less than HS,No,40.1,2793,White
+2003,26,29.6,0,HS,No,38.8,2797,Black
+2004,16,27.1,2,College+,No,40.3,4291,Black
+2005,27,20.1,1,Some college,No,41.1,4108,White
+2006,18,26.6,0,Some college,Yes,35.8,2991,Black
+2007,34,26.5,1,Some college,No,37.7,3850,Hispanic
+2008,35,20.9,1,Some college,Yes,38,3488,White
+2009,22,32,0,HS,No,39.4,3628,Black
+2010,24,19.6,0,College+,Yes,37.5,2954,Black
+2011,22,25.2,0,HS,No,37.8,2724,White
+2012,25,26.6,3,HS,No,37.1,2146,Black
+2013,36,24.7,3,HS,No,36.8,2930,White
+2014,35,23.3,1,HS,No,36.8,3486,Black
+2015,27,24.5,1,HS,No,37.1,3348,Black
+2016,28,24.9,1,Some college,No,42,3687,White
+2017,27,27.1,0,College+,No,40,3449,White
+2018,29,31.7,1,College+,No,38,3300,Hispanic
+2019,26,22.8,0,Less than HS,No,39.1,2607,White
+2020,29,21.7,1,College+,No,38.9,2791,White
+2021,28,26.4,2,Some college,No,39.1,3220,Black
+2022,38,25.4,1,Less than HS,No,39.2,3819,Hispanic
+2023,21,31.9,2,College+,Yes,40.2,3620,Black
+2024,32,32.6,3,College+,No,39.9,3446,White
+2025,30,26.5,1,HS,Yes,39.7,3269,Hispanic
+2026,25,25.8,0,HS,No,40.6,3490,Black
+2027,27,21.1,1,Less than HS,No,39.4,3104,White
+2028,34,24.3,0,Less than HS,No,39.9,3013,White
+2029,29,27.3,1,HS,Yes,38.5,3645,Hispanic
+2030,33,20.5,0,HS,Yes,39.8,3153,Black
+2031,30,21.5,3,HS,No,40.1,3671,White
+2032,21,23,1,HS,Yes,39.9,2479,White
+2033,28,27.2,2,HS,No,41.3,4261,White
+2034,40,16.7,0,HS,No,38.5,3141,White
+2035,23,23.6,3,Some college,No,40,3313,Hispanic
+2036,37,24.2,3,College+,No,41.1,4052,White
+2037,34,20.1,2,Less than HS,No,37.1,3162,Hispanic
+2038,33,28.5,2,Less than HS,No,39,3436,Black
+2039,30,28.9,1,College+,Yes,37.6,2829,Hispanic
+2040,34,30.9,1,HS,No,41,4214,Hispanic
+2041,31,30.5,1,HS,Yes,37.6,2990,Hispanic
+2042,33,32.7,0,HS,No,38.1,3551,White
+2043,23,29.8,0,College+,No,37.9,3167,White
+2044,24,36.9,2,Less than HS,Yes,38.7,3052,White
+2045,33,27,2,College+,No,40.1,3927,Hispanic
+2046,23,22.9,3,Some college,Yes,37.9,2924,Black
+2047,28,30,1,HS,No,38.9,3746,Hispanic
+2048,40,19,0,Less than HS,Yes,36.2,2333,Black
+2049,26,21.9,0,College+,No,40.8,3480,Black
+2050,30,30.3,2,College+,No,39.1,3814,Black
+2051,43,15,0,College+,No,39.2,3019,White
+2052,41,21,0,Some college,Yes,36.8,3285,Hispanic
+2053,24,28.1,1,HS,Yes,39.4,2903,Hispanic
+2054,28,27.9,2,Less than HS,No,40.5,4145,Hispanic
+2055,34,28.3,1,HS,No,40,3703,Hispanic
+2056,32,32.3,1,College+,Yes,36.6,2536,Black
+2057,25,21.8,0,College+,No,39.2,3352,Black
+2058,28,19.5,3,Less than HS,Yes,38.4,2892,Hispanic
+2059,31,36.2,2,College+,No,37.5,4173,Hispanic
+2060,27,22,1,Some college,No,40.3,3465,White
+2061,33,28,0,College+,Yes,35.9,2191,White
+2062,33,29.4,0,Less than HS,Yes,37,2570,White
+2063,32,34.8,0,Less than HS,No,38.8,3305,White
+2064,35,24.9,0,Some college,No,39.2,3231,White
+2065,22,19.9,0,College+,No,39.9,2854,Black
+2066,29,17.4,2,HS,No,38.4,3779,Hispanic
+2067,26,26.9,0,Some college,No,39.3,3385,White
+2068,27,30.3,1,Less than HS,Yes,37.8,2945,Black
+2069,22,29,0,Some college,No,40.1,3115,Black
+2070,25,29.6,2,Some college,No,39,3919,White
+2071,24,31.2,0,College+,No,41.4,3613,Black
+2072,25,20.5,1,HS,No,40.6,3291,White
+2073,22,15.4,1,Less than HS,No,40.6,3605,White
+2074,40,32.1,0,HS,No,39.8,3149,White
+2075,39,21.5,2,Less than HS,No,39.1,2568,Black
+2076,28,35.6,1,College+,No,36.4,2930,White
+2077,28,28,3,Some college,No,37.9,3085,Hispanic
+2078,34,33.5,0,College+,No,39,3173,White
+2079,31,26.5,0,HS,No,40,4117,Black
+2080,27,20.7,0,Some college,No,38,3009,Black
+2081,23,27.6,3,Some college,No,35.5,2935,Hispanic
+2082,20,25.2,1,HS,No,38.8,3639,Hispanic
+2083,28,21.2,1,HS,No,37.9,3646,Black
+2084,35,31.6,0,Some college,No,39.5,2719,Hispanic
+2085,26,19.2,0,HS,No,40.1,3934,Hispanic
+2086,36,31.3,0,College+,No,41.9,4047,Hispanic
+2087,28,23.9,0,HS,No,40.6,3591,White
+2088,32,26.4,0,HS,Yes,37.4,2583,Black
+2089,30,23.8,1,College+,No,39.6,3661,Hispanic
+2090,30,21.4,1,College+,No,39.9,3319,White
+2091,27,22.5,3,College+,No,37.6,3134,White
+2092,30,30.3,2,College+,No,39.8,3900,Black
+2093,17,25,0,Some college,No,41.7,4088,Hispanic
+2094,27,29,1,Some college,No,38.8,3291,White
+2095,34,29.3,0,College+,Yes,36,3175,Hispanic
+2096,29,22.3,1,College+,No,39.4,3756,Black
+2097,26,25.9,1,Less than HS,No,38.1,3242,White
+2098,37,21.7,2,HS,No,37.6,2753,Black
+2099,23,32.1,3,College+,No,39.8,3242,Black
+2100,28,24.4,0,College+,No,38.9,3067,Hispanic
+2101,29,27,2,College+,No,42,3567,White
+2102,20,28.9,0,HS,Yes,35.4,2819,White
+2103,36,21.7,0,Less than HS,No,38.7,3501,White
+2104,35,28.5,1,HS,No,37.9,3225,Hispanic
+2105,23,31.3,0,Some college,Yes,36.4,2544,White
+2106,27,26.1,0,College+,No,40.4,3815,Hispanic
+2107,30,29.9,0,College+,No,37.7,3007,Hispanic
+2108,40,32.9,1,Some college,No,38.3,3116,Black
+2109,23,32.1,2,Some college,No,39,2674,Black
+2110,28,24,0,HS,No,39.7,3307,Black
+2111,26,26.3,0,HS,Yes,37.6,3242,White
+2112,32,34.8,1,College+,No,37.6,3097,Hispanic
+2113,34,16.8,0,HS,No,36.5,3597,White
+2114,30,23.2,0,HS,Yes,36,2641,Hispanic
+2115,24,32.1,1,Less than HS,No,38.9,3279,White
+2116,34,25.4,0,HS,No,37.4,3336,White
+2117,34,24.6,0,Some college,No,39.4,3212,Hispanic
+2118,28,23.3,3,College+,No,39.3,3335,White
+2119,29,21.1,0,HS,No,38,3357,White
+2120,29,20.1,0,HS,No,40.7,3404,White
+2121,33,16.4,1,College+,Yes,40.4,3067,White
+2122,30,30.2,0,Some college,No,40.3,3622,Hispanic
+2123,32,34.5,3,HS,No,40.6,2869,Black
+2124,34,25.3,0,Less than HS,Yes,41.9,3979,White
+2125,36,24.6,0,Some college,No,36.3,2193,Hispanic
+2126,28,20.1,1,HS,No,38.5,3489,Black
+2127,30,25.7,0,HS,No,41.1,4019,Black
+2128,28,30.1,3,Some college,No,38.4,2165,Hispanic
+2129,43,32.5,0,HS,No,35.7,3329,Hispanic
+2130,25,21.3,0,College+,No,38.2,2929,White
+2131,36,29,1,Some college,No,39.5,2994,White
+2132,31,23.3,0,Some college,No,39.4,3549,Hispanic
+2133,34,16.3,0,College+,No,41.8,4099,White
+2134,30,27,1,Less than HS,No,40,3197,White
+2135,33,28.5,0,College+,No,38.1,2829,Hispanic
+2136,27,25.5,0,Some college,No,39.1,3797,Hispanic
+2137,30,32.5,2,HS,No,40.9,3311,White
+2138,26,27.4,3,Some college,No,41.1,4020,White
+2139,32,25.4,0,College+,No,39.8,2944,White
+2140,34,43.2,0,College+,Yes,37.7,2933,Hispanic
+2141,18,29.5,0,Some college,No,38.2,3292,White
+2142,39,19,1,Less than HS,No,37.7,3433,Black
+2143,37,24.4,0,Less than HS,No,37.5,3487,Hispanic
+2144,30,24.9,0,Some college,No,38.5,3180,White
+2145,34,24.7,1,College+,No,39.9,3611,White
+2146,22,29.3,1,Less than HS,No,38.9,4084,White
+2147,32,20.7,0,College+,Yes,38.4,3833,Black
+2148,21,29.9,0,Some college,No,41.2,4032,White
+2149,27,31.2,1,Less than HS,Yes,38.9,3046,White
+2150,18,27,1,College+,Yes,40.2,3571,Hispanic
+2151,28,43.8,1,College+,No,37.7,2988,Hispanic
+2152,24,18.1,0,HS,No,37.7,2978,White
+2153,31,31,1,College+,No,38,3318,Hispanic
+2154,25,24.6,1,HS,No,39.5,3712,Hispanic
+2155,24,32.1,1,Less than HS,Yes,39.3,3021,Hispanic
+2156,31,22.5,0,College+,Yes,38.1,3458,White
+2157,27,32,1,HS,Yes,39.1,3279,White
+2158,32,30.7,0,HS,Yes,36.4,3658,White
+2159,34,28.9,0,HS,No,40.4,4048,Black
+2160,31,32.3,3,Some college,No,37.2,3327,Black
+2161,27,26.7,2,HS,No,39.5,3448,Black
+2162,32,27.7,2,College+,No,38,3177,White
+2163,22,18.9,0,Some college,No,36.1,3124,White
+2164,29,29.4,0,College+,Yes,39.3,3392,Black
+2165,16,24,1,Some college,Yes,39.4,3345,Hispanic
+2166,37,30.5,0,College+,No,38.7,3893,Black
+2167,34,27.3,1,Some college,No,37.3,3455,White
+2168,33,30.6,0,Some college,No,41,3264,White
+2169,27,27.4,1,College+,Yes,39.2,2893,White
+2170,37,30.3,0,College+,No,38,3017,Black
+2171,25,20.2,1,College+,No,40.8,3565,Hispanic
+2172,17,35.3,0,Some college,No,40.7,4104,Hispanic
+2173,26,21.4,0,College+,No,38.6,3385,Hispanic
+2174,32,23.2,1,College+,Yes,35.1,3359,Black
+2175,30,28.1,1,HS,No,42,4002,Black
+2176,35,30.4,2,College+,Yes,38.1,2833,Hispanic
+2177,38,21.3,1,HS,No,39.6,4209,Black
+2178,34,28.7,1,College+,Yes,37.2,2722,White
+2179,25,26.9,1,Some college,No,34.7,3077,White
+2180,26,20.6,1,HS,No,37.4,3259,White
+2181,28,21.4,0,College+,No,37.2,2838,Black
+2182,26,29.2,1,HS,Yes,35.7,2836,White
+2183,30,34,3,HS,No,37.4,3633,White
+2184,34,22.6,0,Some college,No,38.6,2965,Hispanic
+2185,25,35.8,0,HS,No,38.8,3060,Hispanic
+2186,30,21.7,1,Some college,No,39.4,3244,White
+2187,20,27.6,0,HS,Yes,38.1,3376,Hispanic
+2188,30,25,1,Less than HS,No,38.8,3718,Hispanic
+2189,24,32.9,0,College+,No,38.3,2923,Hispanic
+2190,31,26.5,0,Some college,No,37.7,3287,Hispanic
+2191,33,27.9,0,Less than HS,No,40.2,3701,White
+2192,25,19.4,1,College+,No,37.4,3232,White
+2193,27,34.3,1,HS,Yes,39.7,3700,Hispanic
+2194,27,32.6,1,HS,No,35.4,2659,Hispanic
+2195,31,31.3,1,College+,No,37.4,3455,Black
+2196,31,27.6,0,Some college,No,39.4,3380,Hispanic
+2197,21,32.5,1,Some college,No,40.6,3674,Black
+2198,24,22.6,2,College+,No,39.2,3305,White
+2199,34,22.2,0,College+,No,37.7,3530,White
+2200,30,32,0,HS,No,38.8,2936,Black
+2201,30,32.3,0,HS,No,39.3,3370,Black
+2202,26,32.6,1,Some college,No,37.6,3176,Black
+2203,23,32.2,1,HS,No,36.5,3100,White
+2204,20,21.8,1,HS,Yes,38,3492,Hispanic
+2205,30,26.2,1,Less than HS,No,42,4337,White
+2206,31,21.9,0,Some college,Yes,39.6,2617,Hispanic
+2207,40,19.1,0,HS,No,38.7,2896,White
+2208,36,32,2,HS,No,39.5,3615,Black
+2209,23,21.5,0,College+,No,38.9,2898,Hispanic
+2210,29,31.3,0,Less than HS,No,37.7,3305,Hispanic
+2211,33,15,1,Some college,Yes,37.3,3423,Hispanic
+2212,31,21.7,2,Some college,No,39,3483,Black
+2213,31,22.1,3,College+,No,39.9,3714,White
+2214,26,28.8,0,College+,Yes,37.9,3248,Black
+2215,31,25.8,0,HS,No,38.8,3848,White
+2216,27,32.3,0,HS,Yes,37.3,2384,White
+2217,23,25.5,3,Less than HS,Yes,37.1,2876,Black
+2218,24,31,0,HS,No,40.1,3687,Hispanic
+2219,33,21.5,3,College+,No,40.8,3590,Hispanic
+2220,33,20.1,0,College+,No,38.8,3676,Hispanic
+2221,35,20.2,2,College+,Yes,38,2703,Hispanic
+2222,22,23,1,College+,Yes,37.5,2466,Hispanic
+2223,33,30.7,2,Some college,No,38.1,2434,Hispanic
+2224,39,25.8,0,HS,No,37.5,3301,White
+2225,28,29.7,0,HS,Yes,38.1,3007,White
+2226,33,26.3,2,College+,No,39.6,3240,White
+2227,25,25.3,2,HS,No,40.5,2781,White
+2228,30,23,1,Some college,No,37.2,3109,Hispanic
+2229,35,34.3,0,Some college,No,41.4,3146,White
+2230,31,21.2,2,HS,No,40.1,3516,White
+2231,29,28.2,0,HS,No,39.6,3145,White
+2232,29,16.1,1,HS,No,39.3,2842,White
+2233,31,23.4,2,Some college,Yes,38.2,3072,Black
+2234,24,29.8,2,HS,No,38.8,3359,White
+2235,26,23.1,0,Some college,No,39,3415,White
+2236,30,27.1,0,HS,No,38.8,3617,White
+2237,20,27.2,2,Less than HS,Yes,37.2,3091,White
+2238,26,26.3,0,Some college,No,39.2,3310,Hispanic
+2239,43,18,1,HS,No,39.1,3731,White
+2240,30,24.5,1,Some college,Yes,38.2,3208,Hispanic
+2241,26,31.4,3,HS,Yes,39,3433,Hispanic
+2242,36,20.3,0,College+,No,39,3409,White
+2243,24,24.2,0,HS,Yes,36.9,3150,White
+2244,30,20.9,1,Some college,No,39.9,3542,Black
+2245,37,26.2,1,Less than HS,Yes,38.1,3512,Black
+2246,35,32.8,1,College+,No,38.2,3049,Hispanic
+2247,32,28.8,2,HS,Yes,36.1,2661,Hispanic
+2248,30,24.9,1,Some college,Yes,38,2935,White
+2249,24,19.9,2,Some college,No,40.9,3132,Black
+2250,25,24.9,1,Less than HS,Yes,36.5,3197,White
+2251,33,21,0,Less than HS,No,38,3577,Hispanic
+2252,38,24.3,1,Some college,No,37.6,3700,Hispanic
+2253,30,27.3,0,HS,No,41.8,3681,White
+2254,35,19.5,3,College+,No,38.9,2846,White
+2255,24,28.9,1,Some college,Yes,37.9,2675,Black
+2256,28,27.5,0,Some college,No,40.2,3858,White
+2257,25,24.5,1,College+,No,38.1,2563,Black
+2258,34,20.6,2,HS,No,41.3,3918,Black
+2259,25,31.2,3,Some college,No,39.7,4186,Black
+2260,29,19.9,2,Some college,No,37.9,3443,White
+2261,31,21.3,0,HS,No,38.5,2979,Hispanic
+2262,33,28.3,0,College+,No,40.3,3667,White
+2263,29,25.3,0,College+,No,37.5,3424,White
+2264,26,29.5,0,Less than HS,No,37.1,3893,White
+2265,18,29.7,1,Some college,No,39.9,3556,Hispanic
+2266,25,19.2,1,College+,Yes,35.7,2973,White
+2267,33,26.2,0,HS,No,37.5,3592,White
+2268,32,23.9,0,Some college,Yes,36.2,2935,Black
+2269,28,29.6,3,College+,No,39.8,3858,Hispanic
+2270,29,27.3,2,College+,No,38,2524,White
+2271,28,23.5,0,College+,No,37.9,2517,Black
+2272,24,21.2,1,HS,No,36.9,3621,Black
+2273,21,22.9,0,Less than HS,No,42,4100,White
+2274,26,37.1,3,Some college,No,41.3,3516,Hispanic
+2275,28,26.8,1,College+,No,37.2,2692,Black
+2276,30,23.1,1,Less than HS,No,39.4,3191,Hispanic
+2277,32,20.6,3,College+,No,38.8,3420,Black
+2278,25,34.3,1,College+,No,40.5,3742,Hispanic
+2279,33,22.3,1,Less than HS,No,39.9,3191,Black
+2280,25,22.8,2,Some college,No,38.4,3495,White
+2281,28,20.9,2,HS,No,39.3,4006,White
+2282,34,20.1,0,Some college,Yes,37.4,2503,White
+2283,32,25.4,1,College+,No,38,3199,Black
+2284,29,26.9,1,College+,Yes,38,3043,White
+2285,28,17.7,1,HS,No,39.3,3449,White
+2286,39,21.2,0,Some college,No,38,3079,White
+2287,26,26.9,0,Some college,Yes,37.2,2977,White
+2288,30,29.1,1,HS,No,41.7,2900,Black
+2289,37,32.2,3,Some college,No,41.9,3310,White
+2290,31,25.2,2,Less than HS,No,39.3,3687,White
+2291,28,21.8,1,HS,No,38.2,3301,Hispanic
+2292,27,19.7,0,Some college,No,38.8,3494,Black
+2293,27,28.3,1,HS,No,40.8,3776,Hispanic
+2294,26,43.8,1,College+,No,39.6,3591,White
+2295,30,22.2,0,Some college,No,39.4,3450,Black
+2296,32,21.9,3,College+,No,39.9,3557,White
+2297,22,26.5,0,HS,Yes,38.6,2641,White
+2298,22,29.9,1,Some college,No,37.4,3316,Hispanic
+2299,30,24.7,0,HS,Yes,39.6,3848,White
+2300,31,26.5,1,HS,No,38.6,3400,Hispanic
+2301,32,26.1,2,College+,No,40.4,3484,White
+2302,33,23,0,HS,No,36.6,3340,Black
+2303,22,30.7,0,College+,No,39.6,3296,Black
+2304,31,22.1,0,College+,No,38.5,3639,Black
+2305,30,23.9,1,College+,Yes,39.1,3429,White
+2306,32,15,3,HS,Yes,39.2,2996,Black
+2307,33,17.2,0,Some college,No,39.8,3112,Hispanic
+2308,33,22.1,1,Less than HS,No,41.2,3880,White
+2309,30,20.1,0,College+,No,38.2,3280,White
+2310,22,20.3,1,HS,No,40.2,3745,Hispanic
+2311,37,22.1,1,Less than HS,No,38.5,3601,White
+2312,22,27,1,HS,No,40.5,3789,Black
+2313,35,36.2,0,Some college,No,40.8,3863,White
+2314,25,22.4,0,Some college,No,38.8,3042,White
+2315,24,33.6,0,College+,No,38,3844,White
+2316,19,26.2,3,College+,No,38.9,2963,Black
+2317,30,21.7,0,College+,No,39.4,3486,White
+2318,30,20.6,1,Less than HS,No,38.2,2882,White
+2319,38,31.1,1,College+,No,34.7,3329,White
+2320,28,23.4,1,HS,No,39.3,3255,Black
+2321,30,23.1,0,Some college,No,37.5,3534,White
+2322,31,23.4,1,Some college,No,37.3,3122,Hispanic
+2323,21,31.1,1,HS,No,40.7,3407,Hispanic
+2324,26,35.4,0,Some college,No,41.3,4304,White
+2325,24,28.4,0,College+,Yes,36.1,2724,White
+2326,26,15,0,HS,Yes,37.5,3497,White
+2327,32,32.6,0,HS,Yes,37.9,2636,Hispanic
+2328,26,28.3,0,College+,No,37.7,3426,Hispanic
+2329,27,20.3,1,HS,No,40.5,3304,Hispanic
+2330,38,31.8,2,HS,Yes,36.4,2331,White
+2331,25,20.5,2,Less than HS,Yes,39.4,3919,White
+2332,16,25.3,2,College+,No,37.8,2832,Hispanic
+2333,33,23.1,2,College+,No,40.5,3857,Hispanic
+2334,27,24.9,0,HS,No,36.7,2947,White
+2335,26,27.9,3,College+,No,38.8,3231,Hispanic
+2336,25,25,0,College+,No,40.5,3459,Hispanic
+2337,31,20,0,College+,No,40.9,2851,White
+2338,30,26.4,1,Less than HS,No,37.9,2886,White
+2339,36,38.9,2,Less than HS,No,38.2,3534,Hispanic
+2340,31,23.5,0,College+,No,39.4,3440,Black
+2341,34,25.4,0,Less than HS,No,39.9,2760,White
+2342,41,27.9,1,Less than HS,No,39.6,3825,White
+2343,38,31,1,Some college,Yes,38.8,3129,Hispanic
+2344,26,25.8,2,HS,No,38.7,3313,Hispanic
+2345,18,21.6,0,HS,No,40.3,4016,Black
+2346,25,23.1,2,College+,No,36,3049,Hispanic
+2347,42,25.7,0,HS,No,39,3838,Hispanic
+2348,29,20.7,0,College+,Yes,38.2,3072,White
+2349,34,31.5,2,Some college,Yes,35.6,3317,White
+2350,20,27.7,1,HS,No,39.6,3629,White
+2351,22,26.9,2,HS,No,36.4,2684,Hispanic
+2352,30,23.3,1,Less than HS,No,41.3,4034,Hispanic
+2353,25,24.7,1,College+,Yes,37.6,2866,White
+2354,29,23,1,HS,No,39,2934,Black
+2355,22,29.1,0,Some college,No,42,2970,White
+2356,30,31.7,1,HS,No,38.4,3170,Hispanic
+2357,32,26.4,2,College+,No,38.8,3776,Black
+2358,39,34.6,0,College+,No,41.1,3696,Hispanic
+2359,22,25.5,2,College+,No,39.2,3641,Hispanic
+2360,21,27.6,1,Less than HS,No,38.3,2578,Black
+2361,30,26.3,1,Some college,No,39,3496,White
+2362,26,28,2,College+,No,42,4065,Hispanic
+2363,33,29.1,1,Some college,No,38.7,2477,White
+2364,28,15.9,0,Some college,Yes,35.9,3013,Hispanic
+2365,27,25.1,0,HS,No,38.1,3592,White
+2366,41,25.1,1,HS,No,38.6,3807,White
+2367,17,32.6,0,College+,Yes,38.2,2644,Hispanic
+2368,22,20.6,1,College+,No,40.6,2902,White
+2369,30,26.7,0,HS,No,38.9,3408,White
+2370,24,27.8,2,College+,No,37.4,2944,Hispanic
+2371,32,27,0,Some college,No,39.4,3546,White
+2372,34,28.3,1,HS,No,41.1,3952,Black
+2373,30,24.8,0,HS,No,39.5,3164,Hispanic
+2374,37,31.8,2,Less than HS,No,39.5,3266,Black
+2375,31,23.5,0,College+,No,38.6,3494,White
+2376,25,24,1,College+,Yes,38.9,2698,White
+2377,17,24.5,0,HS,No,40.6,3157,White
+2378,34,28.2,1,HS,No,39.8,3467,White
+2379,30,22.1,2,HS,No,37.7,3110,White
+2380,36,29.3,0,Less than HS,No,36.4,3048,Black
+2381,27,30.7,2,College+,No,40.1,3741,Hispanic
+2382,40,23.1,3,College+,Yes,37.4,2802,Hispanic
+2383,35,24.4,3,Some college,No,37.4,3426,Hispanic
+2384,15,15,1,College+,No,39.6,3647,White
+2385,32,24.5,1,HS,No,34,2087,White
+2386,21,33.6,3,HS,Yes,33.9,2339,Black
+2387,31,25.2,2,Some college,Yes,38,2721,White
+2388,30,28.5,1,College+,No,37.8,3179,White
+2389,24,36.3,1,College+,Yes,38.5,3451,Hispanic
+2390,23,34.1,0,College+,No,39,4279,Hispanic
+2391,30,23.4,0,Some college,No,40.1,3416,White
+2392,30,26.5,1,College+,No,39.4,3501,White
+2393,34,21.8,1,Some college,Yes,38.7,3677,Hispanic
+2394,25,28.1,1,HS,No,38.3,3166,White
+2395,25,26,0,Some college,No,38.1,2721,White
+2396,36,23.2,0,Some college,No,40.9,3531,Black
+2397,28,20.2,1,HS,No,38.6,3390,Hispanic
+2398,29,32,0,Some college,No,39,3612,White
+2399,35,32.7,0,HS,No,38.5,3675,Hispanic
+2400,26,26.5,0,Some college,No,38.3,3109,Hispanic
