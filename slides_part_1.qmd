@@ -50,13 +50,10 @@ We'll work in **RStudio** today -- it's probably what you already use and it's g
 
 . . .
 
-But keep an eye on **Positron**: Posit's newer editor, built on VS Code. Multi-language (R *and* Python), more extensible, and where a lot of this is heading.
+But I'll also mention **Positron**: Posit's newer editor, built on VS Code. Multi-language (including R and Python), more extensible, and has some things we'll discuss built in
 
-. . .
-
-I'll mention a few Positron asides in case you ever want to make the switch
-
-#
+```{=html}
+<!-- #
 
 <video autoplay muted loop width="100%" style="max-width: 800px;">
 
@@ -66,7 +63,8 @@ I'll mention a few Positron asides in case you ever want to make the switch
 
 ::: {style="font-size: 0.5em; color: gray;"}
 <https://positron.posit.co/>
-:::
+::: -->
+```
 
 # Projects {background-color="#23373B"}
 
@@ -84,11 +82,13 @@ cannot change working directory
 
 ## Do you think this code from 2015 still runs?
 
+A researcher doing a meta-analysis reached out years later for some data...
+
 ![](images/paste-5.png)
 
 ## The problem with `setwd()`
 
-`setwd()` points at one exact folder on one exact computer. The moment the project moves -- a new laptop, a shared drive, *your* machine -- it's dead.
+`setwd()` points at one exact folder on one exact computer. The moment the project moves -- a new laptop, a shared drive, *your* machine -- it will break
 
 ::: callout-note
 A classic explainer: <https://www.tidyverse.org/blog/2017/12/workflow-vs-script/>
@@ -120,25 +120,42 @@ my-project/
 :::
 :::::
 
-##
+## Always open a project by opening the `.Rproj` file
 
-![](images/paste-6.png)
+::: panel-tabset
+## Mac
+
+![](images/Screenshot%202023-08-10%20at%206.22.10%20PM.png){width="500"}
+
+## Windows
+
+![](images/Screenshot%202023-08-10%20at%206.28.46%20PM.png){width="500"}
+:::
+
+You can have multiple projects open at once in different RStudio sessions!
+
+## You can also switch between R projects from RStudio
+
+![](images/Screenshot%202023-08-12%20at%2011.49.37%20AM.png)
+
+- Clicking the arrow icon will open it up in a new session and keep your current session open
+- Opening an R project will also open all the files you had open last time (including unsaved "Untitled" files!)
 
 ##
 
 ![](images/paste-7.png)
 
-# Activity {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
 - Start a new R project (**File → New Project → New Directory → New Project.**, or use the upper-right-corner drop-down)
 - Add a `data` folder (either through RStudio or your file explorer)
-- Move the workshop files into the appropriate places in the project folder
+- Move the files from Sam into the appropriate places in the project folder
 
 # File paths {background-color="#23373B"}
 
 ## The good news is that this runs now!
 
-The bad news is that, depending on your settings, if you run it from within an RMarkdown/Quarto document, it might break
+The bad news is that there are still ways it might break (e.g., depending on your settings, if you are trying to read it in from an R Markdown or Quarto document in a subfolder)
 
 ``` r
 births<-read.csv("data/births.csv")
@@ -198,13 +215,17 @@ is the same as
 here::here("data/births.csv")
 ```
 
-# Activity {background-color="#0072B2"}
+::: callout-note
+You can do this with any function from any package -- we'll talk more about it in a bit
+:::
 
-Start rewriting the script
+# Activity {.activity-slide background-color="#0072B2"}
+
+Start rewriting the script (save a new, better version to work on)
 
 - Delete the `setwd()` line, and rewrite the `read.csv()` line to use `here()`
   - You might need to `install.packages("here")` first
-- Make sure you can read in the data!
+- Run that line to make sure you can read in the data!
 
 # Blank-slate R {background-color="#23373B"}
 
@@ -220,7 +241,7 @@ While you work, R quietly accumulates:
 
 A script doesn't make this explicit will run for **you, today**, and break for **anyone else** -- including future you
 
-## Hidden state: a worked example
+## Hidden state {.compact}
 
 Sam's script restricts to adult mothers:
 
@@ -255,7 +276,7 @@ This is *hidden state* -- the analysis depends on something that isn't in the co
 
 . . .
 
-This is also common when you are not running code top-to-bottom -- this will error in a new session even if `age_min` is defined down below.
+This is also common when you are not running code top-to-bottom -- this will error in a new session if `age_min` is defined below the code where it's used.
 
 ## And it's not just objects
 
@@ -271,13 +292,33 @@ Error in clean_names(births) : could not find function "clean_names"
 
 . . .
 
-If a package was loaded in Sam's session but `library()` never made it into the script, or a helper function only ever lived in the console, your clean session has no idea what you mean.
+If a package was loaded in Sam's session but `library()` never made it into the script, or a helper function was defined in the console or by running code from a new script, your clean session has no idea what you mean.
 
-## Packages
+## What Sam might have been doing...
+
+![](images/paste-6.png)
+
+## Packages {.smaller}
 
 `base`, `methods`, `datasets`, `utils`, `grDevices`, `graphics`, `stats` are all loaded by default
 
+
+::: {.columns}
+
+::: {.column width="65%"}
+
 ![](images/paste-4.png)
+
+:::
+
+::: {.column width="35%"}
+
+You can use the packages pane to see what packages you have loaded or their versions, but don't load them this way -- make sure to `library()` them in your script so anyone else can run it too
+
+:::
+
+:::
+
 
 ## Referring to functions from packages
 
@@ -288,7 +329,7 @@ library(janitor)
 births <- clean_names(births)
 ```
 
-Works without loading all `janitor` functions
+Works without loading all `janitor` functions, which is fine if this is all you need:
 
 ``` r
 births <- janitor::clean_names(births)
@@ -306,20 +347,62 @@ Error: object 'Age_Min' not found
 Error in clean.names(births) : could not find function "clean.names"
 :::
 
-You are also going to get these same errors if you spell something wrong, so check for typos before going on a wild goose chase for hidden state!
+You are also going to get these same errors if you spell something wrong, so check for typos before going on a wild goose chase for hidden state! Similarly:
+
+```r
+install.packages("jantor")
+```
+:::error-output
+Warning message:
+package ‘jantor’ is not available for this version of R
+
+A version of this package for your version of R might be available elsewhere,
+see the ideas at
+https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+:::
+
+## Start every session empty {.smaller}
+
+Tell R to never save or restore your workspace:
+
+::: nonincremental
+- **Tools → Global Options → General**
+- Uncheck *"Restore .RData into workspace at startup"*
+- Set *"Save workspace to .RData on exit"* → **Never**
+:::
+
+![](images/paste-8.png)
+
+(In **Positron**, this is automatic!)
+
+## `rm(list = ls())` is not a clean slate
+
+You'll see scripts open with this to "clear everything":
+
+::: sin
+``` r
+rm(list = ls())
+```
+:::
+
+It deletes objects -- but it does **not** unload packages, reset options, or change the working directory. It's a false sense of safety.
+
+. . .
+
+::: callout-tip
+The real reset: **Session → Restart R** (`Cmd/Ctrl + Shift + F10`). Do it early and do it often.
+:::
 
 ## `attach()`
 
 Sam's script does this:
 
-::: sin
 ``` r
 attach(births)
-mean(birth_weight)     # look ma, no births$
+mean(birth_weight)     # birth_weight is a variable in births
 ```
-:::
 
-`attach()` dumps a **copy** of every column into your search path so you can type `birth_weight` instead of `births$birth_weight`. Tempting. Don't.
+`attach()` dumps a **copy** of every column into your search path so you can type `birth_weight` instead of `births$birth_weight`. Tempting. Avoid!
 
 ## Why `attach()` goes wrong {.smaller}
 
@@ -339,39 +422,9 @@ The attached copy is a **snapshot**. Edit `births` and the attached `birth_weigh
 - attach two datasets with a shared column name and one silently masks the other
 - forget to `detach()` and the clutter follows you all session
 
-Refer to columns explicitly (`births$x`, or `with()`, or stay inside dplyr).
+Refer to columns explicitly (`births$x`, or `with()`, or stay inside dplyr functions).
 
-## Start every session empty
-
-Tell R to never save or restore your workspace:
-
-- **Tools → Global Options → General**
-- Uncheck *"Restore .RData into workspace at startup"*
-- Set *"Save workspace to .RData on exit"* → **Never**
-
-![](images/paste-8.png)
-
-In **Positron**, this is automatic!
-
-## `rm(list = ls())` is not a clean slate
-
-You'll see scripts open with this to "clear everything":
-
-::: sin
-``` r
-rm(list = ls())
-```
-:::
-
-It deletes objects -- but it does **not** unload packages, reset options, or change the working directory. It's a false sense of safety.
-
-. . .
-
-::: callout-tip
-The real reset: **Session → Restart R** (`Cmd/Ctrl + Shift + F10`). Do it often. A fresh process is the only true blank slate.
-:::
-
-# Activity {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
 Hunt the hidden state
 
@@ -402,7 +455,7 @@ ggplot(plot_data, aes(x = smoker, y = birth_weight)) +
 plot_data = births   # defined AFTER the figure that uses it
 ```
 
-Sam ran the cells out of order in a live session. It "worked" because by then `plot_data` happened to exist.
+Sam ran the code out of order in a live session (this is very common when developing code!). It "worked" because by then `plot_data` happened to exist.
 
 ## Same story with packages
 
@@ -422,7 +475,9 @@ The `library()` call exists -- it's just in the wrong place. In Sam's session th
 
 ## The fix is just... order
 
-A script should read top to bottom like a recipe: **load → read → clean → model → report**. Nothing is used before it exists.
+A script should read top to bottom like a recipe.
+
+For example: **load → read → clean → model → report**.
 
 ``` r
 library(tidyverse)
@@ -431,7 +486,6 @@ library(here)
 births <- read_csv(here("data/raw/births.csv")) |>
   clean_births(age_min = 18)
 
-# now plot it -- the data exists
 ggplot(births, aes(x = smoker, y = birth_weight)) +
   geom_boxplot()
 ```
@@ -446,11 +500,9 @@ That needs:
 - a **clean session** (no hidden state),
 - code in **runnable order**
 
-## Two more reproducibility levers
+## Two more reproducibility concerns
 
 These won't show up today, but you'll hit both in real work -- so know they exist.
-
-. . .
 
 - **Randomness** -- anything random gives different answers each run unless you pin it down.
 - **Package versions** -- "it worked last year" can fail after an update.
@@ -469,6 +521,10 @@ boot_samples <- map(1:1000, \(i) slice_sample(births, prop = 1, replace = TRUE))
 
 `set.seed()` once, near the top, makes the randomness repeatable. Pick an random integer -- the point is that it's **written down**, so your confidence interval is the same tomorrow.
 
+::: callout-note
+Some functions/workflows, such as those that are parallelized, may have more complex ways to deal with random seeds
+:::
+
 ## Your packages are part of the environment
 
 Blank-slate R handles your objects and which packages are loaded. But it doesn't pin **which versions**.
@@ -480,7 +536,7 @@ Blank-slate R handles your objects and which packages are loaded. But it doesn't
 df |> summarise(n = n(), .by = group)   # ...errors on older dplyr
 ```
 
-"Works on my machine" is often really "works with *my* package versions." For an analysis you'll revisit, share, or publish, that's a reproducibility hole.
+"Works on my machine" is often really "works with *my* package versions." For an analysis you'll revisit, share, or publish (so all of them?), that's a reproducibility hole.
 
 ## `renv`: a lockfile for your project
 
@@ -492,11 +548,35 @@ renv::snapshot()    # record current versions to renv.lock
 renv::restore()     # reproduce that exact set on another machine
 ```
 
-. . .
+## The `renv.lock` file
+
+```
+{
+  "R": {
+    "Version": "4.3.1",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cloud.r-project.org"
+      }
+    ]
+  },
+  "Packages": {
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e3f4c5a6b7d8e9f0a1b2c3d4e5f6g7h8"
+    },
+    ...
+  }
+}
+```
 
 We're not going to practice this, but there is helpful documentation: <https://rstudio.github.io/renv/articles/renv.html>
 
-# Activity {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
 Make it run, start to finish
 
@@ -504,7 +584,7 @@ Make it run, start to finish
 2.  Fix the hidden state you found previously (define the objects, load the packages, replace Sam's helper).
     - set `min_age` to 18, `bad_ids` to 1:3, `bw_cutoff` to 2500, and replace `make_or_table()` with `tidy()`
 3.  **Restart R** (`Cmd/Ctrl + Shift + F10`) for a clean slate.
-4.  Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as possible (there will still be 1 you can't fix -- see if you can figure out why!)
+4.  Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.
 
 # Code style {background-color="#23373B"}
 
@@ -516,7 +596,7 @@ The code runs either way. Style is what makes it **readable, reviewable, and har
 
 This is *separate* from code that's wrong or unsafe. We're talking about formatting and naming here, not correctness.
 
-## Ugly, unreadable code
+## Ugly, unreadable code {.compact}
 
 ``` r
 d2=read.csv('f.csv');d2$x2<-d2$x*1.8+32;m=lm(y~x2+grp,d2)
@@ -524,23 +604,23 @@ d2=read.csv('f.csv');d2$x2<-d2$x*1.8+32;m=lm(y~x2+grp,d2)
 
 What does this do? Who knows. One line, three statements, cryptic names, no spaces, mixed assignment.
 
-Instead you might write
+Instead you might write:
 
 ``` r
 data_f <- read.csv('f.csv')
-multiplier <- 1.8
 baseline <- 32
-data_f$corrected_x <- data_f$x * multiplier + baseline
-mod_y <- lm(y ~ corrected_x + grp, data_f)
+x_multiplier <- 1.8
+data_f$corrected_x <- data_f$x * x_multiplier + baseline
+mod_y <- lm(y ~ corrected_x + grp, data = data_f)
 ```
 
-## More bad habits
+## More bad habits {.compact}
 
 ``` r
-# inconsistent naming -- pick a lane!
+# inconsistent naming, spacing, and assignment
 MatAge <- d$mat_age
-birth.weight <- d$birthWeight
-n_Obs <- nrow( d )
+birth.weight<-d$birthWeight
+n_Obs = nrow( d )
 
 # magic numbers with no explanation
 d <- d[d$v3 > 2500 & d$v7 < 37, ]
@@ -549,9 +629,13 @@ d <- d[d$v3 > 2500 & d$v7 < 37, ]
 # m1 <- lm(y ~ x)
 # m2 <- lm(y ~ x + z)
 # m3 <- lm(y ~ x + z + w)   # this one? maybe?
+
+# T/F abbreviations
+T <- 34
+if (x == T) {...}
 ```
 
-## Habits worth keeping {.smaller}
+## Habits worth considering {.smaller}
 
 - **One statement per line**; let long calls breathe across lines
 - **Spaces** around operators: `x + 1`, not `x+1`
@@ -583,21 +667,18 @@ install.packages("styler")
 **Air** (newer, very fast)
 
 - Format-on-save in your editor
-- **Built into Positron**; RStudio & VS Code via extension
-- <https://posit-dev.github.io/air/>
+- **Built into Positron**
+- Install for use in RStudio: <https://posit-dev.github.io/air/editor-rstudio.html>
 :::
 :::::
 
-. . .
 
-Pick one and be consistent. The point isn't *which* -- it's that the machine keeps the formatting tidy so code review is about ideas, not whitespace.
-
-# Activity {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
 Clean it up
 
 1.  Install and run `styler::style_file()` on your script (Addins → Style active file), or install Air and format document.
-2.  Look at the diff -- what did the formatter change for you?
+2.  Compare before and after!
 3.  Now fix what a formatter **won't**: cryptic names, `=` → `<-` inconsistency, magic numbers, anything else that's not aesthetically pleasing to you!
 
 # Reproducible reporting {background-color="#23373B"}
@@ -605,7 +686,7 @@ Clean it up
 ##  {background-color="#23373B"}
 
 ::: {style="font-size:1.4em"}
-**Plot twist** 🔌
+**Plot twist**
 :::
 
 *"Restrict to mothers aged 20 and older, not 18."*
@@ -618,7 +699,7 @@ Change `age_min <- 20` in **one** place, re-run, and every number updates.
 
 ...except the ones Sam hand-typed into `Table1_DRAFT_manuscript.docx`. Those are now **wrong**, and nothing tells you
 
-## Sam's "report" was copy-paste
+## Sam's "report" was copy-paste {.smaller}
 
 Sam's script is full of this:
 
@@ -628,7 +709,9 @@ print(round(prop.table(...), 3))
 print(mean(births$mat_age))
 ```
 
-Numbers got `print()`ed (NB: you do not need to write `print()` in this situation!), then **hand-typed into a Word doc**. Re-run the analysis (or change the inclusion criteria...) and every number in that doc is now a lie waiting to be caught in proofs.
+Numbers got `print()`ed (NB: you do not need to write `print()` in this situation!), then **hand-typed into a Word doc**.
+
+Change the inclusion criteria or update the data and every number in the tables and text now needs to be updated by hand
 
 ## First, let R build the table
 
@@ -645,11 +728,27 @@ table1 <- births |>
 
 . . .
 
-One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it.
+One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it!
 
 ##
 
 ![](images/paste-9.png)
+
+# Activity {.activity-slide background-color="#0072B2"}
+
+- Add a `tbl_summary()` call to your script to generate Table 1
+- Run the code with `age_min` set to 18, then with `age_min` set to 20
+- Open up the browser version of the table and copy into a Word doc
+
+# Quarto {background-color="#23373B"}
+
+## Why not R Markdown?
+
+Only because Quarto is newer and more featured!
+
+- Anything you already know how to do in R Markdown you can do in Quarto, and more!
+- All of these slides are made in Quarto.
+- If you know and love R Markdown, by all means keep using it!
 
 ## Quarto: code and write-up in one file
 
@@ -666,32 +765,16 @@ execute:
 
 Markdown for text; code chunks for analysis:
 
-```` markdown
+````
 ```{{r}}
 births <- read_csv(here("data/births.csv"))
 ```
 We conducted a really *important* study...
 ````
 
-## Why not R Markdown?
+## How does it work? {.smaller}
 
-Only because quarto is newer and more featured!
-
-- Anything you already know how to do in R Markdown you can do in quarto, and more!
-- All of these slides are made in quarto.
-- If you know and love R Markdown, by all means keep using it!
-
-## Quarto workflow
-
-1.  Create a Quarto document
-2.  Write code
-3.  Write text
-4.  Repeat 2-3 in whatever order you want
-5.  Render repeatedly as you go
-
-## How does it work?
-
-- You text in markdown and code in R
+- You write text in markdown and code in R
 - `knitr` processes the code chunks, executes the R code, and inserts the code outputs (e.g., plots, tables) back into the markdown document
 - `pandoc` transforms the markdown document into various output formats
 
@@ -737,9 +820,9 @@ x
 
 ## If you prefer, you can use the visual editor
 
-![](images/Screenshot%202023-08-14%20at%209.41.22%20PM.png)
+![](images/Screenshot%202023-08-14%20at%209.40.22%20PM.png)
 
-## R chunks
+## R chunks {.smaller .compact}
 
 Everything within the chunks has to be valid R[^1]
 
@@ -755,7 +838,15 @@ x <- 3
 x + 4
 ```
 
-Chunks run in order, continuously, like a single script
+Chunks run in order, continuously, like a single script, from a fresh session
+
+## Quarto workflow
+
+1.  Create a Quarto document
+2.  Write code
+3.  Write text
+4.  Repeat 2-3 in whatever order you want
+5.  Render repeatedly as you go
 
 ## YAML
 
@@ -781,7 +872,7 @@ There are a *ton* of possible options, but importantly, this determines the docu
 
 Report results with **inline code** instead of typing them:
 
-``` markdown
+```
 There were `r knitr::inline_expr("nrow(births)")` participants in the study.
 ```
 
@@ -793,7 +884,7 @@ There were 1960 participants in the study.
 
 That `` `r ` `` chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself -- no more hand-typed numbers.
 
-## You can pull numbers directly from tables
+## You can pull numbers directly from tables {.smaller}
 
 ``` markdown
 The median material age was `r knitr::inline_expr('inline_text(table1, variable = "mat_age", \ncolumn = "stat_0")')`.
@@ -819,20 +910,18 @@ When you click **Render**, Quarto runs the whole document in a **fresh R session
 If your `.qmd` renders, it's reproducible by construction -- hidden state and out-of-order code can't survive a render. That alone is a great reason to move analyses into Quarto.
 :::
 
-# Activity 5 {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
-## Turn the analysis into a report
+## Turn the analysis into a report {.activity-slide}
 
 1.  **File → New File → Quarto Document.**
-2.  Move your cleaning + model code into code chunks.
-    - You can omit the sensitivity analysis section for now
-3.  Replace Sam's hand-typed Table 1 with `tbl_summary()`.
-4.  Write one sentence of results using **inline R code** (about whatever you want).
-5.  Click **Render**, then change `age_min` and re-render. Watch every number -- table and text -- update itself.
+2.  Move your cleaning + model + table code into code chunks.
+3.  Write one sentence of results using **inline R code** (about whatever you want).
+4.  Click **Render**, then change `age_min` and re-render. Watch every number -- table and text -- update itself.
 
 # Organizing & scaling {background-color="#23373B"}
 
-## One script that does everything
+## One script that does everything {.smaller}
 
 Sam's script reads, cleans, plots, models, and saves -- all in one file, top to bottom. For a small analysis, honestly, that's fine!
 
@@ -840,8 +929,8 @@ Sam's script reads, cleans, plots, models, and saves -- all in one file, top to 
 
 The strain shows up as it grows:
 
-- you scroll forever to find the modeling code
-- re-running the figure means re-running the slow cleaning too
+- you scroll forever to find the code you're looking for
+- re-running the figure means re-running the slow cleaning code too
 - two people can't edit it without colliding
 
 . . .
@@ -858,7 +947,7 @@ R/03_outputs.R   # tables, figures
 run_all.R        # source() them in order
 ```
 
-Transparent, no new tools. A great default for most projects.
+A great default for many projects
 
 ## 2. One Quarto document
 
@@ -866,7 +955,7 @@ Everything -- cleaning, models, write-up -- in a single `.qmd`.
 
 . . .
 
-Best when the analysis *is* the deliverable: a report, a paper, a homework assignment. One file renders to the finished document.
+Makes a lot of sense when the analysis *is* the deliverable: a report, a paper, a homework assignment. It also encourages good habits.
 
 ## 3. A Quarto report, assembled from sections
 
@@ -875,19 +964,21 @@ Best when the analysis *is* the deliverable: a report, a paper, a homework assig
 {{{< include _sections/_results.qmd >}}}
 ```
 
-A parent document pulls in section files that share one R session.
+A parent document pulls in section files.
 
 . . .
 
 Good when a document gets unwieldy, or co-authors each own a section without scrolling through the whole manuscript.
 
 ::: callout-note
-This is basically how I wrote my dissertation (with RMarkdown)!
+This is similar to how I wrote my dissertation (with R Markdown)!
 :::
 
 ## 4. A `targets` pipeline
 
-`targets` tracks what each step depends on and **only re-runs what changed**.
+`targets` is a package that tracks what each step depends on and **only re-runs what changed**.
+
+Instead of a sequence of R scripts, you have a sequence of targets that may or may not depend on each other:
 
 ``` r
 list(
@@ -902,11 +993,6 @@ list(
 
 Edit the figure and re-run -- a slow model **does not need to be refit**. Change the raw data file and everything downstream knows it's out of date.
 
-``` r
-targets::tar_visnetwork()   # see the dependency graph
-targets::tar_make()         # build only what's stale
-```
-
 . . .
 
 It's overkill for today's tiny analysis, but worth it when steps are slow, numerous, or re-run constantly (I use it for simulation studies and for more complex analyses where the data is often changing)
@@ -919,11 +1005,11 @@ The documentation is very thorough: <https://books.ropensci.org/targets/>
 
 ![](images/paste-10.png)
 
-# Activity 6 {background-color="#0072B2"}
+# Activity {.activity-slide background-color="#0072B2"}
 
-## Split it up
+## Split it up {.activity-slide}
 
-Carve your working script into numbered pieces and save them into the appropriate directory:
+Carve your (pre-Quarto) working script into numbered pieces and save them into the appropriate directory:
 
 1.  `R/00_setup.R` -- `library()` calls, read + clean the data
 2.  `R/01_model.R` -- fit the models
@@ -931,7 +1017,7 @@ Carve your working script into numbered pieces and save them into the appropriat
 4.  `run_all.R` -- `source()` them in order
     - make sure you are referring to the file paths where they are saved!
 
-Restart R and source `run_all.R`. Does it run clean?
+Restart R and source `run_all.R`. Does it run cleanly?
 
 # Documenting your project {background-color="#23373B"}
 
@@ -945,15 +1031,15 @@ A **README** would have answered most of that in 30 seconds.
 
 . . .
 
-It's a plain text or markdown file (`README.md`) at the project root. Be the colleague you wish Sam had been.
+It's just a plain text or markdown file (`README.md`) at the project root
 
 ## What goes in a README {.smaller}
 
 It doesn't have to be long -- even ten lines beats nothing:
 
 - **What** the project is and what question it answers
-- **Data** -- where it came from, and "raw is read-only"
-- **How to run it** -- open the `.Rproj`, restart R, source `run_all.R`
+- **Data** -- where it came from, any particularities, citations
+- **How to run it** -- e.g., open the `.Rproj`, source `run_all.R`, or run `targets::tar_make()`, or just have to render `manuscript.qmd`
 - **Project structure** -- the folder map
 - **Key decisions** -- including those magic numbers (`age_min`, the LBW cutoff)
 - **Requirements** -- packages needed (this is where `renv` pays off)
@@ -961,19 +1047,8 @@ It doesn't have to be long -- even ten lines beats nothing:
 . . .
 
 ::: callout-tip
-Write it for the person who inherits this in two years. That person is usually you.
+Write it for the person who inherits this in two years. That person is usually you!
 :::
-
-# Activity 7 {background-color="#0072B2"}
-
-## Write the README {.smaller}
-
-Create a `README.md` at your project root. Cover:
-
-- what the analysis does
-- where the data come from
-- how to run it (open `.Rproj` → restart R → source `run_all.R`)
-- the key analysis choices -- `age_min`, the low-birth-weight cutoff
 
 # Wrap-up {background-color="#23373B"}
 

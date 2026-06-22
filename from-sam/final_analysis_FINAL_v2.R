@@ -72,8 +72,4 @@ write.csv(births, "births_clean.csv")
 # ... read it back in for the sensitivity analysis
 clean = read.csv("births_clean.csv")
 
-# TODO: sensitivity analysis, stratify by race/ethnicity
-
-model3 <- glm(low_bw ~ smoke + mat_age + mat_bmi + as.factor(education) + parity + as.factor(race_eth), data=clean, family=binomial)
-summary(model3)
-make_or_table(model3)
+# TODO: sensitivity analysis

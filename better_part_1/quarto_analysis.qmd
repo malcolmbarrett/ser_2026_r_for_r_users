@@ -1,0 +1,12 @@
+---
+title: "Smoking and Birthweight analysis"
+format: html
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+
+
+```
