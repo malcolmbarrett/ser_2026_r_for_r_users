@@ -40,7 +40,6 @@ Today we'll cover good R practices to avoid leaving any of your colleagues – a
 - **Blank-slate R** -- why "it works on my machine" happens
 - **Reproducibility** -- code that runs in order, every time
 - **Code style** -- readable code, and formatters that do it for you
-- **Quarto** -- analysis and write-up in one reproducible document
 - **Organizing & scaling** -- scripts → Quarto → `targets`
 
 ## Two editors, same ideas
@@ -217,7 +216,7 @@ here::here("data/births.csv")
 ```
 
 ::: callout-note
-You can do this with any function from any package -- we'll talk more about it in a bit
+You can do this with any function from any package (we'll see another example in a bit)
 :::
 
 ## Start rewriting the script {.activity-slide background-color="#0072B2"}
@@ -396,7 +395,7 @@ It deletes objects -- but it does **not** unload packages, reset options, or cha
 . . .
 
 ::: callout-tip
-The real reset: **Session → Restart R** (`Cmd/Ctrl + Shift + F10`). Do it early and do it often.
+The real reset: **Session → Restart R** (`Cmd/Ctrl + Shift + F10`). Do it early and do it often. (I actually map my keyboard shortcut to Cmd + Shift + R so it's easier to reach/I remember it!).
 :::
 
 ## `attach()`
@@ -604,7 +603,7 @@ We're not going to practice this, but there is helpful documentation: <https://r
 2.  Fix the hidden state you found previously (define the objects, load the packages, replace Sam's helper).
     - set `min_age` to 18, `bad_ids` to 1:3, `bw_cutoff` to 2500, and replace `make_or_table()` with `tidy()`
 3.  **Restart R** (`Cmd/Ctrl + Shift + F10`) for a clean slate.
-4.  Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.
+4.  Run the whole script top to bottom. Read the first error, fix it, repeat until you get rid of as many errors as you can.
 :::
 
 # Code style {background-color="#23373B"}
@@ -620,19 +619,19 @@ This is *separate* from code that's wrong or unsafe. We're talking about formatt
 ## Ugly, unreadable code {.compact}
 
 ``` r
-d2=read.csv('f.csv');d2$x2<-d2$x*1.8+32;m=lm(y~x2+grp,d2)
+T=read.csv('c.csv');T$x2<-T$x*1.8+32;m=lm(y~x2+grp,T)
 ```
 
-What does this do? Who knows. One line, three statements, cryptic names, no spaces, mixed assignment.
+This is painful to look at and difficult to understand. One line, three statements, cryptic names, no spaces, mixed assignment.
 
 Instead you might write:
 
 ``` r
-data_f <- read.csv('f.csv')
-baseline <- 32
-x_multiplier <- 1.8
-data_f$corrected_x <- data_f$x * x_multiplier + baseline
-mod_y <- lm(y ~ corrected_x + grp, data = data_f)
+temps <- read.csv('c.csv')
+cels_baseline <- 32
+cels_multiplier <- 1.8
+temps$temp_f <- temps$x * cels_multiplier + cels_baseline
+mod_y <- lm(y ~ temp_f + grp, data = temps)
 ```
 
 ## More bad habits {.compact}
@@ -985,7 +984,7 @@ Everything -- cleaning, models, write-up -- in a single `.qmd`.
 
 Makes a lot of sense when the analysis *is* the deliverable: a report, a paper, a homework assignment. It also encourages good habits.
 
-## Why Quarto?
+## Why Quarto? {.smaller}
 
 - Every time you render, you are running the whole analysis in a **clean session** -- no hidden state, no out-of-order code
 - **Inline code** means numbers never go stale:
@@ -1051,7 +1050,7 @@ The documentation is very thorough: <https://books.ropensci.org/targets/>
 
 ## Split it up {.activity-slide background-color="#0072B2"}
 
-Carve your (pre-Quarto) working script into numbered pieces and save them into the appropriate directory:
+Carve your working script into numbered pieces and save them into the appropriate directory:
 
 :::nonincremental
 1.  `R/00_setup.R` -- `library()` calls, read + clean the data

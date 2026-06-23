@@ -240,7 +240,6 @@ Louisa Smith
 <li class="fragment"><strong>Blank-slate R</strong> – why “it works on my machine” happens</li>
 <li class="fragment"><strong>Reproducibility</strong> – code that runs in order, every time</li>
 <li class="fragment"><strong>Code style</strong> – readable code, and formatters that do it for you</li>
-<li class="fragment"><strong>Quarto</strong> – analysis and write-up in one reproducible document</li>
 <li class="fragment"><strong>Organizing &amp; scaling</strong> – scripts → Quarto → <code>targets</code></li>
 </ul>
 </section>
@@ -410,7 +409,7 @@ Louisa Smith
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>You can do this with any function from any package – we’ll talk more about it in a bit</p>
+<p>You can do this with any function from any package (we’ll see another example in a bit)</p>
 </div>
 </div>
 </div>
@@ -553,7 +552,7 @@ Louisa Smith
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>The real reset: <strong>Session → Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>). Do it early and do it often.</p>
+<p>The real reset: <strong>Session → Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>). Do it early and do it often. (I actually map my keyboard shortcut to Cmd + Shift + R so it’s easier to reach/I remember it!).</p>
 </div>
 </div>
 </div>
@@ -740,7 +739,7 @@ We're not going to practice this, but there is helpful documentation: <https://r
 <li>set <code>min_age</code> to 18, <code>bad_ids</code> to 1:3, <code>bw_cutoff</code> to 2500, and replace <code>make_or_table()</code> with <code>tidy()</code></li>
 </ul></li>
 <li><strong>Restart R</strong> (<code>Cmd/Ctrl + Shift + F10</code>) for a clean slate.</li>
-<li>Source the whole script. Read the first error, fix it, repeat until you get rid of as many errors as you can.</li>
+<li>Run the whole script top to bottom. Read the first error, fix it, repeat until you get rid of as many errors as you can.</li>
 </ol>
 </section></section>
 <section>
@@ -757,14 +756,14 @@ We're not going to practice this, but there is helpful documentation: <https://r
 </section>
 <section id="ugly-unreadable-code" class="slide level2 compact">
 <h2>Ugly, unreadable code</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>d2<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">'f.csv'</span>);d2<span class="sc">$</span>x2<span class="ot">&lt;-</span>d2<span class="sc">$</span>x<span class="sc">*</span><span class="fl">1.8</span><span class="sc">+</span><span class="dv">32</span>;m<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x2<span class="sc">+</span>grp,d2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>What does this do? Who knows. One line, three statements, cryptic names, no spaces, mixed assignment.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>T<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">'c.csv'</span>);T<span class="sc">$</span>x2<span class="ot">&lt;-</span>T<span class="sc">$</span>x<span class="sc">*</span><span class="fl">1.8</span><span class="sc">+</span><span class="dv">32</span>;m<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x2<span class="sc">+</span>grp,T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is painful to look at and difficult to understand. One line, three statements, cryptic names, no spaces, mixed assignment.</p>
 <p>Instead you might write:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>data_f <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'f.csv'</span>)</span>
-<span id="cb22-2"><a href=""></a>baseline <span class="ot">&lt;-</span> <span class="dv">32</span></span>
-<span id="cb22-3"><a href=""></a>x_multiplier <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
-<span id="cb22-4"><a href=""></a>data_f<span class="sc">$</span>corrected_x <span class="ot">&lt;-</span> data_f<span class="sc">$</span>x <span class="sc">*</span> x_multiplier <span class="sc">+</span> baseline</span>
-<span id="cb22-5"><a href=""></a>mod_y <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> corrected_x <span class="sc">+</span> grp, <span class="at">data =</span> data_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>temps <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'c.csv'</span>)</span>
+<span id="cb22-2"><a href=""></a>cels_baseline <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb22-3"><a href=""></a>cels_multiplier <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
+<span id="cb22-4"><a href=""></a>temps<span class="sc">$</span>temp_f <span class="ot">&lt;-</span> temps<span class="sc">$</span>x <span class="sc">*</span> cels_multiplier <span class="sc">+</span> cels_baseline</span>
+<span id="cb22-5"><a href=""></a>mod_y <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> temp_f <span class="sc">+</span> grp, <span class="at">data =</span> temps)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="more-bad-habits" class="slide level2 compact">
 <h2>More bad habits</h2>
@@ -924,7 +923,7 @@ execute:
 Markdown for text; code chunks for analysis:
 
 ````
-```uiptb
+```jblxb
 births <- read_csv(here("data/births.csv"))
 ```
 We conducted a really *important* study...
@@ -952,7 +951,7 @@ Some **bold text**
 - Eggs
 - Milk
 
-```uiptb
+```jblxb
 x <- 3
 x
 ```
@@ -1006,7 +1005,7 @@ Everything within the chunks has to be valid R[^1]
 ::: {.cell layout-align="center"}
 
 ````{.cell-code}
-```uiptb
+```jblxb
 x <- 3
 ```
 ````
@@ -1019,7 +1018,7 @@ Chunks run in order, continuously, like a single script, from a fresh session
 ::: {.cell layout-align="center"}
 
 ````{.cell-code}
-```uiptb
+```jblxb
 x + 4
 ```
 ````
@@ -1151,7 +1150,7 @@ run_all.R        # source() them in order</code></pre>
 <p>Makes a lot of sense when the analysis <em>is</em> the deliverable: a report, a paper, a homework assignment. It also encourages good habits.</p>
 </div>
 </section>
-<section id="why-quarto" class="slide level2">
+<section id="why-quarto" class="slide level2 smaller">
 <h2>Why Quarto?</h2>
 <ul>
 <li class="fragment">Every time you render, you are running the whole analysis in a <strong>clean session</strong> – no hidden state, no out-of-order code</li>
@@ -1223,7 +1222,7 @@ run_all.R        # source() them in order</code></pre>
 <img data-src="images/paste-10.png" class="r-stretch"></section>
 <section id="split-it-up" class="slide level2 activity-slide" data-background-color="#0072B2">
 <h2>Split it up</h2>
-<p>Carve your (pre-Quarto) working script into numbered pieces and save them into the appropriate directory:</p>
+<p>Carve your working script into numbered pieces and save them into the appropriate directory:</p>
 <ol type="1">
 <li><code>R/00_setup.R</code> – <code>library()</code> calls, read + clean the data</li>
 <li><code>R/01_model.R</code> – fit the models</li>
