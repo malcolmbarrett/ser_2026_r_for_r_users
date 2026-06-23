@@ -227,10 +227,9 @@ Louisa Smith
 <section id="you-open-it-and-start-running" class="slide level2">
 <h2>You open it and start running</h2>
 
-<img data-src="images/paste-1.png" class="r-stretch"></section></section>
-<section>
-<section id="most-of-us-have-written-a-script-like-this" class="title-slide slide level1 center">
-<h1>Most of us have <em>written</em> a script like this</h1>
+<img data-src="images/paste-1.png" class="r-stretch"></section>
+<section id="most-of-us-have-written-a-script-like-this" class="slide level2">
+<h2>Most of us have <em>written</em> a script like this</h2>
 <p>Today we’ll cover good R practices to avoid leaving any of your colleagues – and possibly most importantly, your future self – in this position</p>
 </section>
 <section id="what-part-1-covers" class="slide level2 smaller">
@@ -838,7 +837,7 @@ We're not going to practice this, but there is helpful documentation: <https://r
 <ol type="1">
 <li>Install and run <code>styler::style_file()</code> on your script (Addins → Style active file), or install Air and format document.</li>
 <li>Compare before and after!</li>
-<li>Now fix what a formatter <strong>won’t</strong>: cryptic names, <code>=</code> → <code>&lt;-</code> inconsistency, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
+<li>Now fix what a formatter <strong>won’t</strong>: cryptic names, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
 </ol>
 <!-- # Reproducible reporting {background-color="#23373B"}
 
@@ -923,7 +922,7 @@ execute:
 Markdown for text; code chunks for analysis:
 
 ````
-```jblxb
+```hmxdh
 births <- read_csv(here("data/births.csv"))
 ```
 We conducted a really *important* study...
@@ -951,7 +950,7 @@ Some **bold text**
 - Eggs
 - Milk
 
-```jblxb
+```hmxdh
 x <- 3
 x
 ```
@@ -1005,7 +1004,7 @@ Everything within the chunks has to be valid R[^1]
 ::: {.cell layout-align="center"}
 
 ````{.cell-code}
-```jblxb
+```hmxdh
 x <- 3
 ```
 ````
@@ -1018,7 +1017,7 @@ Chunks run in order, continuously, like a single script, from a fresh session
 ::: {.cell layout-align="center"}
 
 ````{.cell-code}
-```jblxb
+```hmxdh
 x + 4
 ```
 ````

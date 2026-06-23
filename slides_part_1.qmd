@@ -30,7 +30,7 @@ Attached: `final_analysis_FINAL_v2.R`, `births.csv`, and `Table1_DRAFT_manuscrip
 
 ![](images/paste-1.png)
 
-# Most of us have *written* a script like this
+## Most of us have *written* a script like this
 
 Today we'll cover good R practices to avoid leaving any of your colleagues – and possibly most importantly, your future self – in this position
 
@@ -705,7 +705,7 @@ install.packages("styler")
 :::nonincremental
 1.  Install and run `styler::style_file()` on your script (Addins → Style active file), or install Air and format document.
 2.  Compare before and after!
-3.  Now fix what a formatter **won't**: cryptic names, `=` → `<-` inconsistency, magic numbers, anything else that's not aesthetically pleasing to you!
+3.  Now fix what a formatter **won't**: cryptic names, magic numbers, anything else that's not aesthetically pleasing to you!
 :::
 
 <!-- # Reproducible reporting {background-color="#23373B"}
