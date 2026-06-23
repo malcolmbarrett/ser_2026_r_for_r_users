@@ -492,6 +492,7 @@ install.packages(
 
 * [Posit Package Manager](https://packagemanager.posit.co/client/#/) offers binaries for many OSes as well as daily-ish snapshots
 * [R-Universe](https://ropensci.org/r-universe/) and [R-Multiverse](https://r-multiverse.org/) are increasingly important community-led, GitHub-based repositories that serve binaries
+
 # Managing R installations {background-color="#23373B"}
 
 ## [rig](https://github.com/r-lib/rig): The R Installation Manager

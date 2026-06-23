@@ -357,6 +357,7 @@ You are also going to get these same errors if you spell something wrong, so che
 ```r
 install.packages("jantor")
 ```
+
 :::error-output
 Warning message:
 package ‘jantor’ is not available for this version of R

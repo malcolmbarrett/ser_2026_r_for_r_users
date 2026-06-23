@@ -14,7 +14,7 @@ Slides:
 Install the packages you need:
 
 ```r
-install.packages(c("tidyverse", "here", "janitor", "quarto", "usethis", "broom", "gtsummary"))
+install.packages(c("tidyverse", "here", "janitor", "quarto", "usethis", "broom", "gtsummary", "renv"))
 ```
 
 Download the material:
