@@ -6,8 +6,8 @@
 <script src="slides_part_1_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_part_1_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_part_1_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_part_1_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+<link href="slides_part_1_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Louisa Smith">
   <title>R for R Users</title>
@@ -643,59 +643,62 @@ Louisa Smith
 <li class="fragment">a <strong>clean session</strong> (no hidden state),</li>
 <li class="fragment">code in <strong>runnable order</strong></li>
 </ul>
-</section>
-<section id="two-more-reproducibility-concerns" class="slide level2">
-<h2>Two more reproducibility concerns</h2>
-<p>These won’t show up today, but you’ll hit both in real work – so know they exist.</p>
-<ul>
-<li class="fragment"><strong>Randomness</strong> – anything random gives different answers each run unless you pin it down.</li>
-<li class="fragment"><strong>Package versions</strong> – “it worked last year” can fail after an update.</li>
-</ul>
-</section>
-<section id="randomness-needs-a-seed" class="slide level2">
-<h2>Randomness needs a seed</h2>
-<p>Bootstraps, multiple imputation, train/test splits, simulations, <code>sample()</code> – re-run them and you get <em>different numbers</em> every time.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">20260615</span>)</span>
-<span id="cb21-2"><a href=""></a></span>
-<span id="cb21-3"><a href=""></a>boot_samples <span class="ot">&lt;-</span> <span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>, \(i) <span class="fu">slice_sample</span>(births, <span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p><code>set.seed()</code> once, near the top, makes the randomness repeatable. Pick an random integer – the point is that it’s <strong>written down</strong>, so your confidence interval is the same tomorrow.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Some functions/workflows, such as those that are parallelized, may have more complex ways to deal with random seeds</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="your-packages-are-part-of-the-environment" class="slide level2">
-<h2>Your packages are part of the environment</h2>
-<p>Blank-slate R handles your objects and which packages are loaded. But it doesn’t pin <strong>which versions</strong>.</p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co"># code written under dplyr 1.0...</span></span>
-<span id="cb22-2"><a href=""></a>df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.by =</span> group)   <span class="co"># ...errors on older dplyr</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>“Works on my machine” is often really “works with <em>my</em> package versions.” For an analysis you’ll revisit, share, or publish (so all of them?), that’s a reproducibility hole.</p>
-</div>
-</section>
-<section id="renv-a-lockfile-for-your-project" class="slide level2">
-<h2><code>renv</code>: a lockfile for your project</h2>
-<p><code>renv</code> gives each project its <strong>own library</strong> and records exact versions in a <code>renv.lock</code> file that travels with the project.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>renv<span class="sc">::</span><span class="fu">init</span>()        <span class="co"># start tracking this project's packages</span></span>
-<span id="cb23-2"><a href=""></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()    <span class="co"># record current versions to renv.lock</span></span>
-<span id="cb23-3"><a href=""></a>renv<span class="sc">::</span><span class="fu">restore</span>()     <span class="co"># reproduce that exact set on another machine</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="the-renv.lock-file" class="slide level2">
-<h2>The <code>renv.lock</code> file</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<pre><code>{
+<!-- ## Two more reproducibility concerns
+
+These won't show up today, but you'll hit both in real work -- so know they exist.
+
+- **Randomness** -- anything random gives different answers each run unless you pin it down.
+- **Package versions** -- "it worked last year" can fail after an update.
+
+## Randomness needs a seed
+
+Bootstraps, multiple imputation, train/test splits, simulations, `sample()` -- re-run them and you get *different numbers* every time.
+
+``` r
+set.seed(20260615)
+
+boot_samples <- map(1:1000, \(i) slice_sample(births, prop = 1, replace = TRUE))
+```
+
+. . .
+
+`set.seed()` once, near the top, makes the randomness repeatable. Pick an random integer -- the point is that it's **written down**, so your confidence interval is the same tomorrow.
+
+::: callout-note
+Some functions/workflows, such as those that are parallelized, may have more complex ways to deal with random seeds
+:::
+
+## Your packages are part of the environment
+
+Blank-slate R handles your objects and which packages are loaded. But it doesn't pin **which versions**.
+
+. . .
+
+``` r
+# code written under dplyr 1.0...
+df |> summarise(n = n(), .by = group)   # ...errors on older dplyr
+```
+
+"Works on my machine" is often really "works with *my* package versions." For an analysis you'll revisit, share, or publish (so all of them?), that's a reproducibility hole.
+
+## `renv`: a lockfile for your project
+
+`renv` gives each project its **own library** and records exact versions in a `renv.lock` file that travels with the project.
+
+``` r
+renv::init()        # start tracking this project's packages
+renv::snapshot()    # record current versions to renv.lock
+renv::restore()     # reproduce that exact set on another machine
+```
+
+## The `renv.lock` file
+
+
+::: {.columns}
+
+::: {.column width="55%"}
+```
+{
   "R": {
     "Version": "4.3.1",
     "Repositories": [
@@ -715,10 +718,18 @@ Louisa Smith
     },
     ...
   }
-}</code></pre>
-</div><div class="column" style="width:45%;">
-<p>We’re not going to practice this, but there is helpful documentation: <a href="https://rstudio.github.io/renv/articles/renv.html" class="uri">https://rstudio.github.io/renv/articles/renv.html</a></p>
-</div></div>
+}
+```
+:::
+
+::: {.column width="45%"}
+
+We're not going to practice this, but there is helpful documentation: <https://rstudio.github.io/renv/articles/renv.html>
+
+
+:::
+
+::: -->
 </section>
 <section id="make-it-run-start-to-finish" class="slide level2 activity-slide" data-background-color="#0072B2">
 <h2>Make it run, start to finish</h2>
@@ -746,33 +757,33 @@ Louisa Smith
 </section>
 <section id="ugly-unreadable-code" class="slide level2 compact">
 <h2>Ugly, unreadable code</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>d2<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">'f.csv'</span>);d2<span class="sc">$</span>x2<span class="ot">&lt;-</span>d2<span class="sc">$</span>x<span class="sc">*</span><span class="fl">1.8</span><span class="sc">+</span><span class="dv">32</span>;m<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x2<span class="sc">+</span>grp,d2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>d2<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">'f.csv'</span>);d2<span class="sc">$</span>x2<span class="ot">&lt;-</span>d2<span class="sc">$</span>x<span class="sc">*</span><span class="fl">1.8</span><span class="sc">+</span><span class="dv">32</span>;m<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x2<span class="sc">+</span>grp,d2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>What does this do? Who knows. One line, three statements, cryptic names, no spaces, mixed assignment.</p>
 <p>Instead you might write:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>data_f <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'f.csv'</span>)</span>
-<span id="cb26-2"><a href=""></a>baseline <span class="ot">&lt;-</span> <span class="dv">32</span></span>
-<span id="cb26-3"><a href=""></a>x_multiplier <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
-<span id="cb26-4"><a href=""></a>data_f<span class="sc">$</span>corrected_x <span class="ot">&lt;-</span> data_f<span class="sc">$</span>x <span class="sc">*</span> x_multiplier <span class="sc">+</span> baseline</span>
-<span id="cb26-5"><a href=""></a>mod_y <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> corrected_x <span class="sc">+</span> grp, <span class="at">data =</span> data_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>data_f <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'f.csv'</span>)</span>
+<span id="cb22-2"><a href=""></a>baseline <span class="ot">&lt;-</span> <span class="dv">32</span></span>
+<span id="cb22-3"><a href=""></a>x_multiplier <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
+<span id="cb22-4"><a href=""></a>data_f<span class="sc">$</span>corrected_x <span class="ot">&lt;-</span> data_f<span class="sc">$</span>x <span class="sc">*</span> x_multiplier <span class="sc">+</span> baseline</span>
+<span id="cb22-5"><a href=""></a>mod_y <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> corrected_x <span class="sc">+</span> grp, <span class="at">data =</span> data_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="more-bad-habits" class="slide level2 compact">
 <h2>More bad habits</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># inconsistent naming, spacing, and assignment</span></span>
-<span id="cb27-2"><a href=""></a>MatAge <span class="ot">&lt;-</span> d<span class="sc">$</span>mat_age</span>
-<span id="cb27-3"><a href=""></a>birth.weight<span class="ot">&lt;-</span>d<span class="sc">$</span>birthWeight</span>
-<span id="cb27-4"><a href=""></a>n_Obs <span class="ot">=</span> <span class="fu">nrow</span>( d )</span>
-<span id="cb27-5"><a href=""></a></span>
-<span id="cb27-6"><a href=""></a><span class="co"># magic numbers with no explanation</span></span>
-<span id="cb27-7"><a href=""></a>d <span class="ot">&lt;-</span> d[d<span class="sc">$</span>v3 <span class="sc">&gt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> d<span class="sc">$</span>v7 <span class="sc">&lt;</span> <span class="dv">37</span>, ]</span>
-<span id="cb27-8"><a href=""></a></span>
-<span id="cb27-9"><a href=""></a><span class="co"># the commented-out graveyard</span></span>
-<span id="cb27-10"><a href=""></a><span class="co"># m1 &lt;- lm(y ~ x)</span></span>
-<span id="cb27-11"><a href=""></a><span class="co"># m2 &lt;- lm(y ~ x + z)</span></span>
-<span id="cb27-12"><a href=""></a><span class="co"># m3 &lt;- lm(y ~ x + z + w)   # this one? maybe?</span></span>
-<span id="cb27-13"><a href=""></a></span>
-<span id="cb27-14"><a href=""></a><span class="co"># T/F abbreviations</span></span>
-<span id="cb27-15"><a href=""></a>T <span class="ot">&lt;-</span> <span class="dv">34</span></span>
-<span id="cb27-16"><a href=""></a><span class="cf">if</span> (x <span class="sc">==</span> T) {...}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="co"># inconsistent naming, spacing, and assignment</span></span>
+<span id="cb23-2"><a href=""></a>MatAge <span class="ot">&lt;-</span> d<span class="sc">$</span>mat_age</span>
+<span id="cb23-3"><a href=""></a>birth.weight<span class="ot">&lt;-</span>d<span class="sc">$</span>birthWeight</span>
+<span id="cb23-4"><a href=""></a>n_Obs <span class="ot">=</span> <span class="fu">nrow</span>( d )</span>
+<span id="cb23-5"><a href=""></a></span>
+<span id="cb23-6"><a href=""></a><span class="co"># magic numbers with no explanation</span></span>
+<span id="cb23-7"><a href=""></a>d <span class="ot">&lt;-</span> d[d<span class="sc">$</span>v3 <span class="sc">&gt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> d<span class="sc">$</span>v7 <span class="sc">&lt;</span> <span class="dv">37</span>, ]</span>
+<span id="cb23-8"><a href=""></a></span>
+<span id="cb23-9"><a href=""></a><span class="co"># the commented-out graveyard</span></span>
+<span id="cb23-10"><a href=""></a><span class="co"># m1 &lt;- lm(y ~ x)</span></span>
+<span id="cb23-11"><a href=""></a><span class="co"># m2 &lt;- lm(y ~ x + z)</span></span>
+<span id="cb23-12"><a href=""></a><span class="co"># m3 &lt;- lm(y ~ x + z + w)   # this one? maybe?</span></span>
+<span id="cb23-13"><a href=""></a></span>
+<span id="cb23-14"><a href=""></a><span class="co"># T/F abbreviations</span></span>
+<span id="cb23-15"><a href=""></a>T <span class="ot">&lt;-</span> <span class="dv">34</span></span>
+<span id="cb23-16"><a href=""></a><span class="cf">if</span> (x <span class="sc">==</span> T) {...}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="habits-worth-considering" class="slide level2 smaller">
 <h2>Habits worth considering</h2>
@@ -805,7 +816,7 @@ Louisa Smith
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>styler</strong> (R package)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"styler"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>RStudio → <strong>Addins → Style active file</strong></li>
 <li>or <code>styler::style_file("script.R")</code></li>
@@ -830,238 +841,279 @@ Louisa Smith
 <li>Compare before and after!</li>
 <li>Now fix what a formatter <strong>won’t</strong>: cryptic names, <code>=</code> → <code>&lt;-</code> inconsistency, magic numbers, anything else that’s not aesthetically pleasing to you!</li>
 </ol>
-</section></section>
-<section>
-<section id="reproducible-reporting" class="title-slide slide level1 center" data-background-color="#23373B">
-<h1>Reproducible reporting</h1>
+<!-- # Reproducible reporting {background-color="#23373B"}
 
-</section>
-<section id="plot-twist" class="slide level2">
-<h2>Plot twist</h2>
-<p><em>“Restrict to mothers aged 20 and older, not 18.”</em></p>
-<div class="fragment">
-<p>Change <code>age_min &lt;- 20</code> in <strong>one</strong> place, re-run, and every number updates.</p>
-</div>
-<div class="fragment">
-<p>…except the ones Sam hand-typed into <code>Table1_DRAFT_manuscript.docx</code>. Those are now <strong>wrong</strong>, and nothing tells you</p>
-</div>
-</section>
-<section id="sams-report-was-copy-paste" class="slide level2 smaller">
-<h2>Sam’s “report” was copy-paste</h2>
-<p>Sam’s script is full of this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">print</span>(<span class="fu">table</span>(births<span class="sc">$</span>low_bw, births<span class="sc">$</span>smoker))</span>
-<span id="cb29-2"><a href=""></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">prop.table</span>(...), <span class="dv">3</span>))</span>
-<span id="cb29-3"><a href=""></a><span class="fu">print</span>(<span class="fu">mean</span>(births<span class="sc">$</span>mat_age))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Numbers got <code>print()</code>ed (NB: you do not need to write <code>print()</code> if you are just running interactively like this!), then <strong>hand-typed into a Word doc</strong>.</p>
-<p>Change the inclusion criteria or update the data and every number in the tables and text now needs to be updated by hand</p>
-</section>
-<section id="first-let-r-build-the-table" class="slide level2">
-<h2>First, let R build the table</h2>
-<p>Instead of typing Table 1 by hand, generate it with <strong>gtsummary</strong> or a similar package:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb30-2"><a href=""></a></span>
-<span id="cb30-3"><a href=""></a>table1 <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span></span>
-<span id="cb30-4"><a href=""></a>  <span class="fu">select</span>(smoker, mat_age, mat_bmi, parity, education, low_bw, preterm) <span class="sc">|&gt;</span></span>
-<span id="cb30-5"><a href=""></a>  <span class="fu">tbl_summary</span>(<span class="at">by =</span> smoker) <span class="sc">|&gt;</span></span>
-<span id="cb30-6"><a href=""></a>  <span class="fu">add_overall</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p>One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it!</p>
-</div>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+##  Plot twist
 
-<img data-src="images/paste-9.png" class="r-stretch"></section>
-<section id="generate-table-1" class="slide level2 activity-slide" data-background-color="#0072B2">
-<h2>Generate Table 1</h2>
-<ul>
-<li>Add a <code>tbl_summary()</code> call to your script to generate Table 1</li>
-<li>Run the code with <code>age_min</code> set to 18, then with <code>age_min</code> set to 20</li>
-<li>Open up the browser version of the table and copy into a Word doc</li>
-</ul>
-</section></section>
-<section>
-<section id="quarto" class="title-slide slide level1 center" data-background-color="#23373B">
-<h1>Quarto</h1>
+*"Restrict to mothers aged 20 and older, not 18."*
 
-</section>
-<section id="why-not-r-markdown" class="slide level2">
-<h2>Why not R Markdown?</h2>
-<p>Only because Quarto is newer and more featured!</p>
-<ul>
-<li class="fragment">Anything you already know how to do in R Markdown you can do in Quarto, and more!</li>
-<li class="fragment">All of these slides are made in Quarto.</li>
-<li class="fragment">If you know and love R Markdown, by all means keep using it!</li>
-</ul>
-</section>
-<section id="quarto-code-and-write-up-in-one-file" class="slide level2">
-<h2>Quarto: code and write-up in one file</h2>
-<p>A Quarto document (<code>.qmd</code>) weaves prose, code, and output together, then renders to HTML, Word, or PDF.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb31-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Smoking and birth weight"</span></span>
-<span id="cb31-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb31-4"><a href=""></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb31-5"><a href=""></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb31-6"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Markdown for text; code chunks for analysis:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb32-2"><a href=""></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data/births.csv"</span>))</span>
-<span id="cb32-3"><a href=""></a><span class="in">```</span></span>
-<span id="cb32-4"><a href=""></a>We conducted a really *important* study...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="how-does-it-work" class="slide level2 smaller">
-<h2>How does it work?</h2>
-<ul>
-<li class="fragment">You write text in markdown and code in R</li>
-<li class="fragment"><code>knitr</code> processes the code chunks, executes the R code, and inserts the code outputs (e.g., plots, tables) back into the markdown document</li>
-<li class="fragment"><code>pandoc</code> transforms the markdown document into various output formats</li>
-</ul>
+. . .
 
-<img data-src="images/2b931008-dc7c-4bec-92cb-112a55126975.png" class="r-stretch"></section>
-<section id="text-and-code" class="slide level2">
-<h2>Text and code…</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a><span class="fu"># My header</span></span>
-<span id="cb33-2"><a href=""></a></span>
-<span id="cb33-3"><a href=""></a>Some text</span>
-<span id="cb33-4"><a href=""></a></span>
-<span id="cb33-5"><a href=""></a>Some *italic text*</span>
-<span id="cb33-6"><a href=""></a></span>
-<span id="cb33-7"><a href=""></a>Some **bold text**</span>
-<span id="cb33-8"><a href=""></a></span>
-<span id="cb33-9"><a href=""></a><span class="ss">- </span>Eggs</span>
-<span id="cb33-10"><a href=""></a><span class="ss">- </span>Milk</span>
-<span id="cb33-11"><a href=""></a></span>
-<span id="cb33-12"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb33-13"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb33-14"><a href=""></a>x</span>
-<span id="cb33-15"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="becomes" class="slide level2">
-<h2>… becomes …</h2>
-<h3 id="my-title">My title</h3>
-<p>Some text</p>
-<p>Some <em>italic text</em></p>
-<p>Some <strong>bold text</strong></p>
-<ul>
-<li>Eggs</li>
-<li>Milk</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb34-2"><a href=""></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
-</div>
-</div>
-</section>
-<section id="if-you-prefer-you-can-use-the-visual-editor" class="slide level2">
-<h2>If you prefer, you can use the visual editor</h2>
+Change `age_min <- 20` in **one** place, re-run, and every number updates.
 
-<img data-src="images/Screenshot%202023-08-14%20at%209.40.22%20PM.png" class="r-stretch"></section>
-<section id="r-chunks" class="slide level2 smaller compact">
-<h2>R chunks</h2>
-<p>Everything within the chunks has to be valid R<sup>1</sup></p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb36-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb36-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Chunks run in order, continuously, like a single script, from a fresh session</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb37-2"><a href=""></a>x <span class="sc">+</span> <span class="dv">4</span></span>
-<span id="cb37-3"><a href=""></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>You can also use other languages, like Python!</p></li></ol></aside></section>
-<section id="quarto-workflow" class="slide level2">
-<h2>Quarto workflow</h2>
-<ol type="1">
-<li class="fragment">Create a Quarto document</li>
-<li class="fragment">Write code</li>
-<li class="fragment">Write text</li>
-<li class="fragment">Repeat 2-3 in whatever order you want</li>
-<li class="fragment">Render repeatedly as you go</li>
-</ol>
-</section>
-<section id="yaml" class="slide level2">
-<h2>YAML</h2>
-<p>At the top of your Quarto document, a header written in <em>yaml</em> describes options for the document</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb39-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb39-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My document"</span></span>
-<span id="cb39-3"><a href=""></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Louisa Smith</span></span>
-<span id="cb39-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb39-5"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>There are a <em>ton</em> of possible options, but importantly, this determines the document output</p>
-</section>
-<section id="output" class="slide level2">
-<h2>Output</h2>
+. . .
 
-<img data-src="images/6f28e7d4-3394-43f9-8b0d-41c52de3883f.png" class="r-stretch"><p><a href="https://quarto.org/docs/output-formats/all-formats.html" class="uri">https://quarto.org/docs/output-formats/all-formats.html</a></p>
-</section>
-<section id="numbers-that-never-go-stale" class="slide level2">
-<h2>Numbers that never go stale</h2>
-<p>Report results with <strong>inline code</strong> instead of typing them:</p>
-<pre><code>There were `r nrow(births)` participants in the study.</code></pre>
-<div class="fragment">
-<p>There were 1960 participants in the study.</p>
-</div>
-<div class="fragment">
-<p>That <code>`r `</code> chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself – no more hand-typed numbers.</p>
-</div>
-</section>
-<section id="you-can-pull-numbers-directly-from-tables" class="slide level2">
-<h2>You can pull numbers directly from tables</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a>The median material age was `r inline_text(table1, variable = "mat_age", </span>
-<span id="cb41-2"><a href=""></a>column = "stat_0")`.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p>The median maternal age was 29 (26, 33).</p>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><code>inline_text()</code> is a helper that pulls a specific value from the table. A tutorial is available here: <a href="https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html" class="uri">https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html</a></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="rendering-the-blank-slate-test-for-free" class="slide level2">
-<h2>Rendering = the blank-slate test, for free</h2>
-<p>When you click <strong>Render</strong>, Quarto runs the whole document in a <strong>fresh R session, top to bottom</strong>.</p>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>If your <code>.qmd</code> renders, it’s reproducible by construction – hidden state and out-of-order code can’t survive a render. That alone is a great reason to move analyses into Quarto.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="turn-the-analysis-into-a-report" class="slide level2 activity-slide" data-background-color="#0072B2">
-<h2>Turn the analysis into a report</h2>
-<ol type="1">
-<li><strong>File → New File → Quarto Document.</strong></li>
-<li>Move your cleaning + model + table code into code chunks.</li>
-<li>Write one sentence of results using <strong>inline R code</strong> (about whatever you want).</li>
-<li>Click <strong>Render</strong>, then change <code>age_min</code> and re-render. Watch every number – table and text – update itself.</li>
-</ol>
+...except the ones Sam hand-typed into `Table1_DRAFT_manuscript.docx`. Those are now **wrong**, and nothing tells you
+
+## Sam's "report" was copy-paste {.smaller}
+
+Sam's script is full of this:
+
+``` r
+print(table(births$low_bw, births$smoker))
+print(round(prop.table(...), 3))
+print(mean(births$mat_age))
+```
+
+Numbers got `print()`ed (NB: you do not need to write `print()` if you are just running interactively like this!), then **hand-typed into a Word doc**.
+
+Change the inclusion criteria or update the data and every number in the tables and text now needs to be updated by hand
+
+## First, let R build the table
+
+Instead of typing Table 1 by hand, generate it with **gtsummary** or a similar package:
+
+``` r
+library(gtsummary)
+
+table1 <- births |>
+  select(smoker, mat_age, mat_bmi, parity, education, low_bw, preterm) |>
+  tbl_summary(by = smoker) |>
+  add_overall()
+```
+
+. . .
+
+One function, a real Table 1, recomputed from the data every time. Change the data and the table changes with it!
+
+##
+
+![](images/paste-9.png)
+
+## Generate Table 1 {.activity-slide background-color="#0072B2"}
+
+:::nonincremental
+- Add a `tbl_summary()` call to your script to generate Table 1
+- Run the code with `age_min` set to 18, then with `age_min` set to 20
+- Open up the browser version of the table and copy into a Word doc
+:::
+
+# Quarto {background-color="#23373B"}
+
+## Why not R Markdown?
+
+Only because Quarto is newer and more featured!
+
+- Anything you already know how to do in R Markdown you can do in Quarto, and more!
+- All of these slides are made in Quarto.
+- If you know and love R Markdown, by all means keep using it!
+
+## Quarto: code and write-up in one file
+
+A Quarto document (`.qmd`) weaves prose, code, and output together, then renders to HTML, Word, or PDF.
+
+``` yaml
+---
+title: "Smoking and birth weight"
+format: html
+execute:
+  echo: false
+---
+```
+
+Markdown for text; code chunks for analysis:
+
+````
+```uiptb
+births <- read_csv(here("data/births.csv"))
+```
+We conducted a really *important* study...
+````
+
+## How does it work? {.smaller}
+
+- You write text in markdown and code in R
+- `knitr` processes the code chunks, executes the R code, and inserts the code outputs (e.g., plots, tables) back into the markdown document
+- `pandoc` transforms the markdown document into various output formats
+
+![](images/2b931008-dc7c-4bec-92cb-112a55126975.png)
+
+## Text and code...
+
+````
+# My header
+
+Some text
+
+Some *italic text*
+
+Some **bold text**
+
+- Eggs
+- Milk
+
+```uiptb
+x <- 3
+x
+```
+````
+
+## ... becomes ...
+
+### My title
+
+Some text
+
+Some *italic text*
+
+Some **bold text**
+
+:::nonincremental
+- Eggs
+- Milk
+:::
+
+
+::: {.cell layout-align="center"}
+
+```{.r .cell-code}
+x <- 3
+x
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3
+```
+
+
+:::
+:::
+
+
+## If you prefer, you can use the visual editor
+
+![](images/Screenshot%202023-08-14%20at%209.40.22%20PM.png)
+
+## R chunks {.smaller .compact}
+
+Everything within the chunks has to be valid R[^1]
+
+[^1]: You can also use other languages, like Python!
+
+
+::: {.cell layout-align="center"}
+
+````{.cell-code}
+```uiptb
+x <- 3
+```
+````
+:::
+
+
+Chunks run in order, continuously, like a single script, from a fresh session
+
+
+::: {.cell layout-align="center"}
+
+````{.cell-code}
+```uiptb
+x + 4
+```
+````
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 7
+```
+
+
+:::
+:::
+
+
+## Quarto workflow
+
+1.  Create a Quarto document
+2.  Write code
+3.  Write text
+4.  Repeat 2-3 in whatever order you want
+5.  Render repeatedly as you go
+
+## YAML
+
+At the top of your Quarto document, a header written in *yaml* describes options for the document
+
+``` yml
+---
+title: "My document"
+author: Louisa Smith
+format: html
+---
+```
+
+There are a *ton* of possible options, but importantly, this determines the document output
+
+## Output
+
+![](images/6f28e7d4-3394-43f9-8b0d-41c52de3883f.png)
+
+<https://quarto.org/docs/output-formats/all-formats.html>
+
+## Numbers that never go stale
+
+Report results with **inline code** instead of typing them:
+
+```
+There were `r nrow(births)` participants in the study.
+```
+
+. . .
+
+There were 1960 participants in the study.
+
+. . .
+
+That `` `r ` `` chunk runs when the document renders and drops the number straight into the sentence. Change the data, re-render, and the prose updates itself -- no more hand-typed numbers.
+
+## You can pull numbers directly from tables
+
+``` markdown
+The median material age was `r inline_text(table1, variable = "mat_age", 
+column = "stat_0")`.
+```
+
+. . .
+
+The median maternal age was 29 (26, 33).
+
+. . .
+
+::: callout-note
+`inline_text()` is a helper that pulls a specific value from the table. A tutorial is available here: <https://www.danieldsjoberg.com/gtsummary/articles/inline_text.html>
+:::
+
+## Rendering = the blank-slate test, for free
+
+When you click **Render**, Quarto runs the whole document in a **fresh R session, top to bottom**.
+
+. . .
+
+::: callout-tip
+If your `.qmd` renders, it's reproducible by construction -- hidden state and out-of-order code can't survive a render. That alone is a great reason to move analyses into Quarto.
+:::
+
+## Turn the analysis into a report {.activity-slide background-color="#0072B2"}
+
+:::nonincremental
+1.  **File → New File → Quarto Document.**
+2.  Move your cleaning + model + table code into code chunks.
+3.  Write one sentence of results using **inline R code** (about whatever you want).
+4.  Click **Render**, then change `age_min` and re-render. Watch every number -- table and text -- update itself.
+::: -->
 </section></section>
 <section>
 <section id="organizing-scaling" class="title-slide slide level1 center" data-background-color="#23373B">
@@ -1099,10 +1151,34 @@ run_all.R        # source() them in order</code></pre>
 <p>Makes a lot of sense when the analysis <em>is</em> the deliverable: a report, a paper, a homework assignment. It also encourages good habits.</p>
 </div>
 </section>
+<section id="why-quarto" class="slide level2">
+<h2>Why Quarto?</h2>
+<ul>
+<li class="fragment">Every time you render, you are running the whole analysis in a <strong>clean session</strong> – no hidden state, no out-of-order code</li>
+<li class="fragment"><strong>Inline code</strong> means numbers never go stale: <code>Sample size was n = `r nrow(births)`</code></li>
+<li class="fragment">Same with tables and figures – avoid copy-pasting</li>
+<li class="fragment">Easy to share; lots of cool output formats (HTML, Word, PDF, slides, dashboards, books, websites)</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Familiar with R Markdown? You can use basically everything you know about R Markdown in Quarto, and more!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="a-quarto-report-assembled-from-sections" class="slide level2">
 <h2>3. A Quarto report, assembled from sections</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href=""></a>{{&lt; include _sections/_methods.qmd &gt;}}</span>
-<span id="cb43-2"><a href=""></a>{{&lt; include _sections/_results.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a>{{&lt; include _sections/_methods.qmd &gt;}}</span>
+<span id="cb26-2"><a href=""></a>{{&lt; include _sections/_results.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A parent document pulls in section files.</p>
 <div class="fragment">
 <p>Good when a document gets unwieldy, or co-authors each own a section without scrolling through the whole manuscript.</p>
@@ -1125,12 +1201,12 @@ run_all.R        # source() them in order</code></pre>
 <h2>4. A <code>targets</code> pipeline</h2>
 <p><code>targets</code> is a package that tracks what each step depends on and <strong>only re-runs what changed</strong>.</p>
 <p>Instead of a sequence of R scripts, you have a sequence of targets that may or may not depend on each other:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a><span class="fu">list</span>(</span>
-<span id="cb44-2"><a href=""></a>  <span class="fu">tar_target</span>(births_file, <span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>), <span class="at">format =</span> <span class="st">"file"</span>),</span>
-<span id="cb44-3"><a href=""></a>  <span class="fu">tar_target</span>(births,      <span class="fu">clean_births</span>(<span class="fu">read_births</span>(births_file))),</span>
-<span id="cb44-4"><a href=""></a>  <span class="fu">tar_target</span>(lbw_model,   <span class="fu">fit_lbw_model</span>(births)),</span>
-<span id="cb44-5"><a href=""></a>  <span class="fu">tar_target</span>(bw_plot,     <span class="fu">plot_birthweight</span>(births))</span>
-<span id="cb44-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">list</span>(</span>
+<span id="cb27-2"><a href=""></a>  <span class="fu">tar_target</span>(births_file, <span class="fu">here</span>(<span class="st">"data/raw/births.csv"</span>), <span class="at">format =</span> <span class="st">"file"</span>),</span>
+<span id="cb27-3"><a href=""></a>  <span class="fu">tar_target</span>(births,      <span class="fu">clean_births</span>(<span class="fu">read_births</span>(births_file))),</span>
+<span id="cb27-4"><a href=""></a>  <span class="fu">tar_target</span>(lbw_model,   <span class="fu">fit_lbw_model</span>(births)),</span>
+<span id="cb27-5"><a href=""></a>  <span class="fu">tar_target</span>(bw_plot,     <span class="fu">plot_birthweight</span>(births))</span>
+<span id="cb27-6"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="why-targets" class="slide level2">
 <h2>Why <code>targets</code>?</h2>
@@ -1178,7 +1254,7 @@ run_all.R        # source() them in order</code></pre>
 <li class="fragment">Start every session <strong>blank</strong>; restart often</li>
 <li class="fragment">Code that runs <strong>top to bottom</strong> in a fresh session</li>
 <li class="fragment">Let a <strong>formatter</strong> keep the style tidy</li>
-<li class="fragment"><strong>Quarto</strong> so your numbers never go stale; pick the <strong>organization</strong> that fits</li>
+<li class="fragment">Pick an <strong>organization</strong> method that fits</li>
 </ul>
 </section>
 <section id="on-to-part-2" class="slide level2">
@@ -1189,7 +1265,6 @@ run_all.R        # source() them in order</code></pre>
 
 </div>
 </section></section>
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

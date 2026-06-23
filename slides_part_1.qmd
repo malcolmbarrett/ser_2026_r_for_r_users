@@ -508,7 +508,7 @@ That needs:
 - a **clean session** (no hidden state),
 - code in **runnable order**
 
-## Two more reproducibility concerns
+<!-- ## Two more reproducibility concerns
 
 These won't show up today, but you'll hit both in real work -- so know they exist.
 
@@ -594,7 +594,7 @@ We're not going to practice this, but there is helpful documentation: <https://r
 
 :::
 
-:::
+::: -->
 
 
 ## Make it run, start to finish {.activity-slide background-color="#0072B2"}
@@ -709,7 +709,7 @@ install.packages("styler")
 3.  Now fix what a formatter **won't**: cryptic names, `=` → `<-` inconsistency, magic numbers, anything else that's not aesthetically pleasing to you!
 :::
 
-# Reproducible reporting {background-color="#23373B"}
+<!-- # Reproducible reporting {background-color="#23373B"}
 
 ##  Plot twist
 
@@ -945,7 +945,7 @@ If your `.qmd` renders, it's reproducible by construction -- hidden state and ou
 2.  Move your cleaning + model + table code into code chunks.
 3.  Write one sentence of results using **inline R code** (about whatever you want).
 4.  Click **Render**, then change `age_min` and re-render. Watch every number -- table and text -- update itself.
-:::
+::: -->
 
 # Organizing & scaling {background-color="#23373B"}
 
@@ -984,6 +984,22 @@ Everything -- cleaning, models, write-up -- in a single `.qmd`.
 . . .
 
 Makes a lot of sense when the analysis *is* the deliverable: a report, a paper, a homework assignment. It also encourages good habits.
+
+## Why Quarto?
+
+- Every time you render, you are running the whole analysis in a **clean session** -- no hidden state, no out-of-order code
+- **Inline code** means numbers never go stale:
+   ```
+   Sample size was n = `r knitr::inline_expr("nrow(births)")`
+   ```
+- Same with tables and figures -- avoid copy-pasting
+- Easy to share; lots of cool output formats (HTML, Word, PDF, slides, dashboards, books, websites)
+
+. . .
+
+::: callout-note
+Familiar with R Markdown? You can use basically everything you know about R Markdown in Quarto, and more!
+:::
 
 ## 3. A Quarto report, assembled from sections
 
@@ -1063,7 +1079,7 @@ Restart R and source `run_all.R`. Does it run cleanly?
 - Start every session **blank**; restart often
 - Code that runs **top to bottom** in a fresh session
 - Let a **formatter** keep the style tidy
-- **Quarto** so your numbers never go stale; pick the **organization** that fits
+- Pick an **organization** method that fits
 
 ## On to Part 2
 
